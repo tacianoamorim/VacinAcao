@@ -1,0 +1,7 @@
+### BackupFile ###
+*.bak
+*.directory
+
+### Java configuration ###
+/02-codigoFonte/target/
+/02-codigoFonte/.settings/
