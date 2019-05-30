@@ -1,4 +1,4 @@
-package br.ufrpe.spjc.util;
+package br.ufrpe.vacinacao.util;
 
 public interface Constantes {
 	public static final String LOGIN_NOVO_CADASTRO_PROFESSOR= "NCP";

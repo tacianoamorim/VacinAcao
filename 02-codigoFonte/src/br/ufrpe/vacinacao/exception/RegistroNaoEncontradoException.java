@@ -1,4 +1,4 @@
-package br.ufrpe.spjc.exception;
+package br.ufrpe.vacinacao.exception;
 
 public class RegistroNaoEncontradoException extends Exception {
 

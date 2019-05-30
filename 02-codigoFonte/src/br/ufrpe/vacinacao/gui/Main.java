@@ -1,4 +1,4 @@
-package br.ufrpe.spjc.gui;
+package br.ufrpe.vacinacao.gui;
 
 public class Main {
 
@@ -17,7 +17,7 @@ public class Main {
         java.awt.EventQueue.invokeLater(() -> {
             try {
             	//cargaInicial();
-            	FrmLogin window= new FrmLogin();
+            	LoginFrm window= new LoginFrm();
             	window.setVisible(true);
 //				FrmLogin window = new FrmLogin();
 //				window.setVisible(true);

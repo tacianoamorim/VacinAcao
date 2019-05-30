@@ -1,4 +1,4 @@
-package br.ufrpe.spjc.gui;
+package br.ufrpe.vacinacao.gui;
 
 import java.awt.Color;
 import java.awt.Panel;
@@ -21,9 +21,9 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 
-import br.ufrpe.spjc.util.Constantes;
+import br.ufrpe.vacinacao.util.Constantes;
 
-public class FrmPrincipal {
+public class PrincipalFrm {
 
 	JFrame frame;
 	private JDesktopPane desktop;
@@ -55,7 +55,7 @@ public class FrmPrincipal {
 	/**
 	 * Create the application.
 	 */
-	public FrmPrincipal() {
+	public PrincipalFrm() {
 		initialize();
 		
 		carregar();
@@ -65,9 +65,9 @@ public class FrmPrincipal {
 	 * Carregar a permissoes de cada perfil
 	 */
 	private void carregar() {
-		if (Constantes.PERFIL_ALUNO.equalsIgnoreCase(FrmPrincipal.perfilLogado)) {
+		if (Constantes.PERFIL_ALUNO.equalsIgnoreCase(PrincipalFrm.perfilLogado)) {
 			
-		} else if (Constantes.PERFIL_PROFESSOR.equalsIgnoreCase(FrmPrincipal.perfilLogado)) {
+		} else if (Constantes.PERFIL_PROFESSOR.equalsIgnoreCase(PrincipalFrm.perfilLogado)) {
 
 		} else {
 			tbBtnProfessor.setEnabled(true);
@@ -112,7 +112,7 @@ public class FrmPrincipal {
 	    	}
 	    });
 	    tbBtnAluno.setEnabled(false);
-	    tbBtnAluno.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/image/aluno_32.png")));
+	    tbBtnAluno.setIcon(new ImageIcon(PrincipalFrm.class.getResource("/image/aluno_32.png")));
 	    tbBtnAluno.setBackground(Color.WHITE);
 	    tbProfessor.add(tbBtnAluno);
 	    
@@ -129,7 +129,7 @@ public class FrmPrincipal {
 	    		//frmProfessor.setVisible(true);
 	    	}
 	    });
-	    tbBtnProfessor.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/image/professor_32.png")));
+	    tbBtnProfessor.setIcon(new ImageIcon(PrincipalFrm.class.getResource("/image/professor_32.png")));
 	    tbProfessor.add(tbBtnProfessor);
 	    
 	    separator_1 = new JSeparator();
@@ -144,7 +144,7 @@ public class FrmPrincipal {
 	    	}
 	    });
 	    tbBtnDisciplina.setEnabled(false);
-	    tbBtnDisciplina.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/image/disciplina_32.png")));
+	    tbBtnDisciplina.setIcon(new ImageIcon(PrincipalFrm.class.getResource("/image/disciplina_32.png")));
 	    tbBtnDisciplina.setBackground(Color.WHITE);
 	    tbProfessor.add(tbBtnDisciplina);
 	    
@@ -160,7 +160,7 @@ public class FrmPrincipal {
 	    	}
 	    });
 	    tbBtnTurma.setEnabled(false);
-	    tbBtnTurma.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/image/classe_32.png")));
+	    tbBtnTurma.setIcon(new ImageIcon(PrincipalFrm.class.getResource("/image/classe_32.png")));
 	    tbBtnTurma.setBackground(Color.WHITE);
 	    tbProfessor.add(tbBtnTurma);
 	    
@@ -176,7 +176,7 @@ public class FrmPrincipal {
 	    	}
 	    });
 	    tbBtnRendimentoEscolar.setEnabled(false);
-	    tbBtnRendimentoEscolar.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/image/redimentoEscolar_32.png")));
+	    tbBtnRendimentoEscolar.setIcon(new ImageIcon(PrincipalFrm.class.getResource("/image/redimentoEscolar_32.png")));
 	    tbBtnRendimentoEscolar.setBackground(Color.WHITE);
 	    tbProfessor.add(tbBtnRendimentoEscolar);
 	    
@@ -187,7 +187,7 @@ public class FrmPrincipal {
 	    tbBtnSair = new JButton(" Sair   ");
 	    tbBtnSair.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent arg0) {
-	    		FrmPrincipal.perfilLogado= null;
+	    		PrincipalFrm.perfilLogado= null;
 	    		tbBtnProfessor.setEnabled(false);
 	    		tbBtnAluno.setEnabled(false);
 	    		tbBtnDisciplina.setEnabled(false);
@@ -195,12 +195,12 @@ public class FrmPrincipal {
 	    		tbBtnRendimentoEscolar.setEnabled(false);
 	    		frame.setVisible(false);
 	    		
-	    		FrmLogin login= new FrmLogin();
+	    		LoginFrm login= new LoginFrm();
 	    		login.setVisible(true);
 	    	}
 	    	
 	    });
-	    tbBtnSair.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/image/sair_32.png")));
+	    tbBtnSair.setIcon(new ImageIcon(PrincipalFrm.class.getResource("/image/sair_32.png")));
 	    tbBtnSair.setEnabled(false);
 	    tbBtnSair.setBackground(Color.WHITE);
 	    tbProfessor.add(tbBtnSair);
@@ -237,7 +237,7 @@ public class FrmPrincipal {
 		        		
 		        		// Caso click em um no de turma
 		        		if (texto.contains("Turma")) {
-		        			if (FrmPrincipal.perfilLogado.equalsIgnoreCase(Constantes.PERFIL_ALUNO)) {
+		        			if (PrincipalFrm.perfilLogado.equalsIgnoreCase(Constantes.PERFIL_ALUNO)) {
 //		        				if ( !Fachada.getInstance().alunoMatriculadoTurma(id, FrmPrincipal.alunoLogado ) ) {
 //		        					
 //		        					int input = JOptionPane.showConfirmDialog(null, "Deseja se matricular nessa turma?");

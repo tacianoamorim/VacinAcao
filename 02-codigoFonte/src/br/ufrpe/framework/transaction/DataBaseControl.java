@@ -2,11 +2,7 @@ package br.ufrpe.framework.transaction;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.DriverManager;
 import java.util.Properties;
-
-import br.ufrpe.framework.transaction.TransactionProxy;
-import br.ufrpe.spjc.repositorio.RepositorioJuizado;
 
 public class DataBaseControl {
 	
@@ -32,19 +28,19 @@ public class DataBaseControl {
 	
 	private void action() {
 		
-		// Cria o banco de dados
-				dataBaseProperties.getProperty("autoDDL"),
-				dataBaseProperties.getProperty("ativarDML"), 
-				dataBaseProperties.getProperty("AtivarCarga"));		
-		
-		
-		
-		
-		= create
-
-				= true
-				= true
-		
+//		// Cria o banco de dados
+//				dataBaseProperties.getProperty("autoDDL"),
+//				dataBaseProperties.getProperty("ativarDML"), 
+//				dataBaseProperties.getProperty("AtivarCarga"));		
+//		
+//		
+//		
+//		
+//		= create
+//
+//				= true
+//				= true
+//		
 
 	}
 	

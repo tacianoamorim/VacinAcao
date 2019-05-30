@@ -1,4 +1,4 @@
-package br.ufrpe.spjc.gui;
+package br.ufrpe.vacinacao.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -19,9 +19,9 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import br.ufrpe.spjc.util.Constantes;
+import br.ufrpe.vacinacao.util.Constantes;
 
-public class FrmLogin extends JDialog {
+public class LoginFrm extends JDialog {
 
 	/**
 	 * serialVersionUID
@@ -42,7 +42,7 @@ public class FrmLogin extends JDialog {
 	/**
 	 * Create the dialog.
 	 */
-	public FrmLogin() {
+	public LoginFrm() {
 		setTitle("Login");
 		setType(Type.POPUP);
 		setBounds(100, 100, 398, 194);
@@ -106,24 +106,24 @@ public class FrmLogin extends JDialog {
 				btnCadastro.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						
-						FrmPrincipal.perfilLogado= null;
+						PrincipalFrm.perfilLogado= null;
 						
 						// Cadastrar professor
 						if ( jrbProfessor.isSelected() ) {
-							FrmPrincipal.acaoInicializacao= Constantes.LOGIN_NOVO_CADASTRO_PROFESSOR;
+							PrincipalFrm.acaoInicializacao= Constantes.LOGIN_NOVO_CADASTRO_PROFESSOR;
 							
 						}
 						
 						// Cadastrar aluno
 						if ( jrbAluno.isSelected() ) {
-							FrmPrincipal.acaoInicializacao= Constantes.LOGIN_NOVO_CADASTRO_ALUNO;
+							PrincipalFrm.acaoInicializacao= Constantes.LOGIN_NOVO_CADASTRO_ALUNO;
 							//FrmAluno window = new FrmAluno();
 							//window.setVisible(true);
 						}
 						
 					}
 				});
-				btnCadastro.setIcon(new ImageIcon(FrmLogin.class.getResource("/image/novo_32.png")));
+				btnCadastro.setIcon(new ImageIcon(LoginFrm.class.getResource("/image/novo_32.png")));
 				buttonPane.add(btnCadastro);
 				getRootPane().setDefaultButton(btnCadastro);
 			}
@@ -133,7 +133,7 @@ public class FrmLogin extends JDialog {
 					public void actionPerformed(ActionEvent e) {
 						try {
 							// Limpa a variavel
-							FrmPrincipal.acaoInicializacao= null;
+							PrincipalFrm.acaoInicializacao= null;
 							
 							if ( txtCodigo.getText() != null && 
 									txtCodigo.getText().trim().length() == 0) {
@@ -172,7 +172,7 @@ public class FrmLogin extends JDialog {
 						
 					}
 				});
-				tbnLogar.setIcon(new ImageIcon(FrmLogin.class.getResource("/image/login_32.png")));
+				tbnLogar.setIcon(new ImageIcon(LoginFrm.class.getResource("/image/login_32.png")));
 				buttonPane.add(tbnLogar);
 			}
 		}
