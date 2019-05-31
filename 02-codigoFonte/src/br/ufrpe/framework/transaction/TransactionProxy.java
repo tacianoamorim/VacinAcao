@@ -49,5 +49,5 @@ public class TransactionProxy implements MethodInterceptor {
         //chama o metodo do objeto interceptado
         return result;
     }
-
+    
 }
