@@ -68,7 +68,12 @@ public class TransactionManager {
 			connection.setAutoCommit(true);
 
 		} catch (SQLException e) {
-			throw new SystemException("Nao foi possivel finalizar uma transacao", e);
+			if (e.getMessage().contains("Duplicate")) {
+				throw new SystemException("Erro ao tentar inserir um rigistro com id já existente.", e);
+			} else {
+				throw new SystemException("Nao foi possivel finalizar uma transacao", e);
+			}
+			
 
 		} finally {
 			closeConnection(connection);
@@ -89,3 +94,4 @@ public class TransactionManager {
 	}
 
 }
+

@@ -26,22 +26,4 @@ public class DataBaseControl {
 		return instance;
 	}
 	
-	private void action() {
-		
-//		// Cria o banco de dados
-//				dataBaseProperties.getProperty("autoDDL"),
-//				dataBaseProperties.getProperty("ativarDML"), 
-//				dataBaseProperties.getProperty("AtivarCarga"));		
-//		
-//		
-//		
-//		
-//		= create
-//
-//				= true
-//				= true
-//		
-
-	}
-	
 }
