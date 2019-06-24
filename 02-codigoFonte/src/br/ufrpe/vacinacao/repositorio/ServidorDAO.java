@@ -60,7 +60,7 @@ public class ServidorDAO {
 			
 			if (filtro != null) {
 			
-				sql.append("SELECT matricula, nome, senha, numeroSUS FROM USUARIO WHERE 0= 0 ");
+				sql.append("SELECT matricula, nome, senha FROM SERVIDOR WHERE 0= 0 ");
 				if ( filtro.getNome() != null )
 					sql.append("AND nome like '%?%'");
 				
