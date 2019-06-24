@@ -16,6 +16,9 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import br.ufrpe.vacinacao.negocio.controlador.UsuarioControl;
+import br.ufrpe.vacinacao.negocio.entidade.Usuario;
+
 public class FrmLogin extends JDialog {
 
 	/**
@@ -25,7 +28,7 @@ public class FrmLogin extends JDialog {
 	
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtCodigoSUS;
-	private JTextField textSenha;
+	private JTextField txtSenha;
 	public static boolean usuarioLogado= false;
 
 	/**
@@ -74,11 +77,11 @@ public class FrmLogin extends JDialog {
 		contentPanel.add(txtCodigoSUS);
 		txtCodigoSUS.setColumns(10);
 		
-		textSenha = new JTextField();
-		textSenha.setFont(new Font("Dialog", Font.PLAIN, 14));
-		textSenha.setBounds(120, 119, 224, 24);
-		contentPanel.add(textSenha);
-		textSenha.setColumns(10);
+		txtSenha = new JTextField();
+		txtSenha.setFont(new Font("Dialog", Font.PLAIN, 14));
+		txtSenha.setBounds(120, 119, 224, 24);
+		contentPanel.add(txtSenha);
+		txtSenha.setColumns(10);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
@@ -87,11 +90,18 @@ public class FrmLogin extends JDialog {
 				JButton okButton = new JButton("OK");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						if ( "012".equalsIgnoreCase(txtCodigoSUS.getText()) ) {
+						
+						Usuario filtro= new Usuario();
+						filtro.setNumeroSUS( txtCodigoSUS.getText() );
+						Usuario usuario= UsuarioControl.getInstance().findByFilter(filtro);
+						
+						if ( usuario.getSenha().equalsIgnoreCase(txtSenha.getText()) ) {
 							setVisible(false);
 							usuarioLogado= true;
 							FrmPrincipal window= new FrmPrincipal();
 							window.window.setVisible(true);
+							
+							UsuarioControl.getInstance().inserir();
 							
 						} else {
 							JOptionPane.showMessageDialog(null, "Usuário ou senha inválido.");

@@ -6,14 +6,23 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
+
 import org.apache.log4j.Logger;
 
 public class TransactionManager {
 	private Properties dataBaseProperties = new Properties();
 	private Logger log = Logger.getLogger(TransactionManager.class);
-
-	protected TransactionManager() {
+	
+	private static TransactionManager instance;
+	
+	public TransactionManager() {
 		loadConfiguration();
+	}
+	
+	public static TransactionManager getInstance() {
+		if ( instance == null )
+			instance= new TransactionManager();
+		return instance;
 	}
 
 	private void loadConfiguration() {
@@ -34,10 +43,19 @@ public class TransactionManager {
 			
 			Class.forName(dataBaseProperties.getProperty("driverClassName")); 
 			
-			connection= DriverManager.getConnection(
-					dataBaseProperties.getProperty("url"),
-					dataBaseProperties.getProperty("use"), 
+			String autoDDL= dataBaseProperties.getProperty("autoDDL");
+			String url= dataBaseProperties.getProperty("url");
+			if ("create".equalsIgnoreCase(autoDDL)) {
+				url= url + 
+					";INIT=" +
+				    "RUNSCRIPT FROM '~/create.sql'\\;" +
+				    "RUNSCRIPT FROM '~/populate.sql'";
+			}
+			
+			connection= DriverManager.getConnection(url	,
+					dataBaseProperties.getProperty("user"), 
 					dataBaseProperties.getProperty("password"));
+			
 
 		} catch (SQLException e) {
 			throw new RuntimeException(e);

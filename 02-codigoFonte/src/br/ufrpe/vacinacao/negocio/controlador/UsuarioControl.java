@@ -1,6 +1,7 @@
 package br.ufrpe.vacinacao.negocio.controlador;
 
 import br.ufrpe.framework.transaction.TransactionProxy;
+import br.ufrpe.vacinacao.negocio.entidade.Usuario;
 import br.ufrpe.vacinacao.repositorio.UsuarioDAO;
 
 public class UsuarioControl {
@@ -22,6 +23,14 @@ public class UsuarioControl {
 	public void inserir() {
 		System.out.println("Inserir Controlador");
 		repositorio.inserir();
+	}
+	
+	public Usuario findById(int id) {
+		return repositorio.findById(id);
+	}
+	
+	public Usuario findByFilter(Usuario filtro) {
+		return repositorio.findByFilter(filtro);
 	}
 	
 }
