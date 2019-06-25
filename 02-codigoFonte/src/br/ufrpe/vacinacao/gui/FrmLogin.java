@@ -131,7 +131,7 @@ public class FrmLogin extends JDialog {
 							
 							if ( servidor.getSenha().equalsIgnoreCase(txtSenha.getText()) ) {
 								setVisible(false);
-								usuarioLogado= true;
+								usuarioLogado= false;
 								FrmPrincipal window= new FrmPrincipal();
 								window.window.setVisible(true);
 								

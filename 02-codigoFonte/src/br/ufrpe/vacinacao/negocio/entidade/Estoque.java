@@ -4,6 +4,7 @@ public class Estoque {
 	private int id;
 	private Lote lote;
 	private int quantidadeDoses;
+	private UnidadeAtendimento unidadeAtendimento;
 
 	public int getId() {
 		return id;
@@ -27,6 +28,14 @@ public class Estoque {
 
 	public void setQuantidadeDoses(int quantidadeDoses) {
 		this.quantidadeDoses = quantidadeDoses;
+	}
+
+	public UnidadeAtendimento getUnidadeAtendimento() {
+		return unidadeAtendimento;
+	}
+
+	public void setUnidadeAtendimento(UnidadeAtendimento unidadeAtendimento) {
+		this.unidadeAtendimento = unidadeAtendimento;
 	}
 
 }

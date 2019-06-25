@@ -32,7 +32,7 @@ public class FrmPrincipal {
 		window.setResizable(true);
 		window.setBounds(100, 100, 828, 490);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		window.setTitle("VacinAção");
+		window.setTitle("VacinA\u00E7\u00E3o");
 		window.getContentPane().setLayout(new BoxLayout(window.getContentPane(), BoxLayout.X_AXIS));
 		
 		desktop = new JDesktopPane();
@@ -78,7 +78,7 @@ public class FrmPrincipal {
 	    JMenu mmGerenciamento = new JMenu("Gerenciamento");
 	    menuBar.add(mmGerenciamento);
 	    
-	    JMenuItem mntGerenciamentoDistribuicaoVacina = new JMenuItem("Distribuição de vacinas");
+	    JMenuItem mntGerenciamentoDistribuicaoVacina = new JMenuItem("Distribui\u00E7\u00E3o Estadual de vacinas");
 	    mntGerenciamentoDistribuicaoVacina.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent arg0) {
 //	    		FrmTipoIIDocumento window=new FrmTipoIIDocumento();
@@ -91,40 +91,23 @@ public class FrmPrincipal {
 	    /**
 	     * MENU RELATORIO
 	     */	   	    
-	    JMenu mnRelatorio = new JMenu("Relatório");
-	    menuBar.add(mnRelatorio);
+	    JMenu mmRelatorio = new JMenu("Relat\u00F3rio");
+	    menuBar.add(mmRelatorio);
 	    
-	    JMenuItem mntRelatorioEstoque = new JMenuItem("Estoque");
+	    JMenuItem mntRelatorioEstoque = new JMenuItem("Estoque Estadual");
 	    mntRelatorioEstoque.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent arg0) {
 
 	    	}
 	    });
-	    mnRelatorio.add(mntRelatorioEstoque);
+	    mmRelatorio.add(mntRelatorioEstoque);
 	    
-//	    JMenuItem mntmDocumento = new JMenuItem("Documento");
-//	    mnRelatorio.add(mntmDocumento);
-//	    
-//	    JMenuItem mntmJuizado = new JMenuItem("Juizado");
-//	    mnRelatorio.add(mntmJuizado);
-//	    
-//	    JMenu mnRelatorio = new JMenu("Relatorio");
-//	    menuBar.add(mnRelatorio);
-//	    
-//	    JMenuItem mntmRelatrioResumido = new JMenuItem("Relatório Resumido Processo");
-//	    mntmRelatrioResumido.addActionListener(new ActionListener() {
-//	    	public void actionPerformed(ActionEvent arg0) {
-//	    		FrmRelatorioResumido window= new FrmRelatorioResumido();
-//	    		window.setVisible(true);
-//	    	}
-//	    });
-//	    mnRelatorio.add(mntmRelatrioResumido);
-//	    
-//	    JMenuItem mntmRelatrioDetalhadoComunicacao = new JMenuItem("Relatório Detalhado Comunicacao");
-//	    mnRelatorio.add(mntmRelatrioDetalhadoComunicacao);
-//	    
-//	    JMenuItem mntmRelatrioDetalhadoConciliacao = new JMenuItem("Relatório Detalhado Conciliacao");
-//	    mnRelatorio.add(mntmRelatrioDetalhadoConciliacao);
+	    // DESABILITA AS OPCOES GERENCIAIS
+	    if ( FrmLogin.usuarioLogado ) {
+	    	mmCadastro.setEnabled(false);
+	    	mmRelatorio.setEnabled(false);
+	    	mmGerenciamento.setEnabled(false);
+	    }
 	    
 	    JPanel pnlCorpo = new JPanel();
 	    pnlCorpo.setBounds(0, 51, 822, 410);
