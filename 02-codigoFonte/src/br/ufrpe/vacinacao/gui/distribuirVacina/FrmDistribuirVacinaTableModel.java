@@ -6,6 +6,7 @@ import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 import br.ufrpe.vacinacao.negocio.entidade.Estoque;
+import br.ufrpe.vacinacao.negocio.entidade.Lote;
 
 public class FrmDistribuirVacinaTableModel extends AbstractTableModel {
 
@@ -16,7 +17,7 @@ public class FrmDistribuirVacinaTableModel extends AbstractTableModel {
 	
 	private List<Estoque> listaEstoque;
 	private String[] colunas = new String[] { 
-		"XXXX", "XXXXX", "XXXX", "XXXXX" 
+		"Código", "Vacina", "Qtde de doses"
 	};
 
 	/** Creates a new instance of TableModel */
@@ -47,33 +48,29 @@ public class FrmDistribuirVacinaTableModel extends AbstractTableModel {
 	}
 
 	public void setValueAt(Estoque aValue, int rowIndex) {
-		Estoque representante = listaEstoque.get(rowIndex);
+		Estoque estoque = listaEstoque.get(rowIndex);
 
-		representante.setId( aValue.getId() );
-		representante.setLote(aValue.getLote());
-		representante.setQuantidadeDoses(aValue.getQuantidadeDoses());
-		representante.setUnidadeAtendimento(aValue.getUnidadeAtendimento());
+		estoque.setId( aValue.getId() );
+		estoque.setLote(aValue.getLote());
+		estoque.setQuantidadeDoses(aValue.getQuantidadeDoses());
 		
 		fireTableCellUpdated(rowIndex, 0);
 		fireTableCellUpdated(rowIndex, 1);
 		fireTableCellUpdated(rowIndex, 2);
-		fireTableCellUpdated(rowIndex, 3);
 
 	}
 
 	@Override
 	public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
-		Estoque representante = listaEstoque.get(rowIndex);
+		Estoque estoque = listaEstoque.get(rowIndex);
 
 		switch (columnIndex) {
 		case 0:
-			representante.setId( Integer.parseInt(  aValue.toString() ) );
+			estoque.setId( Integer.parseInt( aValue.toString() ) );
 		case 1:
-			representante.setLote(  null );
+			estoque.setLote( (Lote) aValue );
 		case 2:
-			representante.setQuantidadeDoses( Integer.parseInt( (String) aValue ) );
-		case 3:
-			representante.setUnidadeAtendimento( null );
+			estoque.setQuantidadeDoses( Integer.parseInt( (String) aValue ) );
 			
 		default:
 			System.err.println("indice da coluna invalido");
@@ -83,19 +80,16 @@ public class FrmDistribuirVacinaTableModel extends AbstractTableModel {
 
 	public Object getValueAt(int rowIndex, int columnIndex) {
 		Estoque estoqueSelecionado = listaEstoque.get(rowIndex);
-		String valueObject = null;
+		Object valueObject = null;
 		switch (columnIndex) {
 		case 0:
 			valueObject = estoqueSelecionado.getId()+"";
 			break;
 		case 1:
-			valueObject = estoqueSelecionado.getLote().toString();
+			valueObject = estoqueSelecionado.getLote();
 			break;
 		case 2:
 			valueObject = estoqueSelecionado.getQuantidadeDoses()+"";
-			break;
-		case 3:
-			valueObject = estoqueSelecionado.getUnidadeAtendimento().toString();
 			break;
 		default:
 			System.err.println("indice invalido para propriedade do bean Estoque.class");

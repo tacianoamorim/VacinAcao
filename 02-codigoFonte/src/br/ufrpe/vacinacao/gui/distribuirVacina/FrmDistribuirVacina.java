@@ -5,10 +5,13 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
@@ -21,6 +24,8 @@ public class FrmDistribuirVacina extends JDialog {
 	
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtId;
+	private JTable tbLista;
+	private FrmDistribuirVacinaTableModel resumidoTableModel;
 
 	/**
 	 * Launch the application.
@@ -46,13 +51,22 @@ public class FrmDistribuirVacina extends JDialog {
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(10, 11, 580, 145);
-		contentPanel.add(panel);
-		panel.setLayout(null);
+		JPanel pnLista = new JPanel();
+		pnLista.setBounds(10, 11, 586, 145);
+		contentPanel.add(pnLista);
+		pnLista.setLayout(new BoxLayout(pnLista, BoxLayout.X_AXIS));	
+		
+		resumidoTableModel = new FrmDistribuirVacinaTableModel();
+		
+		tbLista = new JTable(resumidoTableModel);
+		formatarTabela(tbLista);	
+		
+		JScrollPane scpLista = new JScrollPane(tbLista);
+		tbLista.setFillsViewportHeight(true);
+		pnLista.add(scpLista);
 		
 		JLabel lblNewLabel = new JLabel("C\u00F3digo:");
-		lblNewLabel.setBounds(20, 173, 46, 14);
+		lblNewLabel.setBounds(20, 173, 75, 14);
 		contentPanel.add(lblNewLabel);
 		
 		txtId = new JTextField();
@@ -92,4 +106,11 @@ public class FrmDistribuirVacina extends JDialog {
 			}
 		}
 	}
+	
+	private void formatarTabela(JTable jTable) {
+		jTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		jTable.getColumnModel().getColumn(0).setPreferredWidth(90);
+		jTable.getColumnModel().getColumn(1).setPreferredWidth(370);
+		jTable.getColumnModel().getColumn(2).setPreferredWidth(120);
+	}		
 }
