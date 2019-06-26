@@ -7,6 +7,7 @@ import javax.swing.table.AbstractTableModel;
 
 import br.ufrpe.vacinacao.negocio.entidade.Estoque;
 import br.ufrpe.vacinacao.negocio.entidade.Lote;
+import br.ufrpe.vacinacao.negocio.entidade.UnidadeAtendimento;
 
 public class FrmDistribuirVacinaTableModel extends AbstractTableModel {
 
@@ -17,7 +18,7 @@ public class FrmDistribuirVacinaTableModel extends AbstractTableModel {
 	
 	private List<Estoque> listaEstoque;
 	private String[] colunas = new String[] { 
-		"Código", "Vacina", "Qtde de doses"
+		"C\u00F3digo", "Unid. atendimento", "Vacina", "Lote", "Qtde de doses"
 	};
 
 	/** Creates a new instance of TableModel */
@@ -51,25 +52,31 @@ public class FrmDistribuirVacinaTableModel extends AbstractTableModel {
 		Estoque estoque = listaEstoque.get(rowIndex);
 
 		estoque.setId( aValue.getId() );
+		estoque.setUnidadeAtendimento(aValue.getUnidadeAtendimento());
 		estoque.setLote(aValue.getLote());
 		estoque.setQuantidadeDoses(aValue.getQuantidadeDoses());
 		
 		fireTableCellUpdated(rowIndex, 0);
 		fireTableCellUpdated(rowIndex, 1);
 		fireTableCellUpdated(rowIndex, 2);
+		fireTableCellUpdated(rowIndex, 3);
+		fireTableCellUpdated(rowIndex, 4);
 
 	}
 
 	@Override
 	public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
 		Estoque estoque = listaEstoque.get(rowIndex);
-
 		switch (columnIndex) {
 		case 0:
 			estoque.setId( Integer.parseInt( aValue.toString() ) );
 		case 1:
-			estoque.setLote( (Lote) aValue );
+			estoque.setUnidadeAtendimento( (UnidadeAtendimento) aValue );
 		case 2:
+			estoque.setLote( (Lote) aValue );
+		case 3:
+			estoque.setLote( (Lote) aValue );			
+		case 4:
 			estoque.setQuantidadeDoses( Integer.parseInt( (String) aValue ) );
 			
 		default:
@@ -86,11 +93,17 @@ public class FrmDistribuirVacinaTableModel extends AbstractTableModel {
 			valueObject = estoqueSelecionado.getId()+"";
 			break;
 		case 1:
-			valueObject = estoqueSelecionado.getLote();
+			valueObject = estoqueSelecionado.getUnidadeAtendimento();
 			break;
 		case 2:
-			valueObject = estoqueSelecionado.getQuantidadeDoses()+"";
+			valueObject = estoqueSelecionado.getLote();
 			break;
+		case 3:
+			valueObject = estoqueSelecionado.getLote();
+			break;
+		case 4:
+			valueObject = estoqueSelecionado.getQuantidadeDoses()+"";
+			break;			
 		default:
 			System.err.println("indice invalido para propriedade do bean Estoque.class");
 		}

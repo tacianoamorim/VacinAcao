@@ -11,6 +11,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
 
 public class FrmPrincipal {
 
@@ -29,14 +31,19 @@ public class FrmPrincipal {
 	 */
 	private void initialize() {
 		window = new JFrame();
-		window.setResizable(true);
-		window.setBounds(100, 100, 828, 490);
+		window.setResizable(false);
+		window.setBounds(100, 100, 900, 600);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setTitle("VacinA\u00E7\u00E3o");
 		window.getContentPane().setLayout(new BoxLayout(window.getContentPane(), BoxLayout.X_AXIS));
 		
+		Color background= new Color(60, 179, 113);
+		if ( FrmLogin.usuarioLogado ) {
+			background= Color.WHITE;
+		}
+		
 		desktop = new JDesktopPane();
-		desktop.setBackground(Color.WHITE);
+		desktop.setBackground(background);
 		window.setContentPane(desktop);
 
 		//Make dragging a little faster but perhaps uglier.
@@ -46,7 +53,7 @@ public class FrmPrincipal {
 	    JMenuBar menuBar = new JMenuBar();
 	    menuBar.setBackground(Color.WHITE);
 	    menuBar.setBounds(0, 0, 254, 21);
-	    menuBar.setSize(800, 35);
+	    menuBar.setSize(900, 38);
 	    desktop.add(menuBar);
 	    
 	    /**
@@ -73,10 +80,16 @@ public class FrmPrincipal {
 	    mmCadastro.add(mntCadastroLoteVacina);
 
 	    /**
-	     * MENU GERENCIA
+	     * MENU GERENCIA FEDERAL
 	     */	    
-	    JMenu mmGerenciamento = new JMenu("Gerenciamento");
-	    menuBar.add(mmGerenciamento);
+	    JMenu mmGerenciamentoFederal = new JMenu("Ger\u00EAncia Federal");
+	    menuBar.add(mmGerenciamentoFederal);
+	    
+	    /**
+	     * MENU GERENCIA ESTADUAL
+	     */	    
+	    JMenu mmGerenciamentoEstadual = new JMenu("Ger\u00EAncia Estadual");
+	    menuBar.add(mmGerenciamentoEstadual);
 	    
 	    JMenuItem mntGerenciamentoDistribuicaoVacina = new JMenuItem("Distribui\u00E7\u00E3o Estadual de vacinas");
 	    mntGerenciamentoDistribuicaoVacina.addActionListener(new ActionListener() {
@@ -85,7 +98,7 @@ public class FrmPrincipal {
 //	    		window.setVisible(true);
 	    	}
 	    });
-	    mmGerenciamento.add(mntGerenciamentoDistribuicaoVacina);
+	    mmGerenciamentoEstadual.add(mntGerenciamentoDistribuicaoVacina);
 	    
 	    
 	    /**
@@ -102,19 +115,36 @@ public class FrmPrincipal {
 	    });
 	    mmRelatorio.add(mntRelatorioEstoque);
 	    
+	    /**
+	     * MENU SAIR
+	     */	  
+	    JButton mnFechar = new JButton("");
+	    mnFechar.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent e) {
+	    		FrmLogin windowLogin= new FrmLogin();
+	    		windowLogin.setVisible(true);	    		
+	    		window.dispose();
+	    	}
+	    });
+	    mnFechar.setBackground(Color.WHITE);
+	    mnFechar.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/com/sun/javafx/scene/control/skin/caspian/dialog-error.png")));
+	    mnFechar.setBounds(356, 11, 48, 48);
+	    menuBar.add(mnFechar);
+	    
 	    // DESABILITA AS OPCOES GERENCIAIS
 	    if ( FrmLogin.usuarioLogado ) {
-	    	mmCadastro.setEnabled(false);
-	    	mmRelatorio.setEnabled(false);
-	    	mmGerenciamento.setEnabled(false);
+	    	mmCadastro.setVisible(false);
+	    	mmRelatorio.setVisible(false);
+	    	mmGerenciamentoEstadual.setVisible(false);
+	    	mmGerenciamentoFederal.setVisible(false);
 	    }
 	    
 	    JPanel pnlCorpo = new JPanel();
 	    pnlCorpo.setBounds(0, 51, 822, 410);
-	    pnlCorpo.setBackground(new Color(255, 255, 255));
+	    pnlCorpo.setBackground(background);
 	    desktop.add(pnlCorpo);
 	    pnlCorpo.setLayout(null);
-		
+	    
 	}
 	
 	public static String completeToLeft(String value, char c, int size) {

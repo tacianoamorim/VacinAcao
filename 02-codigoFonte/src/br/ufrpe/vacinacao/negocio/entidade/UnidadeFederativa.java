@@ -1,14 +1,14 @@
 package br.ufrpe.vacinacao.negocio.entidade;
 
 public class UnidadeFederativa {
-	private char sigla;
+	private String sigla;
 	private String nome;
 
-	public char getSigla() {
+	public String getSigla() {
 		return sigla;
 	}
 
-	public void setSigla(char sigla) {
+	public void setSigla(String sigla) {
 		this.sigla = sigla;
 	}
 
@@ -18,6 +18,11 @@ public class UnidadeFederativa {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	@Override
+	public String toString() {
+		return sigla + "- " + nome;
 	}
 
 }

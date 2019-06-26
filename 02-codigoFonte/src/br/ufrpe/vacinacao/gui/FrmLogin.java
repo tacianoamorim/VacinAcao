@@ -86,12 +86,14 @@ public class FrmLogin extends JDialog {
 		contentPanel.add(lblSenha);
 		
 		txtCodigo = new JTextField();
+		txtCodigo.setText("123456");
 		txtCodigo.setFont(new Font("Dialog", Font.PLAIN, 14));
 		txtCodigo.setBounds(122, 105, 145, 24);
 		contentPanel.add(txtCodigo);
 		txtCodigo.setColumns(10);
 		
 		txtSenha = new JTextField();
+		txtSenha.setText("123456");
 		txtSenha.setFont(new Font("Dialog", Font.PLAIN, 14));
 		txtSenha.setBounds(122, 154, 145, 24);
 		contentPanel.add(txtSenha);
@@ -99,13 +101,13 @@ public class FrmLogin extends JDialog {
 		
 		rdbtnServidor = new JRadioButton("Servidor");
 		rdbtnServidor.setBackground(Color.WHITE);
-		rdbtnServidor.setBounds(168, 58, 89, 23);
+		rdbtnServidor.setBounds(121, 58, 80, 23);
 		contentPanel.add(rdbtnServidor);
 		
 		rdbtnUsuario = new JRadioButton("Usu\u00E1rio");
 		rdbtnUsuario.setSelected(true);
 		rdbtnUsuario.setBackground(Color.WHITE);
-		rdbtnUsuario.setBounds(68, 58, 89, 23);
+		rdbtnUsuario.setBounds(203, 58, 89, 23);
 		
 		buttonGroup = new ButtonGroup();
 		buttonGroup.add(rdbtnUsuario);
