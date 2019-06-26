@@ -1612,3 +1612,1510 @@ SELECT matricula, nome, senha, numeroSUS FROM USUARIO WHERE 0= 0  [42122-199]
 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
 	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
 	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:10:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "IS_GENERATEDCOLUMN" not found [42122-194]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3146)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3234)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:308)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCResultSetImpl.getString(JDBCResultSetImpl.java:454)
+	at org.jkiss.dbeaver.model.impl.jdbc.JDBCUtils.safeGetStringTrimmed(JDBCUtils.java:77)
+	at org.jkiss.dbeaver.ext.generic.model.GenericUtils.safeGetStringTrimmed(GenericUtils.java:74)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:167)
+	at org.jkiss.dbeaver.ext.generic.model.TableCache.fetchChild(TableCache.java:1)
+	at org.jkiss.dbeaver.model.impl.jdbc.cache.JDBCStructCache.loadChildren(JDBCStructCache.java:130)
+	at org.jkiss.dbeaver.ext.generic.model.GenericObjectContainer.cacheStructure(GenericObjectContainer.java:218)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.lambda$0(ERDEditorEmbedded.java:208)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:146)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.collectDatabaseTables(ERDEditorEmbedded.java:206)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.loadFromDatabase(ERDEditorEmbedded.java:190)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded.access$1(ERDEditorEmbedded.java:174)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:149)
+	at org.jkiss.dbeaver.ext.erd.editor.ERDEditorEmbedded$1.evaluate(ERDEditorEmbedded.java:1)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:86)
+	at org.jkiss.dbeaver.ui.LoadingJob.run(LoadingJob.java:71)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:102)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2019-06-26 17:14:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT *
+FROM ESTOQUE E 
+	INNER JOIN UNIDADEATENDIMENTO UN ON E.UNIDADEATENDIMENTO= UN.ID
+	INNER JOIM[*] LOTE L ON L.ID= E.LOTE
+ "; expected "JOIN"; SQL statement:
+SELECT *
+FROM ESTOQUE e 
+	INNER JOIN UNIDADEATENDIMENTO un ON e.UNIDADEATENDIMENTO= un.ID
+	INNER JOIM LOTE l ON l.ID= e.LOTE
+ [42001-194]
+2019-06-26 17:14:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT *
+FROM ESTOQUE E 
+	INNER JOIN UNIDADEATENDIMENTO UN ON E.UNIDADEATENDIMENTO= UN.ID
+	INNER JOIM[*] LOTE L ON L.ID= E.LOTE "; expected "JOIN"; SQL statement:
+SELECT *
+FROM ESTOQUE e 
+	INNER JOIN UNIDADEATENDIMENTO un ON e.UNIDADEATENDIMENTO= un.ID
+	INNER JOIM LOTE l ON l.ID= e.LOTE [42001-194]
+2019-06-26 17:14:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * 
+FROM ESTOQUE E 
+	INNER JOIN UNIDADEATENDIMENTO UN ON E.UNIDADEATENDIMENTO= UN.ID
+	INNER JOIM[*] LOTE L ON L.ID= E.LOTE
+ "; expected "JOIN"; SQL statement:
+SELECT * 
+FROM ESTOQUE e 
+	INNER JOIN UNIDADEATENDIMENTO un ON e.UNIDADEATENDIMENTO= un.ID
+	INNER JOIM LOTE l ON l.ID= e.LOTE
+ [42001-194]
+2019-06-26 17:22:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES, UN.ID AS 'IdUA'[*], UN.NOME AS 'NomeUA', UN.UNIDADEFEDERATIVA AS 'UnidadeFederativa',
+	L.ID AS 'IdLote', L.NUMERO AS 'numeroLote', V.NOME AS 'Vacina'
+FROM ESTOQUE E 
+	INNER JOIN UNIDADEATENDIMENTO UN ON E.UNIDADEATENDIMENTO= UN.ID
+	INNER JOIN LOTE L ON L.ID= E.LOTE
+	INNER JOIN VACINA V ON V.NOME "; expected "identifier"; SQL statement:
+SELECT e.ID, e.QUANTIDADEDOSES, un.ID AS 'IdUA', un.NOME AS 'NomeUA', un.UNIDADEFEDERATIVA AS 'UnidadeFederativa',
+	l.ID AS 'IdLote', l.NUMERO AS 'numeroLote', v.NOME AS 'Vacina'
+FROM ESTOQUE e 
+	INNER JOIN UNIDADEATENDIMENTO un ON e.UNIDADEATENDIMENTO= un.ID
+	INNER JOIN LOTE l ON l.ID= e.LOTE
+	INNER JOIN VACINA v ON v.NOME [42001-194]
+2019-06-26 17:22:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES, UN.ID AS 'IdUA'[*], UN.NOME AS 'NomeUA', UN.UNIDADEFEDERATIVA AS 'UnidadeFederativa',
+	L.ID AS 'IdLote', L.NUMERO AS 'numeroLote', V.NOME AS 'Vacina'
+FROM ESTOQUE E 
+	INNER JOIN UNIDADEATENDIMENTO UN ON E.UNIDADEATENDIMENTO= UN.ID
+	INNER JOIN LOTE L ON L.ID= E.LOTE
+	INNER JOIN VACINA V ON V.ID= L.VACINA "; expected "identifier"; SQL statement:
+SELECT e.ID, e.QUANTIDADEDOSES, un.ID AS 'IdUA', un.NOME AS 'NomeUA', un.UNIDADEFEDERATIVA AS 'UnidadeFederativa',
+	l.ID AS 'IdLote', l.NUMERO AS 'numeroLote', v.NOME AS 'Vacina'
+FROM ESTOQUE e 
+	INNER JOIN UNIDADEATENDIMENTO un ON e.UNIDADEATENDIMENTO= un.ID
+	INNER JOIN LOTE l ON l.ID= e.LOTE
+	INNER JOIN VACINA v ON v.ID= l.VACINA [42001-194]
+2019-06-26 17:22:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES, UN.ID AS 'IdUA'[*], UN.NOME AS 'NomeUA', UN.UNIDADEFEDERATIVA AS 'UnidadeFederativa',
+	L.ID AS 'IdLote', L.NUMERO AS 'numeroLote', V.NOME AS 'Vacina'
+FROM ESTOQUE E 
+	INNER JOIN UNIDADEATENDIMENTO UN ON E.UNIDADEATENDIMENTO= UN.ID
+	INNER JOIN LOTE L ON L.ID= E.LOTE
+	INNER JOIN VACINA V ON V.ID= L.VACINA "; expected "identifier"; SQL statement:
+SELECT e.ID, e.QUANTIDADEDOSES, un.ID AS 'IdUA', un.NOME AS 'NomeUA', un.UNIDADEFEDERATIVA AS 'UnidadeFederativa',
+	l.ID AS 'IdLote', l.NUMERO AS 'numeroLote', v.NOME AS 'Vacina'
+FROM ESTOQUE e 
+	INNER JOIN UNIDADEATENDIMENTO un ON e.UNIDADEATENDIMENTO= un.ID
+	INNER JOIN LOTE l ON l.ID= e.LOTE
+	INNER JOIN VACINA v ON v.ID= l.VACINA [42001-194]
+2019-06-26 17:23:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES, UN.ID AS 'IdUA'[*], UN.NOME AS 'NomeUA', UN.UNIDADEFEDERATIVA AS 'UnidadeFederativa',
+	L.ID AS 'IdLote', L.NUMERO AS 'numeroLote', V.NOME AS 'Vacina'
+FROM ESTOQUE E 
+	INNER JOIN UNIDADEATENDIMENTO UN ON E.UNIDADEATENDIMENTO= UN.ID
+	INNER JOIN LOTE L ON L.ID= E.LOTE
+	INNER JOIN VACINA V ON V.ID= L.VACINA "; expected "identifier"; SQL statement:
+SELECT e.ID, e.QUANTIDADEDOSES, un.ID AS 'IdUA', un.NOME AS 'NomeUA', un.UNIDADEFEDERATIVA AS 'UnidadeFederativa',
+	l.ID AS 'IdLote', l.NUMERO AS 'numeroLote', v.NOME AS 'Vacina'
+FROM ESTOQUE e 
+	INNER JOIN UNIDADEATENDIMENTO un ON e.UNIDADEATENDIMENTO= un.ID
+	INNER JOIN LOTE l ON l.ID= e.LOTE
+	INNER JOIN VACINA v ON v.ID= l.VACINA [42001-194]
+2019-06-26 17:23:43 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES, UN.ID AS 'IdUA'[*], UN.NOME AS 'NomeUA', UN.UNIDADEFEDERATIVA AS 'UnidadeFederativa',
+	L.ID AS 'IdLote', L.NUMERO AS 'numeroLote'
+FROM ESTOQUE E 
+	INNER JOIN UNIDADEATENDIMENTO UN ON E.UNIDADEATENDIMENTO= UN.ID
+	INNER JOIN LOTE L ON L.ID= E.LOTE
+	INNER JOIN VACINA V ON V.ID= L.VACINA "; expected "identifier"; SQL statement:
+SELECT e.ID, e.QUANTIDADEDOSES, un.ID AS 'IdUA', un.NOME AS 'NomeUA', un.UNIDADEFEDERATIVA AS 'UnidadeFederativa',
+	l.ID AS 'IdLote', l.NUMERO AS 'numeroLote'
+FROM ESTOQUE e 
+	INNER JOIN UNIDADEATENDIMENTO un ON e.UNIDADEATENDIMENTO= un.ID
+	INNER JOIN LOTE l ON l.ID= e.LOTE
+	INNER JOIN VACINA v ON v.ID= l.VACINA [42001-194]
+2019-06-26 17:24:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES, UN.ID AS 'IdUA'[*], UN.NOME AS 'NomeUA', UN.UNIDADEFEDERATIVA AS 'UnidadeFederativa',
+	L.ID AS 'IdLote', L.NUMERO AS 'numeroLote'
+FROM ESTOQUE E 
+	INNER JOIN UNIDADEATENDIMENTO UN ON E.UNIDADEATENDIMENTO= UN.ID
+	INNER JOIN LOTE L ON L.ID= E.LOTE "; expected "identifier"; SQL statement:
+SELECT e.ID, e.QUANTIDADEDOSES, un.ID AS 'IdUA', un.NOME AS 'NomeUA', un.UNIDADEFEDERATIVA AS 'UnidadeFederativa',
+	l.ID AS 'IdLote', l.NUMERO AS 'numeroLote'
+FROM ESTOQUE e 
+	INNER JOIN UNIDADEATENDIMENTO un ON e.UNIDADEATENDIMENTO= un.ID
+	INNER JOIN LOTE l ON l.ID= e.LOTE [42001-194]
+2019-06-26 18:03:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES
+	,UN.ID AS 'IdUA'[*], UN.NOME AS 'NomeUA', UN.UNIDADEFEDERATIVA AS 'UnidadeFederativa'
+                                                                  
+FROM ESTOQUE E 
+	INNER JOIN UNIDADEATENDIMENTO UN ON E.UNIDADEATENDIMENTO= UN.ID
+                                    
+                                         
+ "; expected "identifier"; SQL statement:
+SELECT e.ID, e.QUANTIDADEDOSES
+	,un.ID AS 'IdUA', un.NOME AS 'NomeUA', un.UNIDADEFEDERATIVA AS 'UnidadeFederativa'
+--	,l.ID AS 'IdLote', l.NUMERO AS 'numeroLote', v.NOME AS 'Vacina'
+FROM ESTOQUE e 
+	INNER JOIN UNIDADEATENDIMENTO un ON e.UNIDADEATENDIMENTO= un.ID
+--	INNER JOIN LOTE l ON l.ID= e.LOTE
+--	INNER JOIN VACINA v ON v.ID= l.VACINA;
+ [42001-194]
+2019-06-26 18:04:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES
+	,UN.ID AS 'IdUA'[*], UN.NOME AS 'NomeUA', UN.UNIDADEFEDERATIVA AS 'UnidadeFederativa'
+                                                                  
+FROM ESTOQUE E 
+	INNER JOIN UNIDADEATENDIMENTO UN ON E.UNIDADEATENDIMENTO= UN.ID
+                                    
+                                         
+ "; expected "identifier"; SQL statement:
+SELECT e.ID, e.QUANTIDADEDOSES
+	,un.ID AS 'IdUA', un.NOME AS 'NomeUA', un.UNIDADEFEDERATIVA AS 'UnidadeFederativa'
+--	,l.ID AS 'IdLote', l.NUMERO AS 'numeroLote', v.NOME AS 'Vacina'
+FROM ESTOQUE e 
+	INNER JOIN UNIDADEATENDIMENTO un ON e.UNIDADEATENDIMENTO= un.ID
+--	INNER JOIN LOTE l ON l.ID= e.LOTE
+--	INNER JOIN VACINA v ON v.ID= l.VACINA;
+ [42001-194]
+2019-06-26 18:04:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES
+	,UN.ID AS 'IdUA'[*]                                                                    
+                                                                  
+FROM ESTOQUE E 
+	INNER JOIN UNIDADEATENDIMENTO UN ON E.UNIDADEATENDIMENTO= UN.ID
+                                    
+                                         
+ "; expected "identifier"; SQL statement:
+SELECT e.ID, e.QUANTIDADEDOSES
+	,un.ID AS 'IdUA'--, un.NOME AS 'NomeUA', un.UNIDADEFEDERATIVA AS 'UnidadeFederativa'
+--	,l.ID AS 'IdLote', l.NUMERO AS 'numeroLote', v.NOME AS 'Vacina'
+FROM ESTOQUE e 
+	INNER JOIN UNIDADEATENDIMENTO un ON e.UNIDADEATENDIMENTO= un.ID
+--	INNER JOIN LOTE l ON l.ID= e.LOTE
+--	INNER JOIN VACINA v ON v.ID= l.VACINA;
+ [42001-194]
+2019-06-26 18:04:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES
+	,UN.ID 'IdUA'[*]                                                                    
+                                                                  
+FROM ESTOQUE E 
+	INNER JOIN UNIDADEATENDIMENTO UN ON E.UNIDADEATENDIMENTO= UN.ID
+                                    
+                                         
+ "; SQL statement:
+SELECT e.ID, e.QUANTIDADEDOSES
+	,un.ID 'IdUA'--, un.NOME AS 'NomeUA', un.UNIDADEFEDERATIVA AS 'UnidadeFederativa'
+--	,l.ID AS 'IdLote', l.NUMERO AS 'numeroLote', v.NOME AS 'Vacina'
+FROM ESTOQUE e 
+	INNER JOIN UNIDADEATENDIMENTO un ON e.UNIDADEATENDIMENTO= un.ID
+--	INNER JOIN LOTE l ON l.ID= e.LOTE
+--	INNER JOIN VACINA v ON v.ID= l.VACINA;
+ [42000-194]
+2019-06-26 18:04:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES
+	,UN.ID 'IdUA'[*]                                                                    
+                                                                  
+FROM ESTOQUE E 
+	INNER JOIN UNIDADEATENDIMENTO UN ON E.UNIDADEATENDIMENTO= UN.ID
+                                    
+                                         
+ "; SQL statement:
+SELECT e.ID, e.QUANTIDADEDOSES
+	,un.ID 'IdUA'--, un.NOME AS 'NomeUA', un.UNIDADEFEDERATIVA AS 'UnidadeFederativa'
+--	,l.ID AS 'IdLote', l.NUMERO AS 'numeroLote', v.NOME AS 'Vacina'
+FROM ESTOQUE e 
+	INNER JOIN UNIDADEATENDIMENTO un ON e.UNIDADEATENDIMENTO= un.ID
+--	INNER JOIN LOTE l ON l.ID= e.LOTE
+--	INNER JOIN VACINA v ON v.ID= l.VACINA;
+ [42000-194]
+2019-06-26 18:05:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT e.ID, e.QUANTIDADEDOSES
+	,un.ID AS ""IdUA"", un.NOME AS ""NomeUA"", un.UNIDADEFEDERATIVA AS ""UnidadeFederativa""
+	,l.ID AS [*]'IdLote"", l.NUMERO AS ""numeroLote"", v.NOME AS ""Vacina""
+FROM ESTOQUE e 
+	INNER JOIN UNIDADEATENDIMENTO un ON e.UNIDADEATENDIMENTO= un.ID
+	INNER JOIN LOTE l ON l.ID= e.LOTE
+	INNER JOIN VACINA v ON v.ID= l.VACINA"; SQL statement:
+SELECT e.ID, e.QUANTIDADEDOSES
+	,un.ID AS "IdUA", un.NOME AS "NomeUA", un.UNIDADEFEDERATIVA AS "UnidadeFederativa"
+	,l.ID AS 'IdLote", l.NUMERO AS "numeroLote", v.NOME AS "Vacina"
+FROM ESTOQUE e 
+	INNER JOIN UNIDADEATENDIMENTO un ON e.UNIDADEATENDIMENTO= un.ID
+	INNER JOIN LOTE l ON l.ID= e.LOTE
+	INNER JOIN VACINA v ON v.ID= l.VACINA [42000-194]
