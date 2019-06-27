@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.util.List;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -22,8 +23,10 @@ import javax.swing.border.EmptyBorder;
 
 import br.ufrpe.vacinacao.negocio.controlador.ServidorControl;
 import br.ufrpe.vacinacao.negocio.controlador.UsuarioControl;
+import br.ufrpe.vacinacao.negocio.controlador.VacinaControl;
 import br.ufrpe.vacinacao.negocio.entidade.Servidor;
 import br.ufrpe.vacinacao.negocio.entidade.Usuario;
+import br.ufrpe.vacinacao.negocio.entidade.Vacina;
 
 public class FrmLogin extends JDialog {
 
@@ -126,6 +129,22 @@ public class FrmLogin extends JDialog {
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						
+						Vacina vacina= new Vacina();
+						vacina.setNome("Vacina 1");
+						vacina.setPrescricao("pre1");
+						
+						Vacina vacina2= new Vacina();
+						vacina2.setNome("Vacina 2");
+						vacina2.setPrescricao("pre2");						
+						
+						VacinaControl.getInstance().insert(vacina);
+						VacinaControl.getInstance().insert(vacina2);
+						
+						List<Vacina> list= VacinaControl.getInstance().list(new Vacina());
+						for (Vacina vacina3 : list) {
+							System.out.println(vacina3.getId() +"-"+ vacina3.getNome());
+						}
+						
 						if ( rdbtnServidor.isSelected() ) {
 							Servidor filtro= new Servidor();
 							filtro.setMatricula( Integer.parseInt( txtCodigo.getText() ) );
@@ -140,7 +159,6 @@ public class FrmLogin extends JDialog {
 							} else {
 								JOptionPane.showMessageDialog(null, "Servidor ou senha inválido.");
 							}						
-							
 							
 						} else {
 							Usuario filtro= new Usuario();

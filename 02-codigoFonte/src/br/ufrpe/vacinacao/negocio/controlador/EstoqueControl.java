@@ -3,16 +3,16 @@ package br.ufrpe.vacinacao.negocio.controlador;
 import java.util.List;
 
 import br.ufrpe.framework.transaction.TransactionProxy;
-import br.ufrpe.vacinacao.negocio.entidade.UnidadeFederativa;
-import br.ufrpe.vacinacao.repositorio.UnidadeFederativaDAO;
+import br.ufrpe.vacinacao.negocio.entidade.Estoque;
+import br.ufrpe.vacinacao.repositorio.EstoqueDAO;
 
 public class EstoqueControl {
 	
-	private UnidadeFederativaDAO repositorio;
+	private EstoqueDAO repositorio;
 	private static EstoqueControl instance;
 	
 	public EstoqueControl() {
-		repositorio= new UnidadeFederativaDAO();
+		repositorio= new EstoqueDAO();
 	}
 	
 	public static EstoqueControl getInstance() {
@@ -22,7 +22,7 @@ public class EstoqueControl {
 		return instance;
 	}
 	
-	public List<UnidadeFederativa> list(UnidadeFederativa filtro) {
+	public List<Estoque> list(Estoque filtro) {
 		return repositorio.list(filtro);
 	}
 	
