@@ -11,6 +11,9 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+
+import br.ufrpe.vacinacao.gui.vacina.FrmVacina;
+
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 
@@ -66,7 +69,8 @@ public class FrmPrincipal {
 	    JMenuItem mntCadastroVacina = new JMenuItem("Vacina");
 	    mntCadastroVacina.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent arg0) {
-
+	    		FrmVacina window= new FrmVacina();
+	    		window.setVisible(true);
 	    	}
 	    });
 	    mmCadastro.add(mntCadastroVacina);

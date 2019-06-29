@@ -26,11 +26,9 @@ public class UnidadeFederativaDAO {
 			
 			if (filtro != null) {
 			
-				sql.append("SELECT Sigla, Sigla FROM UNIDADEFEDERATIVA WHERE 0= 0 ");
+				sql.append("SELECT Sigla, Nome FROM UNIDADEFEDERATIVA WHERE 0= 0 ");
 				if ( filtro.getNome() != null )
 					sql.append("AND nome like '%?%'");
-				if ( filtro.getSigla() != null )
-					sql.append("AND numeroSUS = ? ");	
 				sql.append("ORDER BY Sigla ");
 				
 				preStmt = connection.prepareStatement(sql.toString());
