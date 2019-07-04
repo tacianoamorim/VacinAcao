@@ -16,22 +16,22 @@ public class FrmDistribuirVacinaTableModel extends AbstractTableModel {
 	 */
 	private static final long serialVersionUID = 7419763598897891865L;
 	
-	private List<Estoque> listaEstoque;
+	private List<Estoque> list;
 	private String[] colunas = new String[] { 
 		"C\u00F3digo", "Unid. atendimento", "Vacina", "Lote", "Qtde de doses"
 	};
 
 	/** Creates a new instance of TableModel */
 	public FrmDistribuirVacinaTableModel(List<Estoque> listaEstoque) {
-		this.listaEstoque = listaEstoque;
+		this.list = listaEstoque;
 	}
 
 	public FrmDistribuirVacinaTableModel() {
-		this.listaEstoque = new ArrayList<Estoque>();
+		this.list = new ArrayList<Estoque>();
 	}
 
 	public int getRowCount() {
-		return listaEstoque.size();
+		return list.size();
 	}
 
 	public int getColumnCount() {
@@ -49,7 +49,7 @@ public class FrmDistribuirVacinaTableModel extends AbstractTableModel {
 	}
 
 	public void setValueAt(Estoque aValue, int rowIndex) {
-		Estoque estoque = listaEstoque.get(rowIndex);
+		Estoque estoque = list.get(rowIndex);
 
 		estoque.setId( aValue.getId() );
 		estoque.setUnidadeAtendimento(aValue.getUnidadeAtendimento());
@@ -66,7 +66,7 @@ public class FrmDistribuirVacinaTableModel extends AbstractTableModel {
 
 	@Override
 	public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
-		Estoque estoque = listaEstoque.get(rowIndex);
+		Estoque estoque = list.get(rowIndex);
 		switch (columnIndex) {
 		case 0:
 			estoque.setId( Integer.parseInt( aValue.toString() ) );
@@ -86,7 +86,7 @@ public class FrmDistribuirVacinaTableModel extends AbstractTableModel {
 	}
 
 	public Object getValueAt(int rowIndex, int columnIndex) {
-		Estoque estoqueSelecionado = listaEstoque.get(rowIndex);
+		Estoque estoqueSelecionado = list.get(rowIndex);
 		Object valueObject = null;
 		switch (columnIndex) {
 		case 0:
@@ -115,34 +115,34 @@ public class FrmDistribuirVacinaTableModel extends AbstractTableModel {
 		return false;
 	}
 
-	public Estoque getEstoque(int indiceLinha) {
-		return listaEstoque.get(indiceLinha);
+	public Estoque get(int indiceLinha) {
+		return list.get(indiceLinha);
 	}
 
-	public void addEstoque(Estoque representante) {
-		listaEstoque.add(representante);
+	public void add(Estoque representante) {
+		list.add(representante);
 		int ultimoIndice = getRowCount() - 1;
 		fireTableRowsInserted(ultimoIndice, ultimoIndice);
 	}
 
-	public void removeEstoque(int indiceLinha) {
-		listaEstoque.remove(indiceLinha);
+	public void remove(int indiceLinha) {
+		list.remove(indiceLinha);
 		fireTableRowsDeleted(indiceLinha, indiceLinha);
 	}
 
-	public void addListaDeEstoques(List<Estoque> novosEstoques) {
+	public void add(List<Estoque> novosEstoques) {
 		int tamanhoAntigo = getRowCount();
-		listaEstoque.addAll(novosEstoques);
+		list.addAll(novosEstoques);
 		fireTableRowsInserted(tamanhoAntigo, getRowCount() - 1);
 	}
 
 	public void limpar() {
-		listaEstoque.clear();
+		list.clear();
 		fireTableDataChanged();
 	}
 
 	public boolean isEmpty() {
-		return listaEstoque.isEmpty();
+		return list.isEmpty();
 	}	
 	
 }

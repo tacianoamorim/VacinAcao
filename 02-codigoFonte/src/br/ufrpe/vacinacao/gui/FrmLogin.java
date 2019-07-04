@@ -35,7 +35,10 @@ public class FrmLogin extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtCodigo;
 	private JTextField txtSenha;
-	public static boolean usuarioLogado= false;
+	
+	public static Servidor servidorLogado;
+	public static Usuario usuarioLogado;
+	
 	private ButtonGroup buttonGroup;
 	private JRadioButton rdbtnServidor, rdbtnUsuario;
 	private JLabel lblCpf;
@@ -132,7 +135,10 @@ public class FrmLogin extends JDialog {
 							
 							if ( servidor.getSenha().equalsIgnoreCase(txtSenha.getText()) ) {
 								setVisible(false);
-								usuarioLogado= false;
+								
+								usuarioLogado= null;
+								servidorLogado= servidor;
+								
 								FrmPrincipal window= new FrmPrincipal();
 								window.window.setVisible(true);
 								
@@ -147,7 +153,10 @@ public class FrmLogin extends JDialog {
 							
 							if ( usuario.getSenha().equalsIgnoreCase(txtSenha.getText()) ) {
 								setVisible(false);
-								usuarioLogado= true;
+
+								usuarioLogado= usuario;
+								servidorLogado= null;
+								
 								FrmPrincipal window= new FrmPrincipal();
 								window.window.setVisible(true);
 								

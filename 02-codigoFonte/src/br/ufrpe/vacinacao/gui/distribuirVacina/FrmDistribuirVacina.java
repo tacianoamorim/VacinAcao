@@ -1,10 +1,10 @@
 package br.ufrpe.vacinacao.gui.distribuirVacina;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.BoxLayout;
@@ -19,15 +19,12 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
-import br.ufrpe.vacinacao.negocio.controlador.UnidadeFederativaControl;
-import br.ufrpe.vacinacao.negocio.controlador.VacinaControl;
+import br.ufrpe.vacinacao.gui.FrmLogin;
+import br.ufrpe.vacinacao.negocio.controlador.EstoqueControl;
 import br.ufrpe.vacinacao.negocio.entidade.Estoque;
 import br.ufrpe.vacinacao.negocio.entidade.Lote;
 import br.ufrpe.vacinacao.negocio.entidade.UnidadeAtendimento;
-import br.ufrpe.vacinacao.negocio.entidade.UnidadeFederativa;
-import br.ufrpe.vacinacao.negocio.entidade.Vacina;
-
-import java.awt.Color;
+import br.ufrpe.vacinacao.util.Utils;
 
 
 public class FrmDistribuirVacina extends JDialog {
@@ -40,10 +37,11 @@ public class FrmDistribuirVacina extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtId;
 	private JTable tbLista;
-	private FrmDistribuirVacinaTableModel resumidoTableModel;
+	private FrmDistribuirVacinaTableModel tableModel;
 	
-	private List<UnidadeFederativa> listUnidadeFederativa= new ArrayList<UnidadeFederativa>();
-	private JTextField TxtQuantidade;
+	private JTextField txtQtdeDoses;
+	private JComboBox<Lote> cbxLotes;
+	private JComboBox<UnidadeAtendimento> cbxUnidadeAtendimento;
 
 	/**
 	 * Launch the application.
@@ -75,9 +73,9 @@ public class FrmDistribuirVacina extends JDialog {
 		contentPanel.add(pnLista);
 		pnLista.setLayout(new BoxLayout(pnLista, BoxLayout.X_AXIS));	
 		
-		resumidoTableModel = new FrmDistribuirVacinaTableModel();
+		tableModel = new FrmDistribuirVacinaTableModel();
 		
-		tbLista = new JTable(resumidoTableModel);
+		tbLista = new JTable(tableModel);
 		formatarTabela(tbLista);	
 		
 		JScrollPane scpLista = new JScrollPane(tbLista);
@@ -94,7 +92,7 @@ public class FrmDistribuirVacina extends JDialog {
 		contentPanel.add(txtId);
 		txtId.setColumns(10);
 		
-		JComboBox<UnidadeAtendimento> cbxUnidadeAtendimento = new JComboBox<UnidadeAtendimento>();
+		cbxUnidadeAtendimento = new JComboBox<UnidadeAtendimento>();
 		cbxUnidadeAtendimento.setBounds(130, 192, 494, 25);
 		contentPanel.add(cbxUnidadeAtendimento);
 		
@@ -102,10 +100,10 @@ public class FrmDistribuirVacina extends JDialog {
 		lblUnidadeAtendimento.setBounds(130, 173, 182, 14);
 		contentPanel.add(lblUnidadeAtendimento);
 		
-		TxtQuantidade = new JTextField();
-		TxtQuantidade.setBounds(389, 247, 235, 25);
-		contentPanel.add(TxtQuantidade);
-		TxtQuantidade.setColumns(10);
+		txtQtdeDoses = new JTextField();
+		txtQtdeDoses.setBounds(389, 247, 235, 25);
+		contentPanel.add(txtQtdeDoses);
+		txtQtdeDoses.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Quantidade:");
 		lblNewLabel_1.setBounds(389, 228, 204, 14);
@@ -115,7 +113,7 @@ public class FrmDistribuirVacina extends JDialog {
 		lblNewLabel_2.setBounds(20, 228, 323, 14);
 		contentPanel.add(lblNewLabel_2);
 		
-		JComboBox<Lote> cbxLotes = new JComboBox<Lote>();
+		cbxLotes = new JComboBox<Lote>();
 		cbxLotes.setBounds(20, 249, 344, 25);
 		contentPanel.add(cbxLotes);
 		{
@@ -134,21 +132,17 @@ public class FrmDistribuirVacina extends JDialog {
 							estoque.setId(Integer.parseInt(txtId.getText()));
 						}
 						
-						if ( TxtQuantidade.getText() == null || TxtQuantidade.getText().length() == 0 || cbxLotes.getSelectedIndex()==0 ||
-								cbxUnidadeAtendimento.getSelectedIndex() == 0) {
+						if ( validaCampos() ) {
+							estoque.setQuantidadeDoses( Integer.parseInt(txtQtdeDoses.getText()));
+							
+							UnidadeAtendimento unidadeAtendimento= (UnidadeAtendimento) cbxUnidadeAtendimento.getSelectedItem();
+							estoque.setUnidadeAtendimento(unidadeAtendimento);
+							
+							Lote lote= (Lote) cbxLotes.getSelectedItem();
+							estoque.setLote(lote);
+						} else {
 							JOptionPane.showMessageDialog(null, "Informe todos os dados.");
-							return;
-						}	
-
-						estoque.setQuantidadeDoses( Integer.parseInt(TxtQuantidade.getText()));
-						
-						UnidadeAtendimento unidadeAtendimento= (UnidadeAtendimento) cbxUnidadeAtendimento.getSelectedItem();
-						estoque.setUnidadeAtendimento(unidadeAtendimento);
-						
-						Lote lote= (Lote) cbxLotes.getSelectedItem();
-						estoque.setLote(lote);
-						
-					
+						}
 					}
 				});
 				
@@ -157,12 +151,30 @@ public class FrmDistribuirVacina extends JDialog {
 				btnNovo.setBackground(new Color(255, 255, 255));
 				btnNovo.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
+						limpar();
 					}
 				});
 				btnNovo.setActionCommand("OK");
 				buttonPane.add(btnNovo);
 				
 				JButton btnApagar = new JButton("Apagar");
+				btnApagar.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						try {
+			                Estoque estoque= tableModel.get(tbLista.getSelectedRow());
+			               
+			                int selectedOption = JOptionPane.showConfirmDialog(null,"Confirma a exclusão?", 
+			                		"Alerta", JOptionPane.YES_NO_OPTION);
+			        		if(selectedOption == JOptionPane.YES_OPTION){
+			        			EstoqueControl.getInstance().apagar(estoque);     
+			        			carregarTable();
+			        		}	
+						} catch (Throwable ex) {
+							ex.printStackTrace();
+							Utils.msgExcption(ex.getMessage());	
+						}						
+					}
+				});
 				btnApagar.setForeground(new Color(255, 0, 0));
 				btnApagar.setBackground(Color.WHITE);
 				btnApagar.setActionCommand("OK");
@@ -187,31 +199,30 @@ public class FrmDistribuirVacina extends JDialog {
 	
 	private void limpar() {
 		txtId.setText("");
-		txtNome.setText("");
-		txtPrescricao.setText("");
+		txtQtdeDoses.setText("");
+		cbxLotes.setSelectedIndex(0);
+		cbxUnidadeAtendimento.setSelectedIndex(0);
 	}
 	
-	private void carregarDados(Vacina entity) {
+	private void carregarDados(Estoque entity) {
 		txtId.setText(entity.getId()+"");
-		txtNome.setText(entity.getNome());
-		txtPrescricao.setText(entity.getPrescricao());
+		txtQtdeDoses.setText(entity.getQuantidadeDoses() +"");
 	}
 	
 	private boolean validaCampos(){
 		boolean isValido= true;
-		if ( txtNome.getText().length() == 0 || 
-			txtPrescricao.getText().length() == 0
-			) {
+		if ( txtQtdeDoses.getText() == null || txtQtdeDoses.getText().length() == 0) {
 			isValido= false;
 		}
 		return isValido;
 	}	
 	
 	private void carregarTable() {
-		jTableModel.limpar();
-		List<Vacina> lista= VacinaControl.getInstance().list(new Vacina());
-		jTableModel.addList(lista);
-		jTableModel.fireTableDataChanged();
+		tableModel.limpar();
+		List<Estoque> lista= EstoqueControl.getInstance()
+				.list(FrmLogin.servidorLogado.getUnidadeAtendimento().getUnidadeFederativa().getSigla());
+		tableModel.add(lista);
+		tableModel.fireTableDataChanged();
 	}
 	
 	private void formatarTabela(JTable jTable) {

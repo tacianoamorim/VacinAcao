@@ -22,8 +22,19 @@ public class EstoqueControl {
 		return instance;
 	}
 	
-	public List<Estoque> list(Estoque filtro) {
-		return repositorio.list(filtro);
+	public List<Estoque> list(String uf) {
+		return repositorio.list(uf);
+	}
+
+	public void apagar(Estoque entity) {
+		repositorio.apagar(entity);		
 	}
 	
+	public void salvar(Estoque entity) {
+		if ( repositorio.findById(entity.getId()) == null ) {
+			repositorio.inserir(entity);
+		} else {
+			repositorio.update(entity);
+		}
+	}	
 }

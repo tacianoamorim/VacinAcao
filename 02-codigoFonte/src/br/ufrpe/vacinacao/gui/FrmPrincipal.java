@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -13,9 +14,6 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import br.ufrpe.vacinacao.gui.vacina.FrmVacina;
-
-import javax.swing.JButton;
-import javax.swing.ImageIcon;
 
 public class FrmPrincipal {
 
@@ -41,7 +39,7 @@ public class FrmPrincipal {
 		window.getContentPane().setLayout(new BoxLayout(window.getContentPane(), BoxLayout.X_AXIS));
 		
 		Color background= new Color(60, 179, 113);
-		if ( FrmLogin.usuarioLogado ) {
+		if ( FrmLogin.usuarioLogado != null ) {
 			background= Color.WHITE;
 		}
 		
@@ -136,7 +134,7 @@ public class FrmPrincipal {
 	    menuBar.add(mnFechar);
 	    
 	    // DESABILITA AS OPCOES GERENCIAIS
-	    if ( FrmLogin.usuarioLogado ) {
+	    if ( FrmLogin.usuarioLogado != null ) {
 	    	mmCadastro.setVisible(false);
 	    	mmRelatorio.setVisible(false);
 	    	mmGerenciamentoEstadual.setVisible(false);
