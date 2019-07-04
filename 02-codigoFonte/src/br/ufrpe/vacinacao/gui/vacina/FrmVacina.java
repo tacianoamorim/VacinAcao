@@ -1,9 +1,13 @@
 package br.ufrpe.vacinacao.gui.vacina;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.List;
 
 import javax.swing.BoxLayout;
@@ -20,9 +24,7 @@ import javax.swing.border.EmptyBorder;
 
 import br.ufrpe.vacinacao.negocio.controlador.VacinaControl;
 import br.ufrpe.vacinacao.negocio.entidade.Vacina;
-import java.awt.Color;
-import javax.swing.ImageIcon;
-import java.awt.Font;
+import br.ufrpe.vacinacao.util.Utils;
 
 
 public class FrmVacina extends JDialog {
@@ -37,6 +39,7 @@ public class FrmVacina extends JDialog {
 	private JTable tbLista;
 	private FrmVacinaTableModel jTableModel;
 	private JTextField txtNome;
+	private JTextArea txtPrescricao;
 
 	/**
 	 * Launch the application.
@@ -72,6 +75,24 @@ public class FrmVacina extends JDialog {
 		
 		tbLista = new JTable(jTableModel);
 		formatarTabela(tbLista);	
+		tbLista.addMouseListener(new MouseListener() {
+            public void mouseClicked(MouseEvent e) {
+                Vacina entity= jTableModel.get(tbLista.getSelectedRow());
+                limpar();
+	            carregarDados(entity);
+            }
+            public void mousePressed(MouseEvent e) {
+            }
+
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            public void mouseExited(MouseEvent e) {
+            }
+        });
 		
 		JScrollPane scpLista = new JScrollPane(tbLista);
 		tbLista.setFillsViewportHeight(true);
@@ -95,7 +116,7 @@ public class FrmVacina extends JDialog {
 		lblNewLabel_2.setBounds(20, 228, 204, 14);
 		contentPanel.add(lblNewLabel_2);
 		
-		JTextArea txtPrescricao = new JTextArea();
+		txtPrescricao = new JTextArea();
 		txtPrescricao.setBounds(20, 248, 606, 90);
 		contentPanel.add(txtPrescricao);
 		
@@ -108,39 +129,46 @@ public class FrmVacina extends JDialog {
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
-				JButton okButton = new JButton("Salvar");
-				okButton.setIcon(new ImageIcon(FrmVacina.class.getResource("/com/sun/java/swing/plaf/windows/icons/FloppyDrive.gif")));
-				okButton.setBackground(Color.WHITE);
-				okButton.setFont(new Font("Tahoma", Font.BOLD, 11));
-				okButton.setForeground(new Color(34, 139, 34));
-				okButton.addActionListener(new ActionListener() {
+				JButton btnSalvar = new JButton("Salvar");
+				btnSalvar.setBackground(Color.WHITE);
+				btnSalvar.setFont(new Font("Tahoma", Font.BOLD, 11));
+				btnSalvar.setForeground(new Color(34, 139, 34));
+				btnSalvar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
-						Vacina vacina= new Vacina();
-						
-						if ( !txtId.getText().equals("") && !txtId.getText().equalsIgnoreCase("0") ) {
-							vacina.setId(Integer.parseInt(txtId.getText()));
-						}
-						
-						if ( txtNome.getText() == null || txtNome.getText().length() == 0 || 
-								txtPrescricao.getText() == null || txtPrescricao.getText().length() == 0) {
-							JOptionPane.showMessageDialog(null, "Informe todos os dados.");
-							return;
-						}	
+						try {
+							/*
+							 * CARREGAR DADOS
+							 */
+							Vacina vacina= new Vacina();
+							vacina.setNome(txtNome.getText());
+							vacina.setPrescricao(txtPrescricao.getText());
+							
+							if (!validaCampos()) {
+								JOptionPane.showMessageDialog(null, "Preencha todos os campos", "Validação de campos", 
+										JOptionPane.ERROR_MESSAGE);
+								return;
+							} else {
+								
+								VacinaControl.getInstance().salvar(vacina);
+								limpar();
+								JOptionPane.showMessageDialog(null, "Operação realizada com sucesso!", "Confirmação de cadastro/atualização", 
+										JOptionPane.INFORMATION_MESSAGE);
+								
+								carregarTable();
 
-						vacina.setNome(txtNome.getText());
-						vacina.setPrescricao(txtPrescricao.getText());
-					
-						VacinaControl.getInstance().insert(vacina);
-						
-						jTableModel.limpar();
-						List<Vacina> lista= VacinaControl.getInstance().list(new Vacina());
-						jTableModel.addList(lista);
-						jTableModel.fireTableDataChanged();
-						
+							}
+						} catch (Throwable ex) {
+							ex.printStackTrace();
+							Utils.msgExcption(ex.getMessage());	
+						}						
 					}
+
 				});
 				
 				JButton btnNovo = new JButton("Novo");
+				btnNovo.setBackground(Color.WHITE);
+				btnNovo.setForeground(new Color(0, 0, 255));				
+				btnNovo.setFont(new Font("Tahoma", Font.BOLD, 11));
 				btnNovo.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						txtId.setText("");
@@ -150,31 +178,69 @@ public class FrmVacina extends JDialog {
 				});
 				btnNovo.setActionCommand("OK");
 				buttonPane.add(btnNovo);
-				okButton.setActionCommand("OK");
-				buttonPane.add(okButton);
-				getRootPane().setDefaultButton(okButton);
+				
+				JButton btnApagar = new JButton("Apagar");
+				btnApagar.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						
+						
+					}
+				});
+				btnApagar.setFont(new Font("Tahoma", Font.BOLD, 11));
+				btnApagar.setForeground(Color.RED);
+				btnApagar.setBackground(Color.WHITE);
+				btnApagar.setActionCommand("OK");
+				buttonPane.add(btnApagar);
+				btnSalvar.setActionCommand("OK");
+				buttonPane.add(btnSalvar);
+				getRootPane().setDefaultButton(btnSalvar);
 			}
 			{
-				JButton cancelButton = new JButton("Cancelar");
-				cancelButton.setFont(new Font("Tahoma", Font.BOLD, 11));
-				cancelButton.setIcon(new ImageIcon(FrmVacina.class.getResource("/com/sun/java/swing/plaf/windows/icons/Error.gif")));
-				cancelButton.setSelectedIcon(new ImageIcon(FrmVacina.class.getResource("/com/sun/java/swing/plaf/windows/icons/Error.gif")));
-				cancelButton.setForeground(Color.RED);
-				cancelButton.setBackground(Color.WHITE);
-				cancelButton.addActionListener(new ActionListener() {
+				JButton btnFechar = new JButton("Fechar");
+				btnFechar.setFont(new Font("Tahoma", Font.BOLD, 11));
+				btnFechar.setForeground(Color.BLACK);
+				btnFechar.setBackground(Color.WHITE);
+				btnFechar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						dispose();
 					}
 				});
-				cancelButton.setActionCommand("Cancel");
-				buttonPane.add(cancelButton);
+				btnFechar.setActionCommand("Cancel");
+				buttonPane.add(btnFechar);
 			}
 		}
 		
-		// Carregar lista
+		carregarTable();
+		
+	}
+	
+	private void limpar() {
+		txtId.setText("");
+		txtNome.setText("");
+		txtPrescricao.setText("");
+	}
+	
+	private void carregarDados(Vacina entity) {
+		txtId.setText(entity.getId()+"");
+		txtNome.setText(entity.getNome());
+		txtPrescricao.setText(entity.getPrescricao());
+	}
+	
+	private boolean validaCampos(){
+		boolean isValido= true;
+		if ( txtNome.getText().length() == 0 || 
+			txtPrescricao.getText().length() == 0
+			) {
+			isValido= false;
+		}
+		return isValido;
+	}	
+	
+	private void carregarTable() {
+		jTableModel.limpar();
 		List<Vacina> lista= VacinaControl.getInstance().list(new Vacina());
 		jTableModel.addList(lista);
-		
+		jTableModel.fireTableDataChanged();
 	}
 	
 	private void formatarTabela(JTable jTable) {

@@ -33,7 +33,7 @@ public class VacinaDAO {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new SystemException("\n " + e.getMessage() + " - Código: "
+			throw new SystemException("\n " + e.getMessage() + " - Codigo: "
 					+ e.getErrorCode());
 		} finally {
 			transactionManager.closeConnection(connection);
@@ -77,7 +77,7 @@ public class VacinaDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new SystemException("\n " + e.getMessage() + " - Código: "
+			throw new SystemException("\n " + e.getMessage() + " - Cï¿½digo: "
 					+ e.getErrorCode());
 		} finally {
 			transactionManager.closeConnection(connection);
@@ -91,6 +91,34 @@ public class VacinaDAO {
 		vacina.setNome(rs.getString("nome"));
 		vacina.setPrescricao(rs.getString("prescricao"));
 		return vacina;
+	}
+
+	public void update(Vacina vacina) {
+		Connection connection = null;
+		PreparedStatement preStmt = null;
+		TransactionManager transactionManager = TransactionManager.getInstance();
+		StringBuilder sql= new StringBuilder();
+
+		try {
+			connection = (Connection) transactionManager.getConnection();
+			
+			sql.append("UPDADE PUBLIC.VACINA SET NOME= ?, PRESCRICAO= ? ");
+			sql.append("WHERE ID= ? ");
+
+			preStmt= connection.prepareStatement(sql.toString());
+			preStmt.setString(1, vacina.getNome());
+			preStmt.setString(2, vacina.getPrescricao());
+			preStmt.setInt(3, vacina.getId());
+			
+			preStmt.execute();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new SystemException("\n " + e.getMessage() + " - Codigo: "
+					+ e.getErrorCode());
+		} finally {
+			transactionManager.closeConnection(connection);
+		}
 	}
 	
 }

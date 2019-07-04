@@ -131,7 +131,7 @@ public class FrmPrincipal {
 	    	}
 	    });
 	    mnFechar.setBackground(Color.WHITE);
-	    mnFechar.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/com/sun/javafx/scene/control/skin/caspian/dialog-error.png")));
+//	    mnFechar.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/com/sun/javafx/scene/control/skin/caspian/dialog-error.png")));
 	    mnFechar.setBounds(356, 11, 48, 48);
 	    menuBar.add(mnFechar);
 	    

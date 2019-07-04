@@ -20,10 +20,14 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import br.ufrpe.vacinacao.negocio.controlador.UnidadeFederativaControl;
+import br.ufrpe.vacinacao.negocio.controlador.VacinaControl;
 import br.ufrpe.vacinacao.negocio.entidade.Estoque;
 import br.ufrpe.vacinacao.negocio.entidade.Lote;
 import br.ufrpe.vacinacao.negocio.entidade.UnidadeAtendimento;
 import br.ufrpe.vacinacao.negocio.entidade.UnidadeFederativa;
+import br.ufrpe.vacinacao.negocio.entidade.Vacina;
+
+import java.awt.Color;
 
 
 public class FrmDistribuirVacina extends JDialog {
@@ -108,7 +112,7 @@ public class FrmDistribuirVacina extends JDialog {
 		contentPanel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Vacina - Lotes - Doses dispon\u00EDveis");
-		lblNewLabel_2.setBounds(20, 228, 204, 14);
+		lblNewLabel_2.setBounds(20, 228, 323, 14);
 		contentPanel.add(lblNewLabel_2);
 		
 		JComboBox<Lote> cbxLotes = new JComboBox<Lote>();
@@ -120,6 +124,8 @@ public class FrmDistribuirVacina extends JDialog {
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("Salvar");
+				okButton.setForeground(new Color(0, 128, 0));
+				okButton.setBackground(new Color(255, 255, 255));
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) {
 						Estoque estoque= new Estoque();
@@ -147,37 +153,65 @@ public class FrmDistribuirVacina extends JDialog {
 				});
 				
 				JButton btnNovo = new JButton("Novo");
+				btnNovo.setForeground(new Color(0, 0, 255));
+				btnNovo.setBackground(new Color(255, 255, 255));
 				btnNovo.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 					}
 				});
 				btnNovo.setActionCommand("OK");
 				buttonPane.add(btnNovo);
+				
+				JButton btnApagar = new JButton("Apagar");
+				btnApagar.setForeground(new Color(255, 0, 0));
+				btnApagar.setBackground(Color.WHITE);
+				btnApagar.setActionCommand("OK");
+				buttonPane.add(btnApagar);
 				okButton.setActionCommand("OK");
 				buttonPane.add(okButton);
 				getRootPane().setDefaultButton(okButton);
 			}
 			{
-				JButton cancelButton = new JButton("Cancel");
-				cancelButton.addActionListener(new ActionListener() {
+				JButton btnFechar = new JButton("Fechar");
+				btnFechar.setBackground(new Color(255, 255, 255));
+				btnFechar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						dispose();
 					}
 				});
-				cancelButton.setActionCommand("Cancel");
-				buttonPane.add(cancelButton);
+				btnFechar.setActionCommand("Cancel");
+				buttonPane.add(btnFechar);
 			}
 		}
-		
-		
-		/**
-		 * CARREGADR DADOS
-		 */
-		listUnidadeFederativa= UnidadeFederativaControl.getInstance().list(new UnidadeFederativa());
-		for (UnidadeFederativa unidadeFederativa: listUnidadeFederativa) {
-			
+	}
+	
+	private void limpar() {
+		txtId.setText("");
+		txtNome.setText("");
+		txtPrescricao.setText("");
+	}
+	
+	private void carregarDados(Vacina entity) {
+		txtId.setText(entity.getId()+"");
+		txtNome.setText(entity.getNome());
+		txtPrescricao.setText(entity.getPrescricao());
+	}
+	
+	private boolean validaCampos(){
+		boolean isValido= true;
+		if ( txtNome.getText().length() == 0 || 
+			txtPrescricao.getText().length() == 0
+			) {
+			isValido= false;
 		}
-		
+		return isValido;
+	}	
+	
+	private void carregarTable() {
+		jTableModel.limpar();
+		List<Vacina> lista= VacinaControl.getInstance().list(new Vacina());
+		jTableModel.addList(lista);
+		jTableModel.fireTableDataChanged();
 	}
 	
 	private void formatarTabela(JTable jTable) {

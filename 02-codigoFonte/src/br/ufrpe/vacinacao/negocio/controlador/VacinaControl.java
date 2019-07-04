@@ -22,8 +22,12 @@ public class VacinaControl {
 		return instance;
 	}
 	
-	public void insert(Vacina vacina) {
-		repositorio.insert(vacina);
+	public void salvar(Vacina vacina) {
+		
+		if (vacina.getId() > 0)
+			repositorio.insert(vacina);
+		else
+			repositorio.update(vacina);
 	}
 	
 	public List<Vacina> list(Vacina filtro) {
