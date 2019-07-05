@@ -29,4 +29,9 @@ public class Vacina {
 		this.prescricao = prescricao;
 	}
 
+	@Override
+	public String toString() {
+		return id + "- " + nome;
+	}
+
 }

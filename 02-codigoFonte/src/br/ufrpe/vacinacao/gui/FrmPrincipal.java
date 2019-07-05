@@ -13,6 +13,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
+import br.ufrpe.vacinacao.gui.distribuirVacina.FrmDistribuirVacina;
 import br.ufrpe.vacinacao.gui.vacina.FrmVacina;
 
 public class FrmPrincipal {
@@ -96,8 +97,8 @@ public class FrmPrincipal {
 	    JMenuItem mntGerenciamentoDistribuicaoVacina = new JMenuItem("Distribui\u00E7\u00E3o Estadual de vacinas");
 	    mntGerenciamentoDistribuicaoVacina.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent arg0) {
-//	    		FrmTipoIIDocumento window=new FrmTipoIIDocumento();
-//	    		window.setVisible(true);
+	    		FrmDistribuirVacina window= new FrmDistribuirVacina();
+	    		window.setVisible(true);
 	    	}
 	    });
 	    mmGerenciamentoEstadual.add(mntGerenciamentoDistribuicaoVacina);

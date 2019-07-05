@@ -38,4 +38,11 @@ public class UnidadeAtendimento {
 		this.endereco = endereco;
 	}
 
+	@Override
+	public String toString() {
+		return  id + "- " + nome;
+	}
+	
+	
+
 }

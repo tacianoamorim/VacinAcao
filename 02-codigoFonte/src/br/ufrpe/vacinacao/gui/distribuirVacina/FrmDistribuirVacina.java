@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.List;
 
 import javax.swing.BoxLayout;
@@ -21,11 +23,12 @@ import javax.swing.border.EmptyBorder;
 
 import br.ufrpe.vacinacao.gui.FrmLogin;
 import br.ufrpe.vacinacao.negocio.controlador.EstoqueControl;
+import br.ufrpe.vacinacao.negocio.controlador.UnidadeAtendimentoControl;
 import br.ufrpe.vacinacao.negocio.entidade.Estoque;
 import br.ufrpe.vacinacao.negocio.entidade.Lote;
 import br.ufrpe.vacinacao.negocio.entidade.UnidadeAtendimento;
+import br.ufrpe.vacinacao.negocio.entidade.UnidadeFederativa;
 import br.ufrpe.vacinacao.util.Utils;
-
 
 public class FrmDistribuirVacina extends JDialog {
 
@@ -76,7 +79,25 @@ public class FrmDistribuirVacina extends JDialog {
 		tableModel = new FrmDistribuirVacinaTableModel();
 		
 		tbLista = new JTable(tableModel);
-		formatarTabela(tbLista);	
+		formatarTabela(tbLista);
+		tbLista.addMouseListener(new MouseListener() {
+            public void mouseClicked(MouseEvent e) {
+                Estoque estoque= tableModel.get(tbLista.getSelectedRow());
+                limpar();
+	            carregarDados(estoque);
+            }
+            public void mousePressed(MouseEvent e) {
+            }
+
+            public void mouseReleased(MouseEvent e) {
+            }
+
+            public void mouseEntered(MouseEvent e) {
+            }
+
+            public void mouseExited(MouseEvent e) {
+            }
+        });		
 		
 		JScrollPane scpLista = new JScrollPane(tbLista);
 		tbLista.setFillsViewportHeight(true);
@@ -195,6 +216,20 @@ public class FrmDistribuirVacina extends JDialog {
 				buttonPane.add(btnFechar);
 			}
 		}
+	
+		
+		UnidadeAtendimento filtro= new UnidadeAtendimento();
+		UnidadeFederativa unidadeFederativa= new UnidadeFederativa();
+		unidadeFederativa.setSigla(FrmLogin.servidorLogado.getUnidadeAtendimento().getUnidadeFederativa().getSigla());
+		filtro.setUnidadeFederativa(unidadeFederativa);
+		
+		List<UnidadeAtendimento> listaUnidadeAtendimento= 
+				UnidadeAtendimentoControl.getInstance().list(filtro);
+		for (UnidadeAtendimento unidadeAtendimento : listaUnidadeAtendimento) {
+			cbxUnidadeAtendimento.addItem(unidadeAtendimento);
+		}
+	
+	
 	}
 	
 	private void limpar() {

@@ -133,7 +133,8 @@ public class FrmLogin extends JDialog {
 							filtro.setMatricula( Integer.parseInt( txtCodigo.getText() ) );
 							Servidor servidor= ServidorControl.getInstance().findByFilter(filtro);
 							
-							if ( servidor.getSenha().equalsIgnoreCase(txtSenha.getText()) ) {
+							if ( txtSenha.getText() != null &&  txtCodigo.getText() != null &&
+									servidor.getSenha().equalsIgnoreCase(txtSenha.getText()) ) {
 								setVisible(false);
 								
 								usuarioLogado= null;
@@ -151,7 +152,8 @@ public class FrmLogin extends JDialog {
 							filtro.setNumeroSUS( txtCodigo.getText() );
 							Usuario usuario= UsuarioControl.getInstance().findByFilter(filtro);
 							
-							if ( usuario.getSenha().equalsIgnoreCase(txtSenha.getText()) ) {
+							if ( txtSenha.getText() != null &&  txtCodigo.getText() != null &&
+									usuario.getSenha().equalsIgnoreCase(txtSenha.getText()) ) {
 								setVisible(false);
 
 								usuarioLogado= usuario;
