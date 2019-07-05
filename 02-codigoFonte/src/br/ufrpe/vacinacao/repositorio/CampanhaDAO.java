@@ -35,6 +35,7 @@ public class CampanhaDAO {
 			preStmt.setDate(5, campanha.getDataFimDivulgacao());
 			preStmt.setDate(6, campanha.getDataInicioExecucao());
 			preStmt.setDate(7, campanha.getDataFimExecucao());
+			preStmt.setString(8, campanha.getObservacao());
 			preStmt.execute();
 			
 		} catch (SQLException e) {
@@ -46,48 +47,36 @@ public class CampanhaDAO {
 		}
 	}
 	
-	public List<Vacina> list(Vacina filtro) {
-		Connection connection = null;
-		PreparedStatement preStmt = null;
-		ResultSet rs = null;
-		TransactionManager transactionManager = TransactionManager.getInstance();
-		List<Vacina> listaRetorno= new ArrayList<Vacina>();
-		StringBuilder sql= new StringBuilder();
-
-		try {
-			connection = (Connection) transactionManager.getConnection();
-			
-			if (filtro != null) {
-				
-				sql.append("SELECT id, nome, prescricao FROM PUBLIC.VACINA WHERE 0= 0 ");
-				if ( filtro.getNome() != null )
-					sql.append("AND nome like '%?%'");
-				if ( filtro.getPrescricao() != null )
-					sql.append("AND prescricao like '%?%'");				
-				
-				preStmt = connection.prepareStatement(sql.toString());
-				int idx= 1;
-				
-				if ( filtro.getNome() != null )
-					preStmt.setString(idx++, filtro.getNome());
-				
-				if ( filtro.getPrescricao() != null )
-					preStmt.setString(idx++, filtro.getPrescricao());
-				
-				rs = preStmt.executeQuery();
-	
-				while (rs.next()) {
-					listaRetorno.add( carregar(rs) );
-				}
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-			throw new SystemException("\n " + e.getMessage() + " - Código: "
-					+ e.getErrorCode());
-		} finally {
-			transactionManager.closeConnection(connection);
-		}
-		return listaRetorno;		
-	}
+	/*
+	 * public List<Campanha> list(Campanha filtro) { Connection connection = null;
+	 * PreparedStatement preStmt = null; ResultSet rs = null; TransactionManager
+	 * transactionManager = TransactionManager.getInstance(); List<Campanha>
+	 * listaRetorno= new ArrayList<Campanha>(); StringBuilder sql= new
+	 * StringBuilder();
+	 * 
+	 * try { connection = (Connection) transactionManager.getConnection();
+	 * 
+	 * if (filtro != null) {
+	 * 
+	 * sql.
+	 * append("SELECT id, vacina, nome, valorTotal, dataInicioDivulgacao, dataFimDivulgacao, dataInicioExecucao, dataFimExecucao FROM PUBLIC.Campanha WHERE 0= 0 "
+	 * ); if ( filtro.getNome() != null ) sql.append("AND nome like '%?%'"); if (
+	 * filtro.getPrescricao() != null ) sql.append("AND prescricao like '%?%'");
+	 * 
+	 * preStmt = connection.prepareStatement(sql.toString()); int idx= 1;
+	 * 
+	 * if ( filtro.getNome() != null ) preStmt.setString(idx++, filtro.getNome());
+	 * 
+	 * if ( filtro.getPrescricao() != null ) preStmt.setString(idx++,
+	 * filtro.getPrescricao());
+	 * 
+	 * rs = preStmt.executeQuery();
+	 * 
+	 * while (rs.next()) { //listaRetorno.add( carregar(rs) ); } }
+	 * 
+	 * } catch (SQLException e) { e.printStackTrace(); throw new
+	 * SystemException("\n " + e.getMessage() + " - Código: " + e.getErrorCode()); }
+	 * finally { transactionManager.closeConnection(connection); } return
+	 * listaRetorno; }
+	 */
 }

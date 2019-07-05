@@ -1,9 +1,11 @@
 package br.ufrpe.vacinacao.gui.campanha;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class FrmCadastroCampanha {
@@ -48,5 +50,16 @@ public class FrmCadastroCampanha {
 
     @FXML
     private Button cadastrarButton;
+    
+    @FXML
+    private TextArea observacaoTextArea;
+
+    @FXML
+    private Label observacaoLabel;
+    
+    @FXML
+    void cadastrarButtonClick(ActionEvent event) {
+
+    }
 
 }

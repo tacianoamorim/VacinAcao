@@ -12,6 +12,7 @@ public class Campanha {
 	private Date dataFimDivulgacao;
 	private Date dataInicioExecucao;
 	private Date dataFimExecucao;
+	private String observacao;
 
 	public int getCodigo() {
 		return codigo;
@@ -69,12 +70,12 @@ public class Campanha {
 		this.dataFimExecucao = dataFimExecucao;
 	}
 
-	public String getDescricao() {
-		return descricao;
+	public String getObservacao() {
+		return observacao;
 	}
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
 	}
 
 	public Vacina getVacina() {
@@ -85,5 +86,5 @@ public class Campanha {
 		this.vacina = vacina;
 	}
 
-	private String descricao;
+	
 }
