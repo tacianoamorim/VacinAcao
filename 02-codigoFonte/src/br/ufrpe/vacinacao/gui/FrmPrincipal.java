@@ -14,7 +14,9 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 import br.ufrpe.vacinacao.gui.distribuirVacina.FrmDistribuirVacina;
+import br.ufrpe.vacinacao.gui.relatorioEstoque.FrmRelatorioEstoque;
 import br.ufrpe.vacinacao.gui.vacina.FrmVacina;
+import java.awt.Font;
 
 public class FrmPrincipal {
 
@@ -113,7 +115,8 @@ public class FrmPrincipal {
 	    JMenuItem mntRelatorioEstoque = new JMenuItem("Estoque Estadual");
 	    mntRelatorioEstoque.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent arg0) {
-
+	    		FrmRelatorioEstoque window= new FrmRelatorioEstoque();
+	    		window.setVisible(true);
 	    	}
 	    });
 	    mmRelatorio.add(mntRelatorioEstoque);
@@ -121,7 +124,9 @@ public class FrmPrincipal {
 	    /**
 	     * MENU SAIR
 	     */	  
-	    JButton mnFechar = new JButton("");
+	    JButton mnFechar = new JButton("Fechar");
+	    mnFechar.setFont(mnFechar.getFont().deriveFont(mnFechar.getFont().getStyle() | Font.BOLD));
+	    mnFechar.setForeground(new Color(0, 128, 0));
 	    mnFechar.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    		FrmLogin windowLogin= new FrmLogin();

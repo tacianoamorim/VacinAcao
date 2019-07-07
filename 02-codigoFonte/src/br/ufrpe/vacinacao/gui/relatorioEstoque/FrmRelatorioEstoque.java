@@ -7,21 +7,25 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import br.ufrpe.vacinacao.gui.FrmLogin;
+import br.ufrpe.vacinacao.negocio.controlador.EstoqueControl;
+import br.ufrpe.vacinacao.negocio.entidade.Estoque;
 import br.ufrpe.vacinacao.util.JasperReportUtil;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import java.awt.Color;
 
 public class FrmRelatorioEstoque extends JDialog {
 
@@ -31,8 +35,6 @@ public class FrmRelatorioEstoque extends JDialog {
 	private static final long serialVersionUID = 5287862733905941387L;
 	
 	private final JPanel contentPanel = new JPanel();
-	private JTextField txtAno;
-	private JComboBox<Integer> cbxSemestre;
 
 	/**
 	 * Launch the application.
@@ -53,81 +55,51 @@ public class FrmRelatorioEstoque extends JDialog {
 	 */
 	public FrmRelatorioEstoque() {
 		setModal(true);
-		setTitle("Formulário Tipo II - Gerenciamento de DOCUMENTO");
+		setTitle("Relatório de estoque");
 		setBounds(100, 100, 477, 248);
 		getContentPane().setLayout(new BorderLayout());
+		contentPanel.setBackground(new Color(255, 255, 255));
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(null);
 		{
-			JLabel lblRelatrioResumidoDe = new JLabel("Relatório resumido de Pautas");
-			lblRelatrioResumidoDe.setHorizontalAlignment(SwingConstants.CENTER);
-			lblRelatrioResumidoDe.setFont(new Font("Dialog", Font.BOLD, 18));
-			lblRelatrioResumidoDe.setBounds(12, 12, 445, 23);
-			contentPanel.add(lblRelatrioResumidoDe);
-		}
-		{
-			JLabel lblAno = new JLabel("Ano:");
-			lblAno.setHorizontalAlignment(SwingConstants.RIGHT);
-			lblAno.setBounds(46, 66, 85, 15);
-			contentPanel.add(lblAno);
-		}
-		{
-			JLabel lblSemestre = new JLabel("Semestre:");
-			lblSemestre.setHorizontalAlignment(SwingConstants.RIGHT);
-			lblSemestre.setBounds(46, 113, 85, 15);
-			contentPanel.add(lblSemestre);
+			JLabel lblRelatrioEstoque = new JLabel("Relatório de Estoque");
+			lblRelatrioEstoque.setHorizontalAlignment(SwingConstants.CENTER);
+			lblRelatrioEstoque.setFont(new Font("Dialog", Font.BOLD, 18));
+			lblRelatrioEstoque.setBounds(12, 12, 445, 23);
+			contentPanel.add(lblRelatrioEstoque);
 		}
 		
-		txtAno = new JTextField();
-		txtAno.setBounds(149, 64, 124, 19);
-		contentPanel.add(txtAno);
-		txtAno.setColumns(10);
-		
-		cbxSemestre = new JComboBox<Integer>();
-		cbxSemestre.setBounds(149, 108, 124, 24);
-		cbxSemestre.addItem(1);
-		cbxSemestre.addItem(2);
-		contentPanel.add(cbxSemestre);
+		JLabel lblPorUnidadeDe = new JLabel("Por Unidade de Atendimento");
+		lblPorUnidadeDe.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPorUnidadeDe.setFont(new Font("Dialog", Font.BOLD, 14));
+		lblPorUnidadeDe.setBounds(12, 42, 445, 23);
+		contentPanel.add(lblPorUnidadeDe);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			getContentPane().add(buttonPane, BorderLayout.SOUTH);
 			{
 				JButton okButton = new JButton("Visualizar relatório");
+				okButton.setForeground(new Color(0, 128, 0));
+				okButton.setBackground(new Color(255, 255, 255));
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						try {
 							Map<String, Object> parametros = new HashMap<String, Object>();
-							parametros.put("ANO", txtAno.getText());
+
+							URL url= getClass().getResource("RelatorioEstoque.jrxml");
 							
-							if (cbxSemestre.getSelectedItem().equals("1")) {
-								parametros.put("MES_INICIO", 1);
-								parametros.put("MES_FIM", 6);
-							} else {
-								parametros.put("MES_INICIO", 7);
-								parametros.put("MES_FIM", 12);								
-							}
+							List<Estoque> lista= EstoqueControl.getInstance().list(
+									FrmLogin.servidorLogado.getUnidadeAtendimento().getUnidadeFederativa().getSigla());
 							
-							URL url= getClass().getResource("RelatorioResumidoPautaAudiencia.jrxml");
-							
-							StringBuilder query= new StringBuilder();
-							query.append("SELECT DISTINCT jpa.nome, ")
-							.append(" jpa.dataAgendamento, ")
-							.append(" jpa.hora, ")
-							.append(" jpa.processo, ")
-							.append(" prp.tipo,  ")
-							.append(" prp.polo, ")
-							.append(" prp.nomePTR ")
-							.append(" FROM DBSPJC.juizadoPautaAudiencia jpa ")
-							.append("   INNER JOIN DBSPJC.parteRepresentanteProcesso prp ON prp.processo= jpa.processo ")
-							.append(" ORDER BY 1, 2, 3, 4, 5 ");
-							
+							JRBeanCollectionDataSource dataSource = 
+									new JRBeanCollectionDataSource(lista);
+
 							//gerando o jasper design
 							JasperDesign desenho= JRXmlLoader.load( url.getFile());
 							
-							JasperReportUtil.gerar(desenho, query.toString(), parametros);
-							setVisible(false);
+							JasperReportUtil.gerar(desenho, dataSource, parametros);
 							
 						} catch (Exception e) {
 							JOptionPane.showMessageDialog(null, e.getMessage());
@@ -140,6 +112,8 @@ public class FrmRelatorioEstoque extends JDialog {
 			}
 			{
 				JButton cancelButton = new JButton("Fechar");
+				cancelButton.setForeground(new Color(255, 0, 0));
+				cancelButton.setBackground(new Color(255, 255, 255));
 				cancelButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
 						dispose();

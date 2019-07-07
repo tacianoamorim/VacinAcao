@@ -155,7 +155,6 @@ public class FrmVacina extends JDialog {
 										JOptionPane.INFORMATION_MESSAGE);
 								
 								carregarTable();
-
 							}
 						} catch (Throwable ex) {
 							ex.printStackTrace();

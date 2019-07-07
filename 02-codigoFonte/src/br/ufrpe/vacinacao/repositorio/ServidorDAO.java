@@ -58,7 +58,7 @@ public class ServidorDAO {
 		unidadeFederativa.setSigla(rs.getString("sigla"));
 		
 		UnidadeAtendimento unidadeAtendimento= new UnidadeAtendimento();
-		unidadeAtendimento.setId(rs.getInt("idUA"));
+		unidadeAtendimento.setId(rs.getInt("id"));
 		unidadeAtendimento.setUnidadeFederativa(unidadeFederativa);
 		
 		servidor.setUnidadeAtendimento(unidadeAtendimento);
@@ -79,8 +79,8 @@ public class ServidorDAO {
 			
 			if (filtro != null) {
 			
-				sql.append("SELECT s.matricula, s.nome, s.senha "
-						+ "	ua.id AS 'idUA', uf.sigla "
+				sql.append("SELECT s.matricula, s.nome, s.senha, "
+						+ "	ua.id, uf.sigla "
 						+ "FROM SERVIDOR s "
 						+ "	INNER JOIN UNIDADEATENDIMENTO ua ON ua.id= s.unidadeAtendimento "
 						+ " INNER JOIN UNIDADEFEDERATIVA uf ON uf.sigla= ua.unidadeFederativa "

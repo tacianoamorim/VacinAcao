@@ -81,3 +81,1179 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:/home/taloam
 2019-07-05 11:35:34 jdbc[4]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT S.MATRICULA, S.NOME, S.SENHA 	UA.[*]ID AS 'idUA', UF.SIGLA FROM SERVIDOR S 	INNER JOIN UNIDADEATENDIMENTO UA ON UA.ID= S.UNIDADEATENDIMENTO  INNER JOIN UNIDADEFEDERATIVA UF ON UF.SIGLA= UA.UNIDADEFEDERATIVA WHERE 0= 0  "; SQL statement:
 SELECT s.matricula, s.nome, s.senha 	ua.id AS 'idUA', uf.sigla FROM SERVIDOR s 	INNER JOIN UNIDADEATENDIMENTO ua ON ua.id= s.unidadeAtendimento  INNER JOIN UNIDADEFEDERATIVA uf ON uf.sigla= ua.unidadeFederativa WHERE 0= 0  [42000-199]
+2019-07-05 19:20:14 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT S.MATRICULA, S.NOME, S.SENHA 	UA.[*]ID AS 'idUA', UF.SIGLA FROM SERVIDOR S 	INNER JOIN UNIDADEATENDIMENTO UA ON UA.ID= S.UNIDADEATENDIMENTO  INNER JOIN UNIDADEFEDERATIVA UF ON UF.SIGLA= UA.UNIDADEFEDERATIVA WHERE 0= 0  "; SQL statement:
+SELECT s.matricula, s.nome, s.senha 	ua.id AS 'idUA', uf.sigla FROM SERVIDOR s 	INNER JOIN UNIDADEATENDIMENTO ua ON ua.id= s.unidadeAtendimento  INNER JOIN UNIDADEFEDERATIVA uf ON uf.sigla= ua.unidadeFederativa WHERE 0= 0  [42000-199]
+2019-07-05 19:21:44 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT S.MATRICULA, S.NOME, S.SENHA, 	UA.ID AS 'idUA'[*], UF.SIGLA FROM SERVIDOR S 	INNER JOIN UNIDADEATENDIMENTO UA ON UA.ID= S.UNIDADEATENDIMENTO  INNER JOIN UNIDADEFEDERATIVA UF ON UF.SIGLA= UA.UNIDADEFEDERATIVA WHERE 0= 0  "; expected "identifier"; SQL statement:
+SELECT s.matricula, s.nome, s.senha, 	ua.id AS 'idUA', uf.sigla FROM SERVIDOR s 	INNER JOIN UNIDADEATENDIMENTO ua ON ua.id= s.unidadeAtendimento  INNER JOIN UNIDADEFEDERATIVA uf ON uf.sigla= ua.unidadeFederativa WHERE 0= 0  [42001-199]
+2019-07-05 19:23:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT S.MATRICULA, S.NOME, S.SENHA, 	UA.ID AS 'idUA'[*], UF.SIGLA 
+FROM SERVIDOR S 	
+INNER JOIN UNIDADEATENDIMENTO UA ON UA.ID= S.UNIDADEATENDIMENTO  INNER JOIN UNIDADEFEDERATIVA UF ON UF.SIGLA= UA.UNIDADEFEDERATIVA WHERE 0= 0"; expected "identifier"; SQL statement:
+SELECT S.MATRICULA, S.NOME, S.SENHA, 	UA.ID AS 'idUA', UF.SIGLA 
+FROM SERVIDOR S 	
+INNER JOIN UNIDADEATENDIMENTO UA ON UA.ID= S.UNIDADEATENDIMENTO  INNER JOIN UNIDADEFEDERATIVA UF ON UF.SIGLA= UA.UNIDADEFEDERATIVA WHERE 0= 0 [42001-199]
+2019-07-05 19:26:25 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/taloam/git/VacinAcao/02-codigoFonte/data/dbvacinacao.mv.db [1.4.199/7]" [50000-199]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:90)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2787)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:441)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:404)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3343)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:162)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:95)
+	at org.h2.engine.Database.getPageStore(Database.java:2739)
+	at org.h2.engine.Database.open(Database.java:769)
+	at org.h2.engine.Database.openDatabase(Database.java:319)
+	at org.h2.engine.Database.<init>(Database.java:313)
+	at org.h2.engine.Engine.openSession(Engine.java:69)
+	at org.h2.engine.Engine.openSession(Engine.java:201)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178)
+	at org.h2.engine.Engine.createSession(Engine.java:161)
+	at org.h2.engine.Engine.createSession(Engine.java:31)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:228)
+	at br.ufrpe.framework.transaction.TransactionManager.getConnection(TransactionManager.java:55)
+	at br.ufrpe.framework.transaction.TransactionProxy.intercept(TransactionProxy.java:33)
+	at br.ufrpe.vacinacao.negocio.controlador.ServidorControl$$EnhancerByCGLIB$$80a07bf9.findByFilter(<generated>)
+	at br.ufrpe.vacinacao.gui.FrmLogin$1.actionPerformed(FrmLogin.java:134)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1967)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2308)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6632)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3342)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6397)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2263)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5008)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4918)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4547)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4488)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2307)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2772)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/taloam/git/VacinAcao/02-codigoFonte/data/dbvacinacao.mv.db [1.4.199/7]" [50000-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 63 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/home/taloam/git/VacinAcao/02-codigoFonte/data/dbvacinacao.mv.db [1.4.199/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:883)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:390)
+	... 57 more
+2019-07-05 19:27:09 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "SIGLA" not found; SQL statement:
+SELECT Id, Nome FROM UnidadeAtendimento WHERE 0= 0 AND sigla= ? ORDER BY Nome  [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:176)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:158)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:205)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:134)
+	at org.h2.command.dml.Select.prepare(Select.java:1248)
+	at org.h2.command.Parser.prepareCommand(Parser.java:689)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:77)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:349)
+	at br.ufrpe.vacinacao.repositorio.UnidadeAtendimentoDAO.list(UnidadeAtendimentoDAO.java:36)
+	at br.ufrpe.vacinacao.negocio.controlador.UnidadeAtendimentoControl.list(UnidadeAtendimentoControl.java:26)
+	at br.ufrpe.vacinacao.negocio.controlador.UnidadeAtendimentoControl$$EnhancerByCGLIB$$1ce6343f.CGLIB$list$0$0(<generated>)
+	at br.ufrpe.vacinacao.negocio.controlador.UnidadeAtendimentoControl$$EnhancerByCGLIB$$1ce6343f$$FastClassByCGLIB$$1a1af0e8.invoke(<generated>)
+	at net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:167)
+	at br.ufrpe.framework.transaction.TransactionProxy.intercept(TransactionProxy.java:40)
+	at br.ufrpe.vacinacao.negocio.controlador.UnidadeAtendimentoControl$$EnhancerByCGLIB$$1ce6343f.list(<generated>)
+	at br.ufrpe.vacinacao.gui.distribuirVacina.FrmDistribuirVacina.<init>(FrmDistribuirVacina.java:227)
+	at br.ufrpe.vacinacao.gui.FrmPrincipal$3.actionPerformed(FrmPrincipal.java:100)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1967)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2308)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.AbstractButton.doClick(AbstractButton.java:369)
+	at java.desktop/javax.swing.plaf.basic.BasicMenuItemUI.doClick(BasicMenuItemUI.java:1020)
+	at java.desktop/javax.swing.plaf.basic.BasicMenuItemUI$Handler.mouseReleased(BasicMenuItemUI.java:1064)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6632)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3342)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6397)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2263)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5008)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4918)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4547)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4488)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2307)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2772)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2019-07-05 19:27:20 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDADE[*] PUBLIC.VACINA SET NOME= ?, PRESCRICAO= ? WHERE ID= ? "; expected "UPDATE, USE"; SQL statement:
+UPDADE PUBLIC.VACINA SET NOME= ?, PRESCRICAO= ? WHERE ID= ?  [42001-199]
+2019-07-05 19:28:31 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDADE[*] PUBLIC.VACINA SET NOME= ?, PRESCRICAO= ? WHERE ID= ? "; expected "UPDATE, USE"; SQL statement:
+UPDADE PUBLIC.VACINA SET NOME= ?, PRESCRICAO= ? WHERE ID= ?  [42001-199]
+2019-07-05 19:31:58 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDADE[*] VACINA SET NOME= ?, PRESCRICAO= ? WHERE ID= ? "; expected "UPDATE, USE"; SQL statement:
+UPDADE VACINA SET NOME= ?, PRESCRICAO= ? WHERE ID= ?  [42001-199]
+2019-07-05 19:40:53 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/taloam/git/VacinAcao/02-codigoFonte/data/dbvacinacao.mv.db [1.4.199/7]" [50000-199]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:90)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2787)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:441)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:404)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3343)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:162)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:95)
+	at org.h2.engine.Database.getPageStore(Database.java:2739)
+	at org.h2.engine.Database.open(Database.java:769)
+	at org.h2.engine.Database.openDatabase(Database.java:319)
+	at org.h2.engine.Database.<init>(Database.java:313)
+	at org.h2.engine.Engine.openSession(Engine.java:69)
+	at org.h2.engine.Engine.openSession(Engine.java:201)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178)
+	at org.h2.engine.Engine.createSession(Engine.java:161)
+	at org.h2.engine.Engine.createSession(Engine.java:31)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:228)
+	at br.ufrpe.framework.transaction.TransactionManager.getConnection(TransactionManager.java:55)
+	at br.ufrpe.framework.transaction.TransactionProxy.intercept(TransactionProxy.java:33)
+	at br.ufrpe.vacinacao.negocio.controlador.ServidorControl$$EnhancerByCGLIB$$80a07bf9.findByFilter(<generated>)
+	at br.ufrpe.vacinacao.gui.FrmLogin$1.actionPerformed(FrmLogin.java:134)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1967)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2308)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6632)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3342)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6397)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2263)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5008)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4918)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4547)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4488)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2307)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2772)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/taloam/git/VacinAcao/02-codigoFonte/data/dbvacinacao.mv.db [1.4.199/7]" [50000-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 63 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/home/taloam/git/VacinAcao/02-codigoFonte/data/dbvacinacao.mv.db [1.4.199/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:883)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:390)
+	... 57 more
+2019-07-05 19:41:47 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/taloam/git/VacinAcao/02-codigoFonte/data/dbvacinacao.mv.db [1.4.199/7]" [50000-199]
+	at org.h2.message.DbException.get(DbException.java:194)
+	at org.h2.message.DbException.convert(DbException.java:347)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:90)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2787)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:441)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:404)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:3343)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:162)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:95)
+	at org.h2.engine.Database.getPageStore(Database.java:2739)
+	at org.h2.engine.Database.open(Database.java:769)
+	at org.h2.engine.Database.openDatabase(Database.java:319)
+	at org.h2.engine.Database.<init>(Database.java:313)
+	at org.h2.engine.Engine.openSession(Engine.java:69)
+	at org.h2.engine.Engine.openSession(Engine.java:201)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178)
+	at org.h2.engine.Engine.createSession(Engine.java:161)
+	at org.h2.engine.Engine.createSession(Engine.java:31)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:228)
+	at br.ufrpe.framework.transaction.TransactionManager.getConnection(TransactionManager.java:55)
+	at br.ufrpe.framework.transaction.TransactionProxy.intercept(TransactionProxy.java:33)
+	at br.ufrpe.vacinacao.negocio.controlador.ServidorControl$$EnhancerByCGLIB$$80a07bf9.findByFilter(<generated>)
+	at br.ufrpe.vacinacao.gui.FrmLogin$1.actionPerformed(FrmLogin.java:134)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1967)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2308)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6632)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3342)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6397)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2263)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5008)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4918)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4547)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4488)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2307)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2772)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "java.lang.IllegalStateException: The file is locked: nio:/home/taloam/git/VacinAcao/02-codigoFonte/data/dbvacinacao.mv.db [1.4.199/7]" [50000-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 63 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/home/taloam/git/VacinAcao/02-codigoFonte/data/dbvacinacao.mv.db [1.4.199/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:883)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:390)
+	... 57 more
+2019-07-05 22:30:22 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES, 
+							L.ID AS 'idLote'[*], L.NOME AS 'nomeLote',
+							UA.ID AS 'idUND', UA.NOME AS 'nomeUND'	
+					FROM ESTOQUE E 
+						INNER JOIN LOTE L ON E.LOTE= L.ID 
+							INNER JOIN UNIDADEATENDIMENTO UA ON E.UNIDADEATENDIMENTO= UA.ID 
+					WHERE UA.UNIDADEFEDERATIVA= 'PE' "; expected "identifier"; SQL statement:
+SELECT e.id, e.quantidadeDoses, 
+							l.id AS 'idLote', l.nome AS 'nomeLote',
+							ua.id AS 'idUND', ua.nome AS 'nomeUND'	
+					FROM Estoque e 
+						INNER JOIN Lote l ON e.lote= l.id 
+							INNER JOIN UnidadeAtendimento ua ON e.unidadeAtendimento= ua.id 
+					WHERE ua.unidadeFederativa= 'PE' [42001-199]
+2019-07-05 22:30:58 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES, 
+							L.ID , L.NOME AS 'nomeLote'[*],
+							UA.ID AS 'idUND', UA.NOME AS 'nomeUND'	
+					FROM ESTOQUE E 
+						INNER JOIN LOTE L ON E.LOTE= L.ID 
+							INNER JOIN UNIDADEATENDIMENTO UA ON E.UNIDADEATENDIMENTO= UA.ID 
+					WHERE UA.UNIDADEFEDERATIVA= 'PE' "; expected "identifier"; SQL statement:
+SELECT e.id, e.quantidadeDoses, 
+							l.id , l.nome AS 'nomeLote',
+							ua.id AS 'idUND', ua.nome AS 'nomeUND'	
+					FROM Estoque e 
+						INNER JOIN Lote l ON e.lote= l.id 
+							INNER JOIN UnidadeAtendimento ua ON e.unidadeAtendimento= ua.id 
+					WHERE ua.unidadeFederativa= 'PE' [42001-199]
+2019-07-05 22:31:27 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES, 
+							L.ID , L.NOME ,
+							UA.ID AS 'idUND'[*], UA.NOME AS 'nomeUND'	
+					FROM ESTOQUE E 
+						INNER JOIN LOTE L ON E.LOTE= L.ID 
+							INNER JOIN UNIDADEATENDIMENTO UA ON E.UNIDADEATENDIMENTO= UA.ID 
+					WHERE UA.UNIDADEFEDERATIVA= 'PE' "; expected "identifier"; SQL statement:
+SELECT e.id, e.quantidadeDoses, 
+							l.id , l.nome ,
+							ua.id AS 'idUND', ua.nome AS 'nomeUND'	
+					FROM Estoque e 
+						INNER JOIN Lote l ON e.lote= l.id 
+							INNER JOIN UnidadeAtendimento ua ON e.unidadeAtendimento= ua.id 
+					WHERE ua.unidadeFederativa= 'PE' [42001-199]
+2019-07-05 22:31:42 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES, 
+							L.ID , L.NOME ,
+							UA.ID , UA.NOME AS 'nomeUND'[*]	
+					FROM ESTOQUE E 
+						INNER JOIN LOTE L ON E.LOTE= L.ID 
+							INNER JOIN UNIDADEATENDIMENTO UA ON E.UNIDADEATENDIMENTO= UA.ID 
+					WHERE UA.UNIDADEFEDERATIVA= 'PE' "; expected "identifier"; SQL statement:
+SELECT e.id, e.quantidadeDoses, 
+							l.id , l.nome ,
+							ua.id , ua.nome AS 'nomeUND'	
+					FROM Estoque e 
+						INNER JOIN Lote l ON e.lote= l.id 
+							INNER JOIN UnidadeAtendimento ua ON e.unidadeAtendimento= ua.id 
+					WHERE ua.unidadeFederativa= 'PE' [42001-199]
+2019-07-05 22:31:44 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES, 
+							L.ID , L.NOME ,
+							UA.ID , UA.NOME AS 'nomeUND'[*]	
+					FROM ESTOQUE E 
+						INNER JOIN LOTE L ON E.LOTE= L.ID 
+							INNER JOIN UNIDADEATENDIMENTO UA ON E.UNIDADEATENDIMENTO= UA.ID 
+					WHERE UA.UNIDADEFEDERATIVA= 'PE' "; expected "identifier"; SQL statement:
+SELECT e.id, e.quantidadeDoses, 
+							l.id , l.nome ,
+							ua.id , ua.nome AS 'nomeUND'	
+					FROM Estoque e 
+						INNER JOIN Lote l ON e.lote= l.id 
+							INNER JOIN UnidadeAtendimento ua ON e.unidadeAtendimento= ua.id 
+					WHERE ua.unidadeFederativa= 'PE' [42001-199]
+2019-07-05 22:31:55 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "L.NOME" not found; SQL statement:
+SELECT e.id, e.quantidadeDoses, 
+							l.id , l.nome ,
+							ua.id , ua.nome
+					FROM Estoque e 
+						INNER JOIN Lote l ON e.lote= l.id 
+							INNER JOIN UnidadeAtendimento ua ON e.unidadeAtendimento= ua.id 
+					WHERE ua.unidadeFederativa= 'PE' [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:176)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:158)
+	at org.h2.command.dml.Select.prepare(Select.java:1245)
+	at org.h2.command.Parser.prepareCommand(Parser.java:689)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:1113)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1436)
+	at org.h2.server.web.WebApp.query(WebApp.java:1111)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1073)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1060)
+	at org.h2.server.web.WebThread.process(WebThread.java:173)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-07-05 22:33:25 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES, 
+							L.ID AS 'idLote'[*], L.NUMERO AS 'nomeLote',
+							UA.ID AS 'idUND', UA.NOME AS 'nomeUND'	
+					FROM ESTOQUE E 
+						INNER JOIN LOTE L ON E.LOTE= L.ID 
+							INNER JOIN UNIDADEATENDIMENTO UA ON E.UNIDADEATENDIMENTO= UA.ID 
+					WHERE UA.UNIDADEFEDERATIVA= "; expected "identifier"; SQL statement:
+SELECT e.id, e.quantidadeDoses, 
+							l.id AS 'idLote', l.numero AS 'nomeLote',
+							ua.id AS 'idUND', ua.nome AS 'nomeUND'	
+					FROM Estoque e 
+						INNER JOIN Lote l ON e.lote= l.id 
+							INNER JOIN UnidadeAtendimento ua ON e.unidadeAtendimento= ua.id 
+					WHERE ua.unidadeFederativa= [42001-199]
+2019-07-05 22:33:39 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES, 
+							L.ID AS 'idLote'[*], L.NUMERO AS 'nomeLote',
+							UA.ID AS 'idUND', UA.NOME AS 'nomeUND'	
+					FROM ESTOQUE E 
+						INNER JOIN LOTE L ON E.LOTE= L.ID 
+							INNER JOIN UNIDADEATENDIMENTO UA ON E.UNIDADEATENDIMENTO= UA.ID "; expected "identifier"; SQL statement:
+SELECT e.id, e.quantidadeDoses, 
+							l.id AS 'idLote', l.numero AS 'nomeLote',
+							ua.id AS 'idUND', ua.nome AS 'nomeUND'	
+					FROM Estoque e 
+						INNER JOIN Lote l ON e.lote= l.id 
+							INNER JOIN UnidadeAtendimento ua ON e.unidadeAtendimento= ua.id [42001-199]
+2019-07-05 22:45:24 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "UA.ID" not found; SQL statement:
+SELECT e.id, e.quantidadeDoses, 
+							l.id, l.numero,
+							ua.id, ua.nome	
+					FROM Estoque e 
+						INNER JOIN Lote l ON e.lote= l.id [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:176)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:158)
+	at org.h2.command.dml.Select.prepare(Select.java:1245)
+	at org.h2.command.Parser.prepareCommand(Parser.java:689)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:1113)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1436)
+	at org.h2.server.web.WebApp.query(WebApp.java:1111)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1073)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1060)
+	at org.h2.server.web.WebThread.process(WebThread.java:173)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-07-06 08:26:19 database: wrong user or password; user: "SA"
+org.h2.message.DbException: Wrong user name or password [28000-199]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.engine.Engine.openSession(Engine.java:126)
+	at org.h2.engine.Engine.openSession(Engine.java:201)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178)
+	at org.h2.engine.Engine.createSession(Engine.java:161)
+	at org.h2.engine.Engine.createSession(Engine.java:31)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:299)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:782)
+	at org.h2.server.web.WebApp.login(WebApp.java:1004)
+	at org.h2.server.web.WebApp.process(WebApp.java:219)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:459)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 20 more
+2019-07-06 08:26:25 database: wrong user or password; user: "SA"
+org.h2.message.DbException: Wrong user name or password [28000-199]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.engine.Engine.openSession(Engine.java:126)
+	at org.h2.engine.Engine.openSession(Engine.java:201)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178)
+	at org.h2.engine.Engine.createSession(Engine.java:161)
+	at org.h2.engine.Engine.createSession(Engine.java:31)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:299)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:782)
+	at org.h2.server.web.WebApp.login(WebApp.java:1004)
+	at org.h2.server.web.WebApp.process(WebApp.java:219)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:459)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 20 more
+2019-07-06 08:26:57 database: wrong user or password; user: "SA"
+org.h2.message.DbException: Wrong user name or password [28000-199]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.engine.Engine.openSession(Engine.java:126)
+	at org.h2.engine.Engine.openSession(Engine.java:201)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178)
+	at org.h2.engine.Engine.createSession(Engine.java:161)
+	at org.h2.engine.Engine.createSession(Engine.java:31)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:299)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:782)
+	at org.h2.server.web.WebApp.login(WebApp.java:1004)
+	at org.h2.server.web.WebApp.process(WebApp.java:219)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:459)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 20 more
+2019-07-06 08:27:10 database: wrong user or password; user: "SA"
+org.h2.message.DbException: Wrong user name or password [28000-199]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.engine.Engine.openSession(Engine.java:126)
+	at org.h2.engine.Engine.openSession(Engine.java:201)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178)
+	at org.h2.engine.Engine.createSession(Engine.java:161)
+	at org.h2.engine.Engine.createSession(Engine.java:31)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:299)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:782)
+	at org.h2.server.web.WebApp.login(WebApp.java:1004)
+	at org.h2.server.web.WebApp.process(WebApp.java:219)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:459)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 20 more
+2019-07-06 08:27:16 database: wrong user or password; user: "SA"
+org.h2.message.DbException: Wrong user name or password [28000-199]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.engine.Engine.openSession(Engine.java:126)
+	at org.h2.engine.Engine.openSession(Engine.java:201)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178)
+	at org.h2.engine.Engine.createSession(Engine.java:161)
+	at org.h2.engine.Engine.createSession(Engine.java:31)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:299)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:782)
+	at org.h2.server.web.WebApp.test(WebApp.java:943)
+	at org.h2.server.web.WebApp.process(WebApp.java:234)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:459)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 20 more
+2019-07-06 08:27:59 database: wrong user or password; user: "SA"
+org.h2.message.DbException: Wrong user name or password [28000-199]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.engine.Engine.openSession(Engine.java:126)
+	at org.h2.engine.Engine.openSession(Engine.java:201)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178)
+	at org.h2.engine.Engine.createSession(Engine.java:161)
+	at org.h2.engine.Engine.createSession(Engine.java:31)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:299)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:782)
+	at org.h2.server.web.WebApp.login(WebApp.java:1004)
+	at org.h2.server.web.WebApp.process(WebApp.java:219)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:459)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 20 more
+2019-07-06 08:28:03 database: wrong user or password; user: "SA"
+org.h2.message.DbException: Wrong user name or password [28000-199]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.engine.Engine.openSession(Engine.java:126)
+	at org.h2.engine.Engine.openSession(Engine.java:201)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178)
+	at org.h2.engine.Engine.createSession(Engine.java:161)
+	at org.h2.engine.Engine.createSession(Engine.java:31)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:299)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:782)
+	at org.h2.server.web.WebApp.login(WebApp.java:1004)
+	at org.h2.server.web.WebApp.process(WebApp.java:219)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:459)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 20 more
+2019-07-06 08:28:07 database: wrong user or password; user: "SA"
+org.h2.message.DbException: Wrong user name or password [28000-199]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.engine.Engine.openSession(Engine.java:126)
+	at org.h2.engine.Engine.openSession(Engine.java:201)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:178)
+	at org.h2.engine.Engine.createSession(Engine.java:161)
+	at org.h2.engine.Engine.createSession(Engine.java:31)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:336)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:169)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:148)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:299)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:782)
+	at org.h2.server.web.WebApp.login(WebApp.java:1004)
+	at org.h2.server.web.WebApp.process(WebApp.java:219)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:139)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:459)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	... 20 more
+2019-07-06 18:55:58 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES, 		L.ID AS 'idLote'[*], L.NOME AS 'nomeLote',		UA.ID AS 'idUND', UA.NOME AS 'nomeUND'	FROM ESTOQUE E 		INNER JOIN LOTE L ON E.LOTE= L.ID 		INNER JOIN UNIDADEATENDIMENTO UA ON E.UNIDADEATENDIMENTO= UA.ID WHERE UA.UNIDADEFEDERATIVA= ?  "; expected "identifier"; SQL statement:
+SELECT e.id, e.quantidadeDoses, 		l.id AS 'idLote', l.nome AS 'nomeLote',		ua.id AS 'idUND', ua.nome AS 'nomeUND'	FROM Estoque e 		INNER JOIN Lote l ON e.lote= l.id 		INNER JOIN UnidadeAtendimento ua ON e.unidadeAtendimento= ua.id WHERE ua.unidadeFederativa= ?  [42001-199]
+2019-07-06 19:05:41 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "L.NOME" not found; SQL statement:
+SELECT e.id, e.quantidadeDoses, 		l.id AS "idLote", l.nome AS "nomeLote", 		ua.id AS "idUND", ua.nome AS "nomeUND"	FROM Estoque e 		INNER JOIN Lote l ON e.lote= l.id 		INNER JOIN UnidadeAtendimento ua ON e.unidadeAtendimento= ua.id WHERE ua.unidadeFederativa= ?  [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:176)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:158)
+	at org.h2.expression.Alias.optimize(Alias.java:52)
+	at org.h2.command.dml.Select.prepare(Select.java:1245)
+	at org.h2.command.Parser.prepareCommand(Parser.java:689)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:77)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:349)
+	at br.ufrpe.vacinacao.repositorio.EstoqueDAO.list(EstoqueDAO.java:28)
+	at br.ufrpe.vacinacao.negocio.controlador.EstoqueControl.list(EstoqueControl.java:26)
+	at br.ufrpe.vacinacao.negocio.controlador.EstoqueControl$$EnhancerByCGLIB$$9ccd99b1.CGLIB$list$0$0(<generated>)
+	at br.ufrpe.vacinacao.negocio.controlador.EstoqueControl$$EnhancerByCGLIB$$9ccd99b1$$FastClassByCGLIB$$fc65ee35.invoke(<generated>)
+	at net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:167)
+	at br.ufrpe.framework.transaction.TransactionProxy.intercept(TransactionProxy.java:40)
+	at br.ufrpe.vacinacao.negocio.controlador.EstoqueControl$$EnhancerByCGLIB$$9ccd99b1.list(<generated>)
+	at br.ufrpe.vacinacao.gui.relatorioEstoque.FrmRelatorioEstoque$1.actionPerformed(FrmRelatorioEstoque.java:83)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1967)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2308)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6632)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3342)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6397)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2263)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5008)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4918)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4547)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4488)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2307)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2772)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:117)
+	at java.desktop/java.awt.WaitDispatchSupport$2.run(WaitDispatchSupport.java:190)
+	at java.desktop/java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:235)
+	at java.desktop/java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:233)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.desktop/java.awt.WaitDispatchSupport.enter(WaitDispatchSupport.java:233)
+	at java.desktop/java.awt.Dialog.show(Dialog.java:1070)
+	at java.desktop/java.awt.Component.show(Component.java:1716)
+	at java.desktop/java.awt.Component.setVisible(Component.java:1663)
+	at java.desktop/java.awt.Window.setVisible(Window.java:1031)
+	at java.desktop/java.awt.Dialog.setVisible(Dialog.java:1005)
+	at br.ufrpe.vacinacao.gui.FrmPrincipal$4.actionPerformed(FrmPrincipal.java:118)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1967)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2308)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.AbstractButton.doClick(AbstractButton.java:369)
+	at java.desktop/javax.swing.plaf.basic.BasicMenuItemUI.doClick(BasicMenuItemUI.java:1020)
+	at java.desktop/javax.swing.plaf.basic.BasicMenuItemUI$Handler.mouseReleased(BasicMenuItemUI.java:1064)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6632)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3342)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6397)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2263)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5008)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4918)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4547)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4488)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2307)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2772)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2019-07-06 19:37:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES
+							L.[*]ID AS ""idLote"", L.NUMERO AS ""nomeLote""
+							UA.ID AS ""idUND"", UA.NOME AS ""nomeUND""
+					FROM ESTOQUE E 
+							INNER JOIN LOTE L ON E.LOTE= L.ID 
+							INNER JOIN UNIDADEATENDIMENTO UA ON E.UNIDADEATENDIMENTO= UA.ID "; SQL statement:
+SELECT e.id, e.quantidadeDoses
+							l.id AS "idLote", l.numero AS "nomeLote"
+							ua.id AS "idUND", ua.nome AS "nomeUND"
+					FROM Estoque e 
+							INNER JOIN Lote l ON e.lote= l.id 
+							INNER JOIN UnidadeAtendimento ua ON e.unidadeAtendimento= ua.id [42000-199]
+2019-07-06 19:37:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES,
+							L.ID AS ""idLote"", L.NUMERO AS ""nomeLote""
+							UA[*].ID AS ""idUND"", UA.NOME AS ""nomeUND""
+					FROM ESTOQUE E 
+							INNER JOIN LOTE L ON E.LOTE= L.ID 
+							INNER JOIN UNIDADEATENDIMENTO UA ON E.UNIDADEATENDIMENTO= UA.ID "; SQL statement:
+SELECT e.id, e.quantidadeDoses,
+							l.id AS "idLote", l.numero AS "nomeLote"
+							ua.id AS "idUND", ua.nome AS "nomeUND"
+					FROM Estoque e 
+							INNER JOIN Lote l ON e.lote= l.id 
+							INNER JOIN UnidadeAtendimento ua ON e.unidadeAtendimento= ua.id [42000-199]
+2019-07-06 19:46:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES, 
+							L.ID AS ""idLote"", L.NUMERO AS ""nomeLote""
+							UA[*].ID AS ""idUND"", UA.NOME AS ""nomeUND""
+					FROM ESTOQUE E 
+							INNER JOIN LOTE L ON E.LOTE= L.ID 
+							INNER JOIN UNIDADEATENDIMENTO UA ON E.UNIDADEATENDIMENTO= UA.ID "; SQL statement:
+SELECT e.id, e.quantidadeDoses, 
+							l.id AS "idLote", l.numero AS "nomeLote"
+							ua.id AS "idUND", ua.nome AS "nomeUND"
+					FROM Estoque e 
+							INNER JOIN Lote l ON e.lote= l.id 
+							INNER JOIN UnidadeAtendimento ua ON e.unidadeAtendimento= ua.id [42000-199]
+2019-07-06 19:47:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES, 
+							L.ID AS 'idLote'[*], L.NUMERO AS 'nomeLote'
+							UA.ID AS 'idUND', UA.NOME AS 'nomeUND'
+					FROM ESTOQUE E 
+							INNER JOIN LOTE L ON E.LOTE= L.ID 
+							INNER JOIN UNIDADEATENDIMENTO UA ON E.UNIDADEATENDIMENTO= UA.ID "; expected "identifier"; SQL statement:
+SELECT e.id, e.quantidadeDoses, 
+							l.id AS 'idLote', l.numero AS 'nomeLote'
+							ua.id AS 'idUND', ua.nome AS 'nomeUND'
+					FROM Estoque e 
+							INNER JOIN Lote l ON e.lote= l.id 
+							INNER JOIN UnidadeAtendimento ua ON e.unidadeAtendimento= ua.id [42001-199]
+2019-07-06 19:47:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES, 
+							L.ID , L.NUMERO 
+							UA.[*]ID, UA.NOME 
+					FROM ESTOQUE E 
+							INNER JOIN LOTE L ON E.LOTE= L.ID 
+							INNER JOIN UNIDADEATENDIMENTO UA ON E.UNIDADEATENDIMENTO= UA.ID "; SQL statement:
+SELECT e.id, e.quantidadeDoses, 
+							l.id , l.numero 
+							ua.id, ua.nome 
+					FROM Estoque e 
+							INNER JOIN Lote l ON e.lote= l.id 
+							INNER JOIN UnidadeAtendimento ua ON e.unidadeAtendimento= ua.id [42000-199]
+2019-07-06 19:48:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES, 
+							L.ID , L.NUMERO 
+							X.[*]ID, X.NOME 
+					FROM ESTOQUE E 
+							INNER JOIN LOTE L ON E.LOTE= L.ID 
+							INNER JOIN UNIDADEATENDIMENTO X ON E.UNIDADEATENDIMENTO= UA.ID "; SQL statement:
+SELECT e.id, e.quantidadeDoses, 
+							l.id , l.numero 
+							x.id, x.nome 
+					FROM Estoque e 
+							INNER JOIN Lote l ON e.lote= l.id 
+							INNER JOIN UnidadeAtendimento x ON e.unidadeAtendimento= ua.id [42000-199]
+2019-07-06 19:52:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "UA.ID" not found; SQL statement:
+SELECT e.id, e.quantidadeDoses, 
+							l.id , l.numero ,
+							x.id, x.nome 
+					FROM Estoque e 
+							INNER JOIN Lote l ON e.lote= l.id 
+							INNER JOIN UnidadeAtendimento x ON e.unidadeAtendimento= ua.id [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:176)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:158)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:207)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:133)
+	at org.h2.command.dml.Select.prepare(Select.java:1248)
+	at org.h2.command.Parser.prepareCommand(Parser.java:689)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:205)
+	at net.sourceforge.squirrel_sql.client.session.StatementWrapper.execute(StatementWrapper.java:168)
+	at net.sourceforge.squirrel_sql.client.session.SQLExecuterTask.processQuery(SQLExecuterTask.java:355)
+	at net.sourceforge.squirrel_sql.client.session.SQLExecuterTask.run(SQLExecuterTask.java:209)
+	at net.sourceforge.squirrel_sql.fw.util.TaskExecuter.run(TaskExecuter.java:82)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-07-06 20:03:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO PUBLIC.Estoque (UnidadeAtendimento, lote, quantidadeDoses) VALUES 
+ (1, 1, '2089RD', 30000, '2025-01-01', 205.93),
+ (1, 2, '3847NE', 15000, '2025-01-01', 2204.23),
+ (2, 2, '7818PED', 90000, '2025-01-01', 3231.24),
+ (1, 3, '20394EP', 10000, '2025-01-01', 2123.72) [21002-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:314)
+	at org.h2.command.Parser.prepareCommand(Parser.java:689)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:205)
+	at net.sourceforge.squirrel_sql.client.session.StatementWrapper.execute(StatementWrapper.java:168)
+	at net.sourceforge.squirrel_sql.client.session.SQLExecuterTask.processQuery(SQLExecuterTask.java:355)
+	at net.sourceforge.squirrel_sql.client.session.SQLExecuterTask.run(SQLExecuterTask.java:209)
+	at net.sourceforge.squirrel_sql.fw.util.TaskExecuter.run(TaskExecuter.java:82)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-07-06 20:12:29 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "UA.UNIDADEFEDERATIVA" not found; SQL statement:
+SELECT e.id, e.quantidadeDoses
+							,l.id , l.numero
+							,x.id, x.nome, v.nome
+					FROM Estoque e 
+							INNER JOIN Lote l ON e.lote= l.id 
+							INNER JOIN UnidadeAtendimento x ON e.unidadeAtendimento= x.id 
+							INNER JOIN Vacina v ON v.id= l.vacina
+					WHERE ua.unidadeFederativa= 'PE' [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:176)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:158)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:205)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:133)
+	at org.h2.command.dml.Select.prepare(Select.java:1248)
+	at org.h2.command.Parser.prepareCommand(Parser.java:689)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:205)
+	at net.sourceforge.squirrel_sql.client.session.StatementWrapper.execute(StatementWrapper.java:168)
+	at net.sourceforge.squirrel_sql.client.session.SQLExecuterTask.processQuery(SQLExecuterTask.java:355)
+	at net.sourceforge.squirrel_sql.client.session.SQLExecuterTask.run(SQLExecuterTask.java:209)
+	at net.sourceforge.squirrel_sql.fw.util.TaskExecuter.run(TaskExecuter.java:82)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-07-06 20:20:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO PUBLIC.Estoque (UnidadeAtendimento, lote, quantidadeDoses) VALUES 
+ (5, 3, 2, 100),
+ (6, 4, 2, 200),
+ (7, 5, 3, 200),
+ (8, 6, 2, 100),
+ (9, 6, 2, 200),
+ (10, 7, 3, 200) [21002-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:314)
+	at org.h2.command.Parser.prepareCommand(Parser.java:689)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:217)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:205)
+	at net.sourceforge.squirrel_sql.client.session.StatementWrapper.execute(StatementWrapper.java:168)
+	at net.sourceforge.squirrel_sql.client.session.SQLExecuterTask.processQuery(SQLExecuterTask.java:355)
+	at net.sourceforge.squirrel_sql.client.session.SQLExecuterTask.run(SQLExecuterTask.java:209)
+	at net.sourceforge.squirrel_sql.fw.util.TaskExecuter.run(TaskExecuter.java:82)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2019-07-06 20:24:35 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "UA.UNIDADEFEDERATIVA" not found; SQL statement:
+SELECT e.id, e.quantidadeDoses, 		l.id AS "idLote", l.numero AS "nomeLote", 		unidAtend.id AS "idUND", unidAtend.nome AS "nomeUND"	FROM Estoque e 		INNER JOIN Lote l ON e.lote= l.id 		INNER JOIN UnidadeAtendimento unidAtend ON e.unidadeAtendimento= unidAtend.id WHERE ua.unidadeFederativa= ?  [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.expression.ExpressionColumn.getColumnException(ExpressionColumn.java:176)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:158)
+	at org.h2.expression.condition.Comparison.optimize(Comparison.java:205)
+	at org.h2.expression.condition.ConditionAndOr.optimize(ConditionAndOr.java:133)
+	at org.h2.command.dml.Select.prepare(Select.java:1248)
+	at org.h2.command.Parser.prepareCommand(Parser.java:689)
+	at org.h2.engine.Session.prepareLocal(Session.java:627)
+	at org.h2.engine.Session.prepareCommand(Session.java:565)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1292)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:77)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:349)
+	at br.ufrpe.vacinacao.repositorio.EstoqueDAO.list(EstoqueDAO.java:28)
+	at br.ufrpe.vacinacao.negocio.controlador.EstoqueControl.list(EstoqueControl.java:26)
+	at br.ufrpe.vacinacao.negocio.controlador.EstoqueControl$$EnhancerByCGLIB$$9ccd99b1.CGLIB$list$0$0(<generated>)
+	at br.ufrpe.vacinacao.negocio.controlador.EstoqueControl$$EnhancerByCGLIB$$9ccd99b1$$FastClassByCGLIB$$fc65ee35.invoke(<generated>)
+	at net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:167)
+	at br.ufrpe.framework.transaction.TransactionProxy.intercept(TransactionProxy.java:40)
+	at br.ufrpe.vacinacao.negocio.controlador.EstoqueControl$$EnhancerByCGLIB$$9ccd99b1.list(<generated>)
+	at br.ufrpe.vacinacao.gui.relatorioEstoque.FrmRelatorioEstoque$1.actionPerformed(FrmRelatorioEstoque.java:83)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1967)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2308)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6632)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3342)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6397)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2263)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5008)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4918)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4547)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4488)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2307)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2772)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:117)
+	at java.desktop/java.awt.WaitDispatchSupport$2.run(WaitDispatchSupport.java:190)
+	at java.desktop/java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:235)
+	at java.desktop/java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:233)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.desktop/java.awt.WaitDispatchSupport.enter(WaitDispatchSupport.java:233)
+	at java.desktop/java.awt.Dialog.show(Dialog.java:1070)
+	at java.desktop/java.awt.Component.show(Component.java:1716)
+	at java.desktop/java.awt.Component.setVisible(Component.java:1663)
+	at java.desktop/java.awt.Window.setVisible(Window.java:1031)
+	at java.desktop/java.awt.Dialog.setVisible(Dialog.java:1005)
+	at br.ufrpe.vacinacao.gui.FrmPrincipal$4.actionPerformed(FrmPrincipal.java:119)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1967)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2308)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.AbstractButton.doClick(AbstractButton.java:369)
+	at java.desktop/javax.swing.plaf.basic.BasicMenuItemUI.doClick(BasicMenuItemUI.java:1020)
+	at java.desktop/javax.swing.plaf.basic.BasicMenuItemUI$Handler.mouseReleased(BasicMenuItemUI.java:1064)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6632)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3342)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6397)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2263)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5008)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4918)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4547)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4488)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2307)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2772)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2019-07-06 20:26:42 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "numeroLote" not found [42122-199]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:451)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:427)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3188)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3287)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:314)
+	at br.ufrpe.vacinacao.repositorio.EstoqueDAO.carregarEntity(EstoqueDAO.java:172)
+	at br.ufrpe.vacinacao.repositorio.EstoqueDAO.list(EstoqueDAO.java:40)
+	at br.ufrpe.vacinacao.negocio.controlador.EstoqueControl.list(EstoqueControl.java:26)
+	at br.ufrpe.vacinacao.negocio.controlador.EstoqueControl$$EnhancerByCGLIB$$9ccd99b1.CGLIB$list$0$0(<generated>)
+	at br.ufrpe.vacinacao.negocio.controlador.EstoqueControl$$EnhancerByCGLIB$$9ccd99b1$$FastClassByCGLIB$$fc65ee35.invoke(<generated>)
+	at net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:167)
+	at br.ufrpe.framework.transaction.TransactionProxy.intercept(TransactionProxy.java:40)
+	at br.ufrpe.vacinacao.negocio.controlador.EstoqueControl$$EnhancerByCGLIB$$9ccd99b1.list(<generated>)
+	at br.ufrpe.vacinacao.gui.relatorioEstoque.FrmRelatorioEstoque$1.actionPerformed(FrmRelatorioEstoque.java:83)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1967)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2308)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:279)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6632)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3342)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6397)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2263)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5008)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4918)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4547)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4488)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2307)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2772)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:117)
+	at java.desktop/java.awt.WaitDispatchSupport$2.run(WaitDispatchSupport.java:190)
+	at java.desktop/java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:235)
+	at java.desktop/java.awt.WaitDispatchSupport$4.run(WaitDispatchSupport.java:233)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.desktop/java.awt.WaitDispatchSupport.enter(WaitDispatchSupport.java:233)
+	at java.desktop/java.awt.Dialog.show(Dialog.java:1070)
+	at java.desktop/java.awt.Component.show(Component.java:1716)
+	at java.desktop/java.awt.Component.setVisible(Component.java:1663)
+	at java.desktop/java.awt.Window.setVisible(Window.java:1031)
+	at java.desktop/java.awt.Dialog.setVisible(Dialog.java:1005)
+	at br.ufrpe.vacinacao.gui.FrmPrincipal$4.actionPerformed(FrmPrincipal.java:119)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1967)
+	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2308)
+	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)
+	at java.desktop/javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:262)
+	at java.desktop/javax.swing.AbstractButton.doClick(AbstractButton.java:369)
+	at java.desktop/javax.swing.plaf.basic.BasicMenuItemUI.doClick(BasicMenuItemUI.java:1020)
+	at java.desktop/javax.swing.plaf.basic.BasicMenuItemUI$Handler.mouseReleased(BasicMenuItemUI.java:1064)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6632)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3342)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6397)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2263)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5008)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4918)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4547)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4488)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2307)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2772)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4840)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:772)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:745)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:743)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:742)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2019-07-06 21:45:28 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT E.ID, E.QUANTIDADEDOSES, 		L.ID AS ""idLote"", L.NUMERO AS ""numeroLote"", 		UNIDATEND.ID AS ""idUND"", UNIDATEND.NOME AS ""nomeUND"", 		V.ID AS ""idVac"", V.NOME AS ""nomeVac"", FROM ESTOQUE E 		INNER JOIN LOTE L ON E.LOTE= L.ID 		INNER JOIN UNIDADEATENDIMENTO UNIDATEND ON E.UNIDADEATENDIMENTO= UNIDATEND.ID 		INNER JOIN VACINA V ON V.ID= L.VACINA WHERE[*] UNIDATEND.UNIDADEFEDERATIVA= ?  "; expected "(, ., [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, ILIKE, REGEXP, IS, IN, BETWEEN, AND, OR, RIGHT, LEFT, FULL, INNER, JOIN, CROSS, NATURAL, ,, SELECT"; SQL statement:
+SELECT e.id, e.quantidadeDoses, 		l.id AS "idLote", l.numero AS "numeroLote", 		unidAtend.id AS "idUND", unidAtend.nome AS "nomeUND", 		v.id AS "idVac", v.nome AS "nomeVac", FROM Estoque e 		INNER JOIN Lote l ON e.lote= l.id 		INNER JOIN UnidadeAtendimento unidAtend ON e.unidadeAtendimento= unidAtend.id 		INNER JOIN Vacina v ON v.id= l.vacina WHERE unidAtend.unidadeFederativa= ?  [42001-199]

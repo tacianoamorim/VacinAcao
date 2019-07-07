@@ -23,7 +23,7 @@ public class VacinaDAO {
 			connection = (Connection) transactionManager.getConnection();
 			
 			sql.append("INSERT INTO PUBLIC.VACINA (NOME, PRESCRICAO) ");
-			sql.append("VALUES(?, ?) ");
+			sql.append("VALUE (?, ?) ");
 
 			preStmt= connection.prepareStatement(sql.toString());
 			preStmt.setString(1, vacina.getNome());
@@ -102,7 +102,7 @@ public class VacinaDAO {
 		try {
 			connection = (Connection) transactionManager.getConnection();
 			
-			sql.append("UPDADE PUBLIC.VACINA SET NOME= ?, PRESCRICAO= ? ");
+			sql.append("UPDATE PUBLIC.VACINA SET NOME= ?, PRESCRICAO= ? ");
 			sql.append("WHERE ID= ? ");
 
 			preStmt= connection.prepareStatement(sql.toString());

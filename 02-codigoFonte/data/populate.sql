@@ -1,4 +1,4 @@
-INSERT INTO PUBLIC.LABORATORIO (Nome) VALUES  
+INSERT INTO PUBLIC.Laboratorio (Nome) VALUES  
  ('NEO QUIMICA'),
  ('EMS SA'),
  ('LAFEPE'),
@@ -6,27 +6,27 @@ INSERT INTO PUBLIC.LABORATORIO (Nome) VALUES
  ('Ache'),
  ('Ultrapharma');
 
-INSERT INTO Vacina (nome, prescricao) VALUES 
+INSERT INTO PUBLIC.Vacina (nome, prescricao) VALUES 
  ('Sarampo', 'Sarampo prescricao'),
  ('HN1', 'HN1 prescricao'),
  ('Tripiceviral', 'Tripiceviral prescricao');
 
- INSERT INTO Lote (vacina, laboratorio, numero, quantidadeDose, dataVencimento, valor) VALUES 
+INSERT INTO PUBLIC.Lote (vacina, laboratorio, numero, quantidadeDose, dataVencimento, valor) VALUES 
  (1, 1, '2089RD', 30000, '2025-01-01', 205.93),
  (1, 2, '3847NE', 15000, '2025-01-01', 2204.23),
  (2, 2, '7818PED', 90000, '2025-01-01', 3231.24),
  (1, 3, '20394EP', 10000, '2025-01-01', 2123.72);
 
 INSERT INTO PUBLIC.UnidadeFederativa (Sigla, Nome) VALUES 
-('PE', 'Pernambuco'),
-('SE', 'Sergipe'),
-('SP', 'São Paulo'),
-('BA', 'Bahia'),
-('RJ', 'Rio de Janeiro'),
-('MG', 'Minas Gerais'),
-('DF', 'Distrito Federal');
+ ('PE', 'Pernambuco'),
+ ('SE', 'Sergipe'),
+ ('SP', 'São Paulo'),
+ ('BA', 'Bahia'),
+ ('RJ', 'Rio de Janeiro'),
+ ('MG', 'Minas Gerais'),
+ ('DF', 'Distrito Federal');
 
-INSERT INTO PUBLIC.UNIDADEATENDIMENTO (unidadeFederativa, Nome, endereco) VALUES 
+INSERT INTO PUBLIC.UnidadeAtendimento (unidadeFederativa, Nome, endereco) VALUES 
  ('PE', 'UPA Sao Jose', 'Rua 01, 44'),
  ('PE', 'UPA Carlos correia', 'Rua 37, 42'),
  ('SP', 'UPA Pedro Lins', 'Rua mais de um 4445'),
@@ -37,6 +37,18 @@ INSERT INTO PUBLIC.UNIDADEATENDIMENTO (unidadeFederativa, Nome, endereco) VALUES
  ('PE', 'UPA Caxanga', 'Rua ultima, 130'),
  ('RJ', 'UPA Castro', 'Rua do castro, 30');
 
+INSERT INTO PUBLIC.Estoque (id, unidadeAtendimento, lote, quantidadeDoses) VALUES 
+ (1, 1, 1, 100),
+ (2, 1, 2, 100),
+ (3, 2, 2, 200),
+ (4, 1, 3, 200),
+ (5, 3, 2, 100),
+ (6, 4, 2, 200),
+ (7, 5, 3, 200),
+ (8, 6, 2, 100),
+ (9, 6, 2, 200),
+ (10, 7, 3, 200);
+ 
 INSERT INTO PUBLIC.Usuario (numeroSUS, Nome, endereco, sexo, dataNascimento, senha) VALUES
  ('2468', 'Marcos Alencar Junior', 'Rua 01, 39', 'M', '1980-01-01', '246'),
  ('1357', 'Maria da Silva', 'Rua 02, 39', 'F', '1990-01-01', '135');
@@ -44,4 +56,5 @@ INSERT INTO PUBLIC.Usuario (numeroSUS, Nome, endereco, sexo, dataNascimento, sen
 INSERT INTO PUBLIC.Servidor (matricula, UnidadeAtendimento, Nome, senha) VALUES
  ('2468', 1, 'Mario Henrique', '246'),
  ('1357', 2, 'Carla Jose', '135');
+ 
  

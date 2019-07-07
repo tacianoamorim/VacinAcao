@@ -12,6 +12,7 @@ import br.ufrpe.framework.transaction.TransactionManager;
 import br.ufrpe.vacinacao.negocio.entidade.Estoque;
 import br.ufrpe.vacinacao.negocio.entidade.Lote;
 import br.ufrpe.vacinacao.negocio.entidade.UnidadeAtendimento;
+import br.ufrpe.vacinacao.negocio.entidade.Vacina;
 
 public class EstoqueDAO {
 
@@ -27,12 +28,14 @@ public class EstoqueDAO {
 			if (uf != null) {
 				preStmt = connection.prepareStatement(
 					"SELECT e.id, e.quantidadeDoses, "
-					+ "		l.id AS 'idLote', l.nome AS 'nomeLote',"
-					+ "		ua.id AS 'idUND', ua.nome AS 'nomeUND'	"
+					+ "		l.id AS \"idLote\", l.numero AS \"numeroLote\", "
+					+ "		unidAtend.id AS \"idUND\", unidAtend.nome AS \"nomeUND\", "
+					+ "		v.id AS \"idVac\", v.nome AS \"nomeVac\" "
 					+ "FROM Estoque e "
 					+ "		INNER JOIN Lote l ON e.lote= l.id "
-					+ "		INNER JOIN UnidadeAtendimento ua ON e.unidadeAtendimento= ua.id "
-					+ "WHERE ua.unidadeFederativa= ? ");
+					+ "		INNER JOIN UnidadeAtendimento unidAtend ON e.unidadeAtendimento= unidAtend.id "
+					+ "		INNER JOIN Vacina v ON v.id= l.vacina "					
+					+ "WHERE unidAtend.unidadeFederativa= ? ");
 				preStmt.setString(1, uf);
 				rs = preStmt.executeQuery();
 	
@@ -62,11 +65,13 @@ public class EstoqueDAO {
 			connection = (Connection) transactionManager.getConnection();
 			preStmt = connection.prepareStatement(
 					"SELECT e.id, e.quantidadeDoses, "
-					+ "		l.id AS 'idLote', l.nome AS 'nomeLote',"
-					+ "		ua.id AS 'idUND', ua.nome AS 'nomeUND'	"
+					+ "		l.id AS \"idLote\", l.numero AS \"numeroLote\", "
+					+ "		unidAtend.id AS \"idUND\", unidAtend.nome AS \"nomeUND\", "
+					+ "		v.id AS \"idVac\", v.nome AS \"nomeVac\", "
 					+ "FROM Estoque e "
 					+ "		INNER JOIN Lote l ON e.lote= l.id "
-					+ "		INNER JOIN UnidadeAtendimento ua ON e.unidadeAtendimento= ua.id "
+					+ "		INNER JOIN UnidadeAtendimento unidAtend ON e.unidadeAtendimento= unidAtend.id "
+					+ "		INNER JOIN Vacina v ON v.id= l.vacina "	
 					+ "WHERE e.id= ? ");
 			preStmt.setInt(1, id);
 			rs = preStmt.executeQuery();
@@ -170,6 +175,11 @@ public class EstoqueDAO {
 		Lote lote= new Lote();
 		lote.setId(rs.getInt("idLote"));
 		lote.setNumero(rs.getString("numeroLote"));
+
+		Vacina vacina= new Vacina();
+		vacina.setId(rs.getInt("idVac"));
+		vacina.setNome(rs.getString("nomeVac"));
+		lote.setVacina(vacina);
 		entity.setLote(lote);
 
 		UnidadeAtendimento unidadeAtendimento= new UnidadeAtendimento();

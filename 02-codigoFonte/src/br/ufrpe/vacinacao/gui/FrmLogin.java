@@ -102,11 +102,11 @@ public class FrmLogin extends JDialog {
 		
 		rdbtnServidor = new JRadioButton("Servidor");
 		rdbtnServidor.setBackground(Color.WHITE);
+		rdbtnServidor.setSelected(true);
 		rdbtnServidor.setBounds(121, 58, 113, 23);
 		contentPanel.add(rdbtnServidor);
 		
 		rdbtnUsuario = new JRadioButton("Usu\u00E1rio");
-		rdbtnUsuario.setSelected(true);
 		rdbtnUsuario.setBackground(Color.WHITE);
 		rdbtnUsuario.setBounds(250, 58, 89, 23);
 		
