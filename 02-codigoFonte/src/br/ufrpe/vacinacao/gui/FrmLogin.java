@@ -173,7 +173,7 @@ public class FrmLogin extends JDialog {
 				getRootPane().setDefaultButton(okButton);
 			}
 			{
-				JButton cancelButton = new JButton("Cancel");
+				JButton cancelButton = new JButton("Fechar");
 				cancelButton.setForeground(new Color(255, 0, 0));
 				cancelButton.setBackground(new Color(255, 255, 255));
 				cancelButton.addActionListener(new ActionListener() {
