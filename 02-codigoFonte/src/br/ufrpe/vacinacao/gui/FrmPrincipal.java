@@ -1,6 +1,7 @@
 package br.ufrpe.vacinacao.gui;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -13,10 +14,10 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
+import br.ufrpe.vacinacao.gui.campanha.FrmCadastroCampanha;
 import br.ufrpe.vacinacao.gui.distribuirVacina.FrmDistribuirVacina;
 import br.ufrpe.vacinacao.gui.relatorioEstoque.FrmRelatorioEstoque;
 import br.ufrpe.vacinacao.gui.vacina.FrmVacina;
-import java.awt.Font;
 
 public class FrmPrincipal {
 
@@ -75,6 +76,15 @@ public class FrmPrincipal {
 	    	}
 	    });
 	    mmCadastro.add(mntCadastroVacina);
+	    
+	    JMenuItem mntCadastroCampanha = new JMenuItem("Campanha");
+	    mntCadastroCampanha.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent arg0) {
+	    		FrmCadastroCampanha window= new FrmCadastroCampanha();
+	    		//window.setVisible(true);
+	    	}
+	    });
+	    mmCadastro.add(mntCadastroCampanha);	    
 	    
 	    JMenuItem mntCadastroLoteVacina = new JMenuItem("Lote de vacina");
 	    mntCadastroLoteVacina.addActionListener(new ActionListener() {

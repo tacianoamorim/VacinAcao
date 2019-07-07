@@ -24,9 +24,9 @@ public class VacinaControl {
 	
 	public void salvar(Vacina vacina) {
 		if (vacina.getId() > 0)
-			repositorio.insert(vacina);
-		else
 			repositorio.update(vacina);
+		else
+			repositorio.insert(vacina);
 	}
 	
 	public List<Vacina> list(Vacina filtro) {

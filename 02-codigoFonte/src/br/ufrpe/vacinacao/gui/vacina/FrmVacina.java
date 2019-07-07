@@ -140,6 +140,11 @@ public class FrmVacina extends JDialog {
 							 * CARREGAR DADOS
 							 */
 							Vacina vacina= new Vacina();
+							
+							if ( txtId.getText().length() > 0 ) {
+								vacina.setId(  Integer.parseInt(txtId.getText()));
+							}
+							
 							vacina.setNome(txtNome.getText());
 							vacina.setPrescricao(txtPrescricao.getText());
 							

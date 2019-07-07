@@ -65,7 +65,7 @@ CREATE INDEX FK_LOTEUNIDADEFEDERATIVA_LOTE ON LoteUnidadeFederativa (lote);
 CREATE INDEX FK_LOTEUNIDADEFEDERATIVA_UNIDADEFEDERATIVA ON LoteUnidadeFederativa (unidadeFederativa);
 
 CREATE TABLE Estoque (
-  id                             INTEGER UNSIGNED NOT NULL
+  id                             INTEGER UNSIGNED AUTO_INCREMENT NOT NULL
  ,unidadeAtendimento             INTEGER UNSIGNED NOT NULL
  ,lote                           INTEGER UNSIGNED NOT NULL
  ,quantidadeDoses                INTEGER UNSIGNED NOT NULL
@@ -92,7 +92,7 @@ CREATE TABLE Campanha (
 CREATE INDEX FK_CAMPANHA_VACINA ON Campanha (vacina);
 
 CREATE TABLE Servidor (
-  matricula                      INTEGER UNSIGNED AUTO_INCREMENT NOT NULL
+  matricula                      INTEGER UNSIGNED NOT NULL
  ,unidadeAtendimento             INTEGER UNSIGNED NOT NULL
  ,nome                           VARCHAR(100) NOT NULL
  ,senha                          VARCHAR(512) NOT NULL

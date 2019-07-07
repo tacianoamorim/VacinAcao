@@ -37,17 +37,17 @@ INSERT INTO PUBLIC.UnidadeAtendimento (unidadeFederativa, Nome, endereco) VALUES
  ('PE', 'UPA Caxanga', 'Rua ultima, 130'),
  ('RJ', 'UPA Castro', 'Rua do castro, 30');
 
-INSERT INTO PUBLIC.Estoque (id, unidadeAtendimento, lote, quantidadeDoses) VALUES 
- (1, 1, 1, 100),
- (2, 1, 2, 100),
- (3, 2, 2, 200),
- (4, 1, 3, 200),
- (5, 3, 2, 100),
- (6, 4, 2, 200),
- (7, 5, 3, 200),
- (8, 6, 2, 100),
- (9, 6, 2, 200),
- (10, 7, 3, 200);
+INSERT INTO PUBLIC.Estoque (unidadeAtendimento, lote, quantidadeDoses) VALUES 
+ (1, 1, 100),
+ (1, 2, 100),
+ (2, 2, 200),
+ (1, 3, 200),
+ (3, 2, 100),
+ (4, 2, 200),
+ (5, 3, 200),
+ (6, 2, 100),
+ (6, 2, 200),
+ (7, 3, 200);
  
 INSERT INTO PUBLIC.Usuario (numeroSUS, Nome, endereco, sexo, dataNascimento, senha) VALUES
  ('2468', 'Marcos Alencar Junior', 'Rua 01, 39', 'M', '1980-01-01', '246'),
