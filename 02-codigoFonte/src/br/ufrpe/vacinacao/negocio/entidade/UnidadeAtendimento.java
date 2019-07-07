@@ -2,7 +2,7 @@ package br.ufrpe.vacinacao.negocio.entidade;
 
 public class UnidadeAtendimento {
 	private int id;
-	private UnidadeFederativa uf;
+	private UnidadeFederativa unidadeFederativa;
 	private String nome;
 	private String endereco;
 
@@ -14,12 +14,12 @@ public class UnidadeAtendimento {
 		this.id = id;
 	}
 
-	public UnidadeFederativa getUf() {
-		return uf;
+	public UnidadeFederativa getUnidadeFederativa() {
+		return unidadeFederativa;
 	}
 
-	public void setUf(UnidadeFederativa uf) {
-		this.uf = uf;
+	public void setUnidadeFederativa(UnidadeFederativa unidadeFederativa) {
+		this.unidadeFederativa = unidadeFederativa;
 	}
 
 	public String getNome() {
@@ -37,5 +37,12 @@ public class UnidadeAtendimento {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
+
+	@Override
+	public String toString() {
+		return  id + "- " + nome;
+	}
+	
+	
 
 }

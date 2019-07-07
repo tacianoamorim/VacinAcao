@@ -4,6 +4,7 @@ public class Servidor {
 	private int matricula;
 	private String nome;
 	private String senha;
+	private UnidadeAtendimento unidadeAtendimento;
 
 	public int getMatricula() {
 		return matricula;
@@ -27,6 +28,14 @@ public class Servidor {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public UnidadeAtendimento getUnidadeAtendimento() {
+		return unidadeAtendimento;
+	}
+
+	public void setUnidadeAtendimento(UnidadeAtendimento unidadeAtendimento) {
+		this.unidadeAtendimento = unidadeAtendimento;
 	}
 
 }

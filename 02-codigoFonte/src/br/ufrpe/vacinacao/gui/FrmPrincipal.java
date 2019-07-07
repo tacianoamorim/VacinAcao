@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -12,10 +13,10 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
+import br.ufrpe.vacinacao.gui.distribuirVacina.FrmDistribuirVacina;
+import br.ufrpe.vacinacao.gui.relatorioEstoque.FrmRelatorioEstoque;
 import br.ufrpe.vacinacao.gui.vacina.FrmVacina;
-
-import javax.swing.JButton;
-import javax.swing.ImageIcon;
+import java.awt.Font;
 
 public class FrmPrincipal {
 
@@ -41,7 +42,7 @@ public class FrmPrincipal {
 		window.getContentPane().setLayout(new BoxLayout(window.getContentPane(), BoxLayout.X_AXIS));
 		
 		Color background= new Color(60, 179, 113);
-		if ( FrmLogin.usuarioLogado ) {
+		if ( FrmLogin.usuarioLogado != null ) {
 			background= Color.WHITE;
 		}
 		
@@ -98,8 +99,8 @@ public class FrmPrincipal {
 	    JMenuItem mntGerenciamentoDistribuicaoVacina = new JMenuItem("Distribui\u00E7\u00E3o Estadual de vacinas");
 	    mntGerenciamentoDistribuicaoVacina.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent arg0) {
-//	    		FrmTipoIIDocumento window=new FrmTipoIIDocumento();
-//	    		window.setVisible(true);
+	    		FrmDistribuirVacina window= new FrmDistribuirVacina();
+	    		window.setVisible(true);
 	    	}
 	    });
 	    mmGerenciamentoEstadual.add(mntGerenciamentoDistribuicaoVacina);
@@ -114,7 +115,8 @@ public class FrmPrincipal {
 	    JMenuItem mntRelatorioEstoque = new JMenuItem("Estoque Estadual");
 	    mntRelatorioEstoque.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent arg0) {
-
+	    		FrmRelatorioEstoque window= new FrmRelatorioEstoque();
+	    		window.setVisible(true);
 	    	}
 	    });
 	    mmRelatorio.add(mntRelatorioEstoque);
@@ -122,7 +124,9 @@ public class FrmPrincipal {
 	    /**
 	     * MENU SAIR
 	     */	  
-	    JButton mnFechar = new JButton("");
+	    JButton mnFechar = new JButton("Fechar");
+	    mnFechar.setFont(mnFechar.getFont().deriveFont(mnFechar.getFont().getStyle() | Font.BOLD));
+	    mnFechar.setForeground(new Color(0, 128, 0));
 	    mnFechar.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    		FrmLogin windowLogin= new FrmLogin();
@@ -131,12 +135,12 @@ public class FrmPrincipal {
 	    	}
 	    });
 	    mnFechar.setBackground(Color.WHITE);
-	    mnFechar.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/com/sun/javafx/scene/control/skin/caspian/dialog-error.png")));
+//	    mnFechar.setIcon(new ImageIcon(FrmPrincipal.class.getResource("/com/sun/javafx/scene/control/skin/caspian/dialog-error.png")));
 	    mnFechar.setBounds(356, 11, 48, 48);
 	    menuBar.add(mnFechar);
 	    
 	    // DESABILITA AS OPCOES GERENCIAIS
-	    if ( FrmLogin.usuarioLogado ) {
+	    if ( FrmLogin.usuarioLogado != null ) {
 	    	mmCadastro.setVisible(false);
 	    	mmRelatorio.setVisible(false);
 	    	mmGerenciamentoEstadual.setVisible(false);

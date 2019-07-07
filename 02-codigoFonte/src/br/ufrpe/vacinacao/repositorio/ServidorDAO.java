@@ -8,6 +8,8 @@ import java.sql.SQLException;
 import br.ufrpe.framework.transaction.SystemException;
 import br.ufrpe.framework.transaction.TransactionManager;
 import br.ufrpe.vacinacao.negocio.entidade.Servidor;
+import br.ufrpe.vacinacao.negocio.entidade.UnidadeAtendimento;
+import br.ufrpe.vacinacao.negocio.entidade.UnidadeFederativa;
 
 public class ServidorDAO {
 
@@ -17,10 +19,17 @@ public class ServidorDAO {
 		ResultSet rs = null;
 		TransactionManager transactionManager = TransactionManager.getInstance();
 		Servidor servidor= null;
+		StringBuilder sql= new StringBuilder();
 
 		try {
 			connection = (Connection) transactionManager.getConnection();
-			preStmt = connection.prepareStatement("SELECT matricula, nome, senha FROM SERVIDOR WHERE matricula= ? ");
+			sql.append("SELECT s.matricula, s.nome, s.senha "
+					+ "	ua.id AS 'idUA', uf.sigla "
+					+ "FROM SERVIDOR s "
+					+ "	INNER JOIN UNIDADEATENDIMENTO ua ON ua.id= s.unidadeAtendimento "
+					+ " INNER JOIN UNIDADEFEDERATIVA uf ON uf.sigla= ua.unidadeFederativa "
+					+ "WHERE matricula= ?");
+			preStmt = connection.prepareStatement(sql.toString());
 			preStmt.setInt(1, id);
 			
 			rs = preStmt.executeQuery();
@@ -31,7 +40,7 @@ public class ServidorDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new SystemException("\n " + e.getMessage() + " - Código: "
+			throw new SystemException("\n " + e.getMessage() + " - Codigo: "
 					+ e.getErrorCode());
 		} finally {
 			transactionManager.closeConnection(connection);
@@ -44,6 +53,16 @@ public class ServidorDAO {
 		servidor.setMatricula(rs.getInt("matricula"));
 		servidor.setNome(rs.getString("nome"));
 		servidor.setSenha(rs.getString("senha"));
+		
+		UnidadeFederativa unidadeFederativa= new UnidadeFederativa();
+		unidadeFederativa.setSigla(rs.getString("sigla"));
+		
+		UnidadeAtendimento unidadeAtendimento= new UnidadeAtendimento();
+		unidadeAtendimento.setId(rs.getInt("id"));
+		unidadeAtendimento.setUnidadeFederativa(unidadeFederativa);
+		
+		servidor.setUnidadeAtendimento(unidadeAtendimento);
+		
 		return servidor;
 	}
 	
@@ -60,7 +79,12 @@ public class ServidorDAO {
 			
 			if (filtro != null) {
 			
-				sql.append("SELECT matricula, nome, senha FROM SERVIDOR WHERE 0= 0 ");
+				sql.append("SELECT s.matricula, s.nome, s.senha, "
+						+ "	ua.id, uf.sigla "
+						+ "FROM SERVIDOR s "
+						+ "	INNER JOIN UNIDADEATENDIMENTO ua ON ua.id= s.unidadeAtendimento "
+						+ " INNER JOIN UNIDADEFEDERATIVA uf ON uf.sigla= ua.unidadeFederativa "
+						+ "WHERE 0= 0 ");
 				if ( filtro.getNome() != null )
 					sql.append("AND nome like '%?%'");
 				
@@ -79,7 +103,7 @@ public class ServidorDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new SystemException("\n " + e.getMessage() + " - Código: "
+			throw new SystemException("\n " + e.getMessage() + " - Cï¿½digo: "
 					+ e.getErrorCode());
 		} finally {
 			transactionManager.closeConnection(connection);

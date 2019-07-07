@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 5.0.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioEstoque" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4144a9ee-054a-492f-ab5d-b2a697d4c985">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="quantidadeDoses" class="java.lang.Integer"/>
+	<field name="unidadeAtendimento.nome" class="java.lang.String"/>
+	<field name="lote.vacina.nome" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="81" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="15" width="550" height="24" uuid="94647473-230b-4a06-8326-4224e750871e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de Estoque]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="42" width="550" height="24" uuid="7b0a4944-9480-4829-a81e-a72801790bfb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[( Por Unidade de Atendimento )]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Transparent" x="1" y="1" width="545" height="31" uuid="6d3b0e2e-ac3c-4345-87b1-39a68348e8b6">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="7" y="8" width="157" height="20" uuid="908cb900-8647-483e-b604-e90ce9c5cc6c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f65c9ed4-ec20-446c-b3af-3657015e331c"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Unidade atendimento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="8" width="100" height="20" uuid="7ca80448-00f6-45a4-a787-7c74a4808b96">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="104979de-185e-4498-808c-1790686668a6"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Vacina]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="412" y="8" width="100" height="20" uuid="b5ec7a3b-7192-49fe-8ff5-024132a9daac">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="49886790-fedf-4574-bf45-d5be0d8633df"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Qtde de doses]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="5" y="2" width="175" height="20" uuid="9d0d568b-bf51-402e-91d6-92b3c1e0b03c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f65c9ed4-ec20-446c-b3af-3657015e331c"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{unidadeAtendimento.nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="2" width="200" height="20" uuid="a393304f-c595-4ee8-8dbf-9a6510572cc1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="104979de-185e-4498-808c-1790686668a6"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{lote.vacina.nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="2" width="100" height="20" uuid="8cc394a8-6637-4adf-aebb-ffe14089fcd6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="49886790-fedf-4574-bf45-d5be0d8633df"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{quantidadeDoses}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
