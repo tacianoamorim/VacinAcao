@@ -1,4 +1,4 @@
-package br.ufrpe.vacinacao.gui.vacina;
+package br.ufrpe.vacinacao.gui.lote;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -8,25 +8,29 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.List;
+import java.text.ParseException;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.MaskFormatter;
 
 import br.ufrpe.vacinacao.negocio.controlador.VacinaControl;
+import br.ufrpe.vacinacao.negocio.entidade.Lote;
 import br.ufrpe.vacinacao.negocio.entidade.Vacina;
 import br.ufrpe.vacinacao.util.Utils;
+import javax.swing.JComboBox;
 
-public class FrmVacina extends JDialog {
+
+public class FrmLote extends JDialog {
 
 	/**
 	 * serialVersionUID
@@ -36,16 +40,18 @@ public class FrmVacina extends JDialog {
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtId;
 	private JTable tbLista;
-	private FrmVacinaTableModel tableModel;
+	private FrmLoteTableModel jTableModel;
 	private JTextField txtNome;
-	private JTextArea txtPrescricao;
+	private JTextField textField;
+	private JFormattedTextField txtDataValidade;
+	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
 		try {
-			FrmVacina dialog = new FrmVacina();
+			FrmLote dialog = new FrmLote();
 			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 			dialog.setVisible(true);
 		} catch (Exception e) {
@@ -55,11 +61,12 @@ public class FrmVacina extends JDialog {
 
 	/**
 	 * Create the dialog.
+	 * @throws ParseException 
 	 */
-	public FrmVacina() {
+	public FrmLote() throws ParseException {
 		setTitle("Cadastro de vacina");
 		setModal(true);
-		setBounds(100, 100, 652, 421);
+		setBounds(100, 100, 652, 370);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -70,13 +77,13 @@ public class FrmVacina extends JDialog {
 		contentPanel.add(pnLista);
 		pnLista.setLayout(new BoxLayout(pnLista, BoxLayout.X_AXIS));	
 		
-		tableModel = new FrmVacinaTableModel();
+		jTableModel = new FrmLoteTableModel();
 		
-		tbLista = new JTable(tableModel);
+		tbLista = new JTable(jTableModel);
 		formatarTabela(tbLista);	
 		tbLista.addMouseListener(new MouseListener() {
             public void mouseClicked(MouseEvent e) {
-                Vacina entity= tableModel.get(tbLista.getSelectedRow());
+                Lote entity= jTableModel.get(tbLista.getSelectedRow());
                 limpar();
 	            carregarDados(entity);
             }
@@ -107,22 +114,58 @@ public class FrmVacina extends JDialog {
 		contentPanel.add(txtId);
 		txtId.setColumns(10);
 		
-		JLabel lblUnidadeAtendimento = new JLabel("Nome:");
-		lblUnidadeAtendimento.setBounds(130, 173, 182, 14);
+		JLabel lblUnidadeAtendimento = new JLabel("Número:");
+		lblUnidadeAtendimento.setBounds(130, 173, 129, 14);
 		contentPanel.add(lblUnidadeAtendimento);
 		
-		JLabel lblNewLabel_2 = new JLabel("Prescri\u00E7\u00E3o:");
-		lblNewLabel_2.setBounds(20, 228, 204, 14);
+		JLabel lblNewLabel_2 = new JLabel("Vacina:");
+		lblNewLabel_2.setBounds(436, 173, 175, 14);
 		contentPanel.add(lblNewLabel_2);
 		
-		txtPrescricao = new JTextArea();
-		txtPrescricao.setBounds(20, 248, 606, 90);
-		contentPanel.add(txtPrescricao);
-		
 		txtNome = new JTextField();
-		txtNome.setBounds(130, 191, 494, 25);
+		txtNome.setBounds(130, 191, 136, 25);
 		contentPanel.add(txtNome);
 		txtNome.setColumns(10);
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBounds(281, 191, 143, 25);
+		contentPanel.add(textField);
+		
+		JLabel lblQtdeDoses = new JLabel("Qtde doses:");
+		lblQtdeDoses.setBounds(281, 173, 129, 14);
+		contentPanel.add(lblQtdeDoses);
+		
+		txtDataValidade = new JFormattedTextField();
+		txtDataValidade.setBounds(341, 248, 142, 25);
+		contentPanel.add(txtDataValidade);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(436, 191, 188, 25);
+		contentPanel.add(comboBox);
+		
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setBounds(20, 248, 295, 25);
+		contentPanel.add(comboBox_1);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(495, 248, 129, 25);
+		contentPanel.add(textField_1);
+		
+		JLabel lblLaboratrio = new JLabel("Laboratório: ");
+		lblLaboratrio.setBounds(20, 228, 175, 14);
+		contentPanel.add(lblLaboratrio);
+		
+		JLabel lblDataVencmento = new JLabel("Data vencimento:");
+		lblDataVencmento.setBounds(341, 228, 136, 14);
+		contentPanel.add(lblDataVencmento);
+		
+		JLabel lblValor = new JLabel("Valor:");
+		lblValor.setBounds(496, 228, 136, 14);
+		contentPanel.add(lblValor);
+		txtDataValidade=new JFormattedTextField(new MaskFormatter("##/##/####"));
+		txtDataValidade.setColumns(10);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
@@ -145,7 +188,7 @@ public class FrmVacina extends JDialog {
 							}
 							
 							vacina.setNome(txtNome.getText());
-							vacina.setPrescricao(txtPrescricao.getText());
+							//vacina.setPrescricao(txtPrescricao.getText());
 							
 							if (!validaCampos()) {
 								JOptionPane.showMessageDialog(null, "Preencha todos os campos", "Validação de campos", 
@@ -176,7 +219,7 @@ public class FrmVacina extends JDialog {
 					public void actionPerformed(ActionEvent arg0) {
 						txtId.setText("");
 						txtNome.setText("");
-						txtPrescricao.setText("");
+						//txtPrescricao.setText("");
 					}
 				});
 				btnNovo.setActionCommand("OK");
@@ -185,20 +228,7 @@ public class FrmVacina extends JDialog {
 				JButton btnApagar = new JButton("Apagar");
 				btnApagar.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						try {
-			                Vacina estoque= tableModel.get(tbLista.getSelectedRow());
-			               
-			                int selectedOption = JOptionPane.showConfirmDialog(null,"Confirma a exclusão?", 
-			                		"Alerta", JOptionPane.YES_NO_OPTION);
-			        		if(selectedOption == JOptionPane.YES_OPTION){
-			        			VacinaControl.getInstance().apagar(estoque);  
-			        			limpar();
-			        			carregarTable();
-			        		}	
-						} catch (Throwable ex) {
-							ex.printStackTrace();
-							Utils.msgExcption(ex.getMessage());	
-						}							
+						
 						
 					}
 				});
@@ -233,19 +263,19 @@ public class FrmVacina extends JDialog {
 	private void limpar() {
 		txtId.setText("");
 		txtNome.setText("");
-		txtPrescricao.setText("");
+		//txtPrescricao.setText("");
 	}
 	
-	private void carregarDados(Vacina entity) {
+	private void carregarDados(Lote entity) {
 		txtId.setText(entity.getId()+"");
-		txtNome.setText(entity.getNome());
-		txtPrescricao.setText(entity.getPrescricao());
+		//txtNome.setText(entity.getNome());
+		//txtPrescricao.setText(entity.getPrescricao());
 	}
 	
 	private boolean validaCampos(){
 		boolean isValido= true;
-		if ( txtNome.getText().length() == 0 || 
-			txtPrescricao.getText().length() == 0
+		if ( txtNome.getText().length() == 0 //|| 
+			//txtPrescricao.getText().length() == 0
 			) {
 			isValido= false;
 		}
@@ -253,10 +283,10 @@ public class FrmVacina extends JDialog {
 	}	
 	
 	private void carregarTable() {
-		tableModel.limpar();
-		List<Vacina> lista= VacinaControl.getInstance().list(new Vacina());
-		tableModel.addList(lista);
-		tableModel.fireTableDataChanged();
+		jTableModel.limpar();
+//		List<Lote> lista= LoteControl.getInstance().list(new Vacina());
+//		jTableModel.addList(lista);
+		jTableModel.fireTableDataChanged();
 	}
 	
 	private void formatarTabela(JTable jTable) {

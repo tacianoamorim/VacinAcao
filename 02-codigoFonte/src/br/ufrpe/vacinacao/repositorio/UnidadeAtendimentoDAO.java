@@ -27,8 +27,6 @@ public class UnidadeAtendimentoDAO {
 			if (filtro != null) {
 			
 				sql.append("SELECT Id, Nome FROM UnidadeAtendimento WHERE 0= 0 ");
-				if ( filtro.getUnidadeFederativa() != null && filtro.getUnidadeFederativa().getSigla() != null)
-					sql.append("AND sigla= ? ");
 				if ( filtro.getNome() != null )
 					sql.append("AND nome like '%?%'");
 				sql.append("ORDER BY Nome ");
@@ -36,8 +34,6 @@ public class UnidadeAtendimentoDAO {
 				preStmt = connection.prepareStatement(sql.toString());
 				int idx= 1;
 				
-				if ( filtro.getUnidadeFederativa() != null && filtro.getUnidadeFederativa().getSigla() != null)
-					preStmt.setString(idx++, filtro.getUnidadeFederativa().getSigla());
 				if ( filtro.getNome() != null )
 					preStmt.setString(idx++, filtro.getNome()+"");
 				rs = preStmt.executeQuery();

@@ -1,7 +1,6 @@
 package br.ufrpe.vacinacao.negocio.entidade;
 
 import java.sql.Date;
-import java.time.LocalDate;
 
 public class Campanha {
 	private int codigo;

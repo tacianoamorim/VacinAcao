@@ -1,12 +1,13 @@
 package br.ufrpe.vacinacao.gui.campanha;
 
-import javafx.event.ActionEvent;
+import java.awt.Button;
+import java.awt.Label;
+import java.awt.TextArea;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 
 public class FrmCadastroCampanha {
 	@FXML

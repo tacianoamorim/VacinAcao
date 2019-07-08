@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -16,6 +17,7 @@ import javax.swing.JPanel;
 
 import br.ufrpe.vacinacao.gui.campanha.FrmCadastroCampanha;
 import br.ufrpe.vacinacao.gui.distribuirVacina.FrmDistribuirVacina;
+import br.ufrpe.vacinacao.gui.lote.FrmLote;
 import br.ufrpe.vacinacao.gui.relatorioEstoque.FrmRelatorioEstoque;
 import br.ufrpe.vacinacao.gui.vacina.FrmVacina;
 
@@ -80,11 +82,26 @@ public class FrmPrincipal {
 	    JMenuItem mntCadastroCampanha = new JMenuItem("Campanha");
 	    mntCadastroCampanha.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent arg0) {
-	    		FrmCadastroCampanha window= new FrmCadastroCampanha();
+	    		@SuppressWarnings("unused")
+				FrmCadastroCampanha window= new FrmCadastroCampanha();
 	    		//window.setVisible(true);
 	    	}
 	    });
 	    mmCadastro.add(mntCadastroCampanha);	    
+	    
+	    JMenuItem mntCadastroLote = new JMenuItem("Lote");
+	    mntCadastroLote.addActionListener(new ActionListener() {
+	    	public void actionPerformed(ActionEvent arg0) {
+	    		FrmLote window;
+				try {
+					window = new FrmLote();
+					window.setVisible(true);
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+	    	}
+	    });
+	    mmCadastro.add(mntCadastroLote);		    
 	    
 	    JMenuItem mntCadastroLoteVacina = new JMenuItem("Lote de vacina");
 	    mntCadastroLoteVacina.addActionListener(new ActionListener() {

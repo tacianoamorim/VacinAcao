@@ -32,4 +32,8 @@ public class VacinaControl {
 	public List<Vacina> list(Vacina filtro) {
 		return repositorio.list(filtro);
 	}
+	
+	public void apagar(Vacina entity) {
+		repositorio.delete(entity.getId());
+	}
 }

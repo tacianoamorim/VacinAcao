@@ -1,19 +1,24 @@
 package br.ufrpe.vacinacao.repositorio;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import br.ufrpe.framework.transaction.SystemException;
 import br.ufrpe.framework.transaction.TransactionManager;
+import br.ufrpe.vacinacao.negocio.entidade.Laboratorio;
+import br.ufrpe.vacinacao.negocio.entidade.Lote;
 import br.ufrpe.vacinacao.negocio.entidade.Vacina;
 
-public class VacinaDAO {
+public class LoteDAO {
 
-	public void insert(Vacina vacina) {
+	public void insert(br.ufrpe.vacinacao.negocio.entidade.Lote lote) {
 		Connection connection = null;
 		PreparedStatement preStmt = null;
 		TransactionManager transactionManager = TransactionManager.getInstance();
@@ -22,13 +27,17 @@ public class VacinaDAO {
 		try {
 			connection = (Connection) transactionManager.getConnection();
 			
-			sql.append("INSERT INTO PUBLIC.VACINA (NOME, PRESCRICAO) ");
-			sql.append("VALUES (?, ?) ");
+			sql.append("INSERT INTO PUBLIC.LOTE (Vacina, Laboratorio, numero, qtdeDose, ");
+			sql.append("	dataVencimento, valor )  VALUE (?, ?, ? ,?, ?, ?) ");
 
 			preStmt= connection.prepareStatement(sql.toString());
-			preStmt.setString(1, vacina.getNome());
-			preStmt.setString(2, vacina.getPrescricao());
-			
+			preStmt.setInt(1, lote.getVacina().getId());
+			preStmt.setInt(2, lote.getLaboratorio().getId());
+			preStmt.setString(3, lote.getNumero());
+			preStmt.setInt(4, lote.getQuantidadeDose());
+			Date dataVencimento = new Date( lote.getDataVencimento().getTimeInMillis() );
+			preStmt.setDate(5, dataVencimento );
+			preStmt.setDouble(6, lote.getValor());			
 			preStmt.execute();
 			
 		} catch (SQLException e) {
@@ -40,33 +49,30 @@ public class VacinaDAO {
 		}
 	}
 	
-	public List<Vacina> list(Vacina filtro) {
+	public List<Lote> list(Lote filtro) {
 		Connection connection = null;
 		PreparedStatement preStmt = null;
 		ResultSet rs = null;
 		TransactionManager transactionManager = TransactionManager.getInstance();
-		List<Vacina> listaRetorno= new ArrayList<Vacina>();
-		StringBuilder sql= new StringBuilder();
+		List<Lote> listaRetorno= new ArrayList<Lote>();
 
 		try {
 			connection = (Connection) transactionManager.getConnection();
 			
 			if (filtro != null) {
 				
-				sql.append("SELECT id, nome, prescricao FROM PUBLIC.VACINA WHERE 0= 0 ");
-				if ( filtro.getNome() != null )
-					sql.append("AND nome like '%?%'");
-				if ( filtro.getPrescricao() != null )
-					sql.append("AND prescricao like '%?%'");				
-				
-				preStmt = connection.prepareStatement(sql.toString());
+				preStmt = connection.prepareStatement(
+						"SELECT l.id, l.qtdeDose, l.dataVencimento, l.numero, l.valor "
+						+ "		lab.id AS \"idLaboratorio\", lab.nome AS \"nomeLaboratorio\", "
+						+ "		v.id AS \"idVac\", v.nome AS \"nomeVac\" "
+						+ "FROM Lote l "
+						+ "		INNER JOIN Laboratorio lab ON lab.id= l.laboratorio "
+						+ "		INNER JOIN Vacina v ON v.id= l.vacina "					
+						+ "WHERE unidAtend.unidadeFederativa= ? ");
 				int idx= 1;
 				
-				if ( filtro.getNome() != null )
-					preStmt.setString(idx++, filtro.getNome());
-				
-				if ( filtro.getPrescricao() != null )
-					preStmt.setString(idx++, filtro.getPrescricao());
+				if ( filtro.getNumero() != null )
+					preStmt.setString(idx++, filtro.getNumero());
 				
 				rs = preStmt.executeQuery();
 	
@@ -77,7 +83,7 @@ public class VacinaDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new SystemException("\n " + e.getMessage() + " - C�digo: "
+			throw new SystemException("\n " + e.getMessage() + " - Codigo: "
 					+ e.getErrorCode());
 		} finally {
 			transactionManager.closeConnection(connection);
@@ -85,15 +91,30 @@ public class VacinaDAO {
 		return listaRetorno;		
 	}	
 	
-	private Vacina carregar(ResultSet rs) throws SQLException {
+	private Lote carregar(ResultSet rs) throws SQLException {
+		Lote lote= new Lote();
+		lote.setId(rs.getInt("id"));
+		lote.setNumero(rs.getString("numero"));
+		lote.setQuantidadeDose(rs.getInt("qtdeDose"));
+		
+		Calendar dataVencimento= new GregorianCalendar();
+		dataVencimento.setTime( rs.getDate("dataVencimento") );
+		lote.setDataVencimento( dataVencimento );
+		
 		Vacina vacina= new Vacina();
-		vacina.setId(rs.getInt("id"));
-		vacina.setNome(rs.getString("nome"));
-		vacina.setPrescricao(rs.getString("prescricao"));
-		return vacina;
+		vacina.setId(rs.getInt("idVacina"));
+		vacina.setNome(rs.getString("nomeVacina"));
+		lote.setVacina(vacina);
+		
+		Laboratorio laboratorio= new Laboratorio();
+		laboratorio.setId(rs.getInt("idLaboratorio"));
+		laboratorio.setNome(rs.getString("nomeLaboratorio"));
+		lote.setLaboratorio(laboratorio);
+		
+		return lote;
 	}
 
-	public void update(Vacina vacina) {
+	public void update(Lote lote) {
 		Connection connection = null;
 		PreparedStatement preStmt = null;
 		TransactionManager transactionManager = TransactionManager.getInstance();
@@ -102,14 +123,19 @@ public class VacinaDAO {
 		try {
 			connection = (Connection) transactionManager.getConnection();
 			
-			sql.append("UPDATE PUBLIC.VACINA SET NOME= ?, PRESCRICAO= ? ");
+			sql.append("UPDATE PUBLIC.LOTE SET Vacina= ?, Laboratorio= ?, numero= ? ");
+			sql.append("	qtdeDose= ?, dataVencimento= ?, valor= ? ");
 			sql.append("WHERE ID= ? ");
 
 			preStmt= connection.prepareStatement(sql.toString());
-			preStmt.setString(1, vacina.getNome());
-			preStmt.setString(2, vacina.getPrescricao());
-			preStmt.setInt(3, vacina.getId());
-			
+			preStmt.setInt(1, lote.getVacina().getId());
+			preStmt.setInt(2, lote.getLaboratorio().getId());
+			preStmt.setString(3, lote.getNumero());
+			preStmt.setInt(4, lote.getQuantidadeDose());
+			Date dataVencimento = new Date( lote.getDataVencimento().getTimeInMillis() );
+			preStmt.setDate(5, dataVencimento );
+			preStmt.setDouble(6, lote.getValor());			
+			preStmt.setInt(7, lote.getId());
 			preStmt.execute();
 			
 		} catch (SQLException e) {
@@ -130,7 +156,7 @@ public class VacinaDAO {
 		try {
 			connection = (Connection) transactionManager.getConnection();
 			
-			sql.append("DELETE FROM PUBLIC.VACINA WHERE ID= ? ");
+			sql.append("DELETE FROM PUBLIC.LOTE WHERE ID= ? ");
 			preStmt= connection.prepareStatement(sql.toString());
 			preStmt.setInt(1, id);
 			preStmt.execute();
