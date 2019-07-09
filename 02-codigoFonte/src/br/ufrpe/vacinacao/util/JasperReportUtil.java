@@ -1,5 +1,6 @@
 package br.ufrpe.vacinacao.util;
 
+import java.awt.Dialog.ModalExclusionType;
 import java.sql.SQLException;
 import java.util.Map;
 
@@ -25,6 +26,7 @@ public interface JasperReportUtil {
 			 
 			 //exibe o resultado
 			 JasperViewer viewer = new JasperViewer( impressao , true );
+			 viewer.setModalExclusionType(ModalExclusionType.APPLICATION_EXCLUDE);
 			 viewer.setVisible(true);
 			
 		} catch (Exception e) {

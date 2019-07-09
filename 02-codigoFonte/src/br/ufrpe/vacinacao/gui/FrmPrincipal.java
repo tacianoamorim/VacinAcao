@@ -102,14 +102,6 @@ public class FrmPrincipal {
 	    	}
 	    });
 	    mmCadastro.add(mntCadastroLote);		    
-	    
-	    JMenuItem mntCadastroLoteVacina = new JMenuItem("Lote de vacina");
-	    mntCadastroLoteVacina.addActionListener(new ActionListener() {
-	    	public void actionPerformed(ActionEvent arg0) {
-
-	    	}
-	    });
-	    mmCadastro.add(mntCadastroLoteVacina);
 
 	    /**
 	     * MENU GERENCIA FEDERAL

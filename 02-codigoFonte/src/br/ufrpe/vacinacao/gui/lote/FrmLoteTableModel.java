@@ -5,7 +5,10 @@ import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
 
+import br.ufrpe.vacinacao.negocio.entidade.Laboratorio;
 import br.ufrpe.vacinacao.negocio.entidade.Lote;
+import br.ufrpe.vacinacao.negocio.entidade.Vacina;
+import br.ufrpe.vacinacao.util.Utils;
 
 public class FrmLoteTableModel extends AbstractTableModel {
 
@@ -16,7 +19,7 @@ public class FrmLoteTableModel extends AbstractTableModel {
 	
 	private List<Lote> list;
 	private String[] colunas = new String[] { 
-		"C\u00F3digo", "Nome", "Prescri��o"
+		"C\u00F3digo", "Laboratório", "Vacina", "Qtde doses"
 	};
 
 	/** Creates a new instance of TableModel */
@@ -49,13 +52,16 @@ public class FrmLoteTableModel extends AbstractTableModel {
 	public void setValueAt(Lote aValue, int rowIndex) {
 		Lote lote = list.get(rowIndex);
 
+		
 		lote.setId( aValue.getId() );
-//		lote.setNome(aValue.getNome());
-//		lote.setPrescricao(aValue.getPrescricao());
+		// laboratorio
+		// Vacina
+		lote.setQuantidadeDose(aValue.getQuantidadeDose());
 		
 		fireTableCellUpdated(rowIndex, 0);
 		fireTableCellUpdated(rowIndex, 1);
 		fireTableCellUpdated(rowIndex, 2);
+		fireTableCellUpdated(rowIndex, 3);
 	}
 
 	@Override
@@ -65,9 +71,18 @@ public class FrmLoteTableModel extends AbstractTableModel {
 		case 0:
 			lote.setId( Integer.parseInt( aValue.toString() ) );
 		case 1:
-			//lote.setNome( aValue.toString() );
+			lote.setNumero( aValue.toString() );
 		case 2:
-			//lote.setPrescricao( aValue.toString() );
+			Laboratorio laboratorio= new Laboratorio();
+			int id= Integer.parseInt(Utils.getId(aValue.toString(), "-"));
+			laboratorio.setId(id);
+			lote.setLaboratorio(laboratorio);
+			
+		case 3:
+			Vacina vacina= new Vacina();
+			int idVac= Integer.parseInt(Utils.getId(aValue.toString(), "-"));
+			vacina.setId(idVac);
+			lote.setVacina(vacina);
 			
 		default:
 			System.err.println("indice da coluna invalido");
@@ -83,11 +98,14 @@ public class FrmLoteTableModel extends AbstractTableModel {
 			valueObject = loteSelecionado.getId()+"";
 			break;
 		case 1:
-			//valueObject = loteSelecionado.getNome();
+			valueObject = loteSelecionado.getLaboratorio().getNome();
 			break;
 		case 2:
-			//valueObject = loteSelecionado.getPrescricao();
+			valueObject = loteSelecionado.getVacina().getNome();
 			break;
+		case 3:
+			valueObject = loteSelecionado.getQuantidadeDose();
+			break;			
 		default:
 			System.err.println("indice invalido para propriedade do bean Lote.class");
 		}

@@ -62,18 +62,12 @@ public class LoteDAO {
 			if (filtro != null) {
 				
 				preStmt = connection.prepareStatement(
-						"SELECT l.id, l.qtdeDose, l.dataVencimento, l.numero, l.valor "
+						"SELECT l.id, l.qtdeDose, l.dataVencimento, l.numero, l.valor, "
 						+ "		lab.id AS \"idLaboratorio\", lab.nome AS \"nomeLaboratorio\", "
-						+ "		v.id AS \"idVac\", v.nome AS \"nomeVac\" "
+						+ "		v.id AS \"idVacina\", v.nome AS \"nomeVacina\" "
 						+ "FROM Lote l "
 						+ "		INNER JOIN Laboratorio lab ON lab.id= l.laboratorio "
-						+ "		INNER JOIN Vacina v ON v.id= l.vacina "					
-						+ "WHERE unidAtend.unidadeFederativa= ? ");
-				int idx= 1;
-				
-				if ( filtro.getNumero() != null )
-					preStmt.setString(idx++, filtro.getNumero());
-				
+						+ "		INNER JOIN Vacina v ON v.id= l.vacina ");
 				rs = preStmt.executeQuery();
 	
 				while (rs.next()) {

@@ -99,6 +99,7 @@ public class FrmRelatorioEstoque extends JDialog {
 							//gerando o jasper design
 							JasperDesign desenho= JRXmlLoader.load( url.getFile());
 							
+							
 							JasperReportUtil.gerar(desenho, dataSource, parametros);
 							
 						} catch (Exception e) {

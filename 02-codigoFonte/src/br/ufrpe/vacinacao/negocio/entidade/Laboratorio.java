@@ -20,4 +20,9 @@ public class Laboratorio {
 		this.nome = nome;
 	}
 
+	@Override
+	public String toString() {
+		return id + "- " + nome;
+	}
+
 }

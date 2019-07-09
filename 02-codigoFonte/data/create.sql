@@ -43,7 +43,7 @@ CREATE TABLE Lote (
  ,vacina                         INTEGER UNSIGNED NOT NULL
  ,laboratorio                    INTEGER UNSIGNED NOT NULL
  ,numero                         VARCHAR(20) NOT NULL
- ,quantidadeDose                 INTEGER UNSIGNED NOT NULL
+ ,qtdeDose		                 INTEGER UNSIGNED NOT NULL
  ,dataVencimento                 DATE NOT NULL
  ,valor                          DOUBLE NOT NULL
  ,PRIMARY KEY (id)

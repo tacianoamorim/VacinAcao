@@ -11,11 +11,11 @@ INSERT INTO PUBLIC.Vacina (nome, prescricao) VALUES
  ('HN1', 'HN1 prescricao'),
  ('Tripiceviral', 'Tripiceviral prescricao');
 
-INSERT INTO PUBLIC.Lote (vacina, laboratorio, numero, quantidadeDose, dataVencimento, valor) VALUES 
+INSERT INTO PUBLIC.Lote (vacina, laboratorio, numero, qtdeDose, dataVencimento, valor) VALUES 
  (1, 1, '2089RD', 30000, '2025-01-01', 205.93),
  (1, 2, '3847NE', 15000, '2025-01-01', 2204.23),
  (2, 2, '7818PED', 90000, '2025-01-01', 3231.24),
- (1, 3, '20394EP', 10000, '2025-01-01', 2123.72);
+ (3, 3, '20394EP', 10000, '2025-01-01', 2123.72);
 
 INSERT INTO PUBLIC.UnidadeFederativa (Sigla, Nome) VALUES 
  ('PE', 'Pernambuco'),
@@ -39,14 +39,13 @@ INSERT INTO PUBLIC.UnidadeAtendimento (unidadeFederativa, Nome, endereco) VALUES
 
 INSERT INTO PUBLIC.Estoque (unidadeAtendimento, lote, quantidadeDoses) VALUES 
  (1, 1, 100),
- (1, 2, 100),
+ (1, 3, 100),
+ (1, 4, 200),
  (2, 2, 200),
- (1, 3, 200),
  (3, 2, 100),
  (4, 2, 200),
  (5, 3, 200),
  (6, 2, 100),
- (6, 2, 200),
  (7, 3, 200);
  
 INSERT INTO PUBLIC.Usuario (numeroSUS, Nome, endereco, sexo, dataNascimento, senha) VALUES
