@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.text.ParseException;
 
 import javax.swing.BoxLayout;
@@ -20,6 +21,10 @@ import br.ufrpe.vacinacao.gui.distribuirVacina.FrmDistribuirVacina;
 import br.ufrpe.vacinacao.gui.lote.FrmLote;
 import br.ufrpe.vacinacao.gui.relatorioEstoque.FrmRelatorioEstoque;
 import br.ufrpe.vacinacao.gui.vacina.FrmVacina;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 public class FrmPrincipal {
 
@@ -83,6 +88,20 @@ public class FrmPrincipal {
 	    mntCadastroCampanha.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent arg0) {
 	    		@SuppressWarnings("unused")
+	    		Stage stage;
+	    		Scene scene;
+	    		Parent parent;
+	    		try {
+					parent = FXMLLoader.load(getClass().getResource("campanha/FrmCadastroCampanha.fxml"));
+					scene = new Scene(parent);
+					stage = new Stage();
+					stage.setScene(scene);
+					stage.show();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					System.out.println(e.getMessage());
+				}
+	    		
 				FrmCadastroCampanha window= new FrmCadastroCampanha();
 	    		//window.setVisible(true);
 	    	}

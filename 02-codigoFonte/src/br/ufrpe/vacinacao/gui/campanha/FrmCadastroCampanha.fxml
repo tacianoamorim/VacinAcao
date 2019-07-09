@@ -15,7 +15,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="vacinaLabel" layoutX="84.0" layoutY="96.0" text="Vacina" />
+      <Label fx:id="vacinaLabel" layoutX="36.0" layoutY="96.0" text="Vacina (código)" />
       <Label fx:id="campanhaLabel" layoutX="62.0" layoutY="130.0" text="Campanha" />
       <Label fx:id="valorGastoLabel" layoutX="31.0" layoutY="162.0" text="Valor total gasto" />
       <Label fx:id="dataInicioDivulgacaoLabel" layoutX="18.0" layoutY="202.0" text="Início da divulgação" />

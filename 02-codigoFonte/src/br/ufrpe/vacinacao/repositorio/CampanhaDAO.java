@@ -23,7 +23,7 @@ public class CampanhaDAO {
 			sql.append("VALUES(?, ?, ?, ?, ?, ?, ?, ?) ");
 
 			preStmt= connection.prepareStatement(sql.toString());			
-			preStmt.setInt(1, campanha.getVacina().getId());
+			preStmt.setInt(1, campanha.getVacina());
 			preStmt.setString(2, campanha.getNome());
 			preStmt.setDouble(3, campanha.getValor());
 			preStmt.setDate(4, campanha.getDataInicioDivulgacao());

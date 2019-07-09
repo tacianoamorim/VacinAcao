@@ -5,7 +5,7 @@ import java.sql.Date;
 public class Campanha {
 	private int codigo;
 	private String nome;
-	private Vacina vacina;
+	private int vacinaID;
 	private double valor;
 	private Date dataInicioDivulgacao;
 	private Date dataFimDivulgacao;
@@ -77,12 +77,12 @@ public class Campanha {
 		this.observacao = observacao;
 	}
 
-	public Vacina getVacina() {
-		return vacina;
+	public int getVacina() {
+		return vacinaID;
 	}
 
-	public void setVacina(Vacina vacina) {
-		this.vacina = vacina;
+	public void setVacina(int vacina) {
+		this.vacinaID = vacina;
 	}
 
 	

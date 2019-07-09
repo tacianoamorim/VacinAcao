@@ -5,11 +5,18 @@ import java.awt.Label;
 import java.awt.TextArea;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
+import java.sql.Date;
 
+import br.ufrpe.vacinacao.negocio.entidade.Campanha;
+import br.ufrpe.vacinacao.repositorio.CampanhaDAO;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 
 public class FrmCadastroCampanha {
+	
+	private Campanha campanha;
+	private CampanhaDAO controladorCampanha;
+	
 	@FXML
     private Label vacinaLabel;
 
@@ -60,7 +67,16 @@ public class FrmCadastroCampanha {
     
     @FXML
     void cadastrarButtonClick(ActionEvent event) {
-
+    	campanha = new Campanha();
+    	
+    	campanha.setNome(campanhaText.getText());
+    	campanha.setVacina(Integer.parseInt(vacinaText.getText()));
+    	campanha.setDataInicioDivulgacao(Date.valueOf(dataInicioDivulgacaoDate.getValue()));
+    	campanha.setDataFimDivulgacao(Date.valueOf(dataFimDivulgacaoDate.getValue()));
+    	campanha.setDataInicioExecucao(Date.valueOf(dataInicioExecucaoDate.getValue()));
+    	campanha.setDataFimExecucao(Date.valueOf(dataFimExecucaoDate.getValue()));
+    	campanha.setObservacao(observacaoTextArea.getText());
+    	controladorCampanha.insert(campanha);
     }
 
 }
